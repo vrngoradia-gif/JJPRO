@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Palette — premium ivory/cream + antique gold */
+  --color-ink: #faf7f1;
+  --color-ink-soft: #f2ebdc;
+  --color-panel: #ffffff;
+  --color-line: #e6ddc7;
+  --color-paper: #1e1911;
+  --color-paper-dim: #7d7364;
+  --color-accent: #a9812f;
+  --color-accent-bright: #c9a04f;
+  --color-accent-dim: #7a5f26;
+  --color-cyan: #c17a4a;
+
+  --font-display: var(--font-space-grotesk);
+  --font-sans: var(--font-inter);
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-ink);
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--color-accent-bright);
+  color: var(--color-paper);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Fluid display heading scale */
+.h-display-xl {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+  font-size: clamp(2.5rem, 4vw + 1.4rem, 6rem);
+}
+
+.h-display-lg {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  font-size: clamp(2.1rem, 2.6vw + 1.3rem, 3.75rem);
+}
+
+.h-display-md {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  font-size: clamp(1.6rem, 1.6vw + 1.1rem, 2.5rem);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-accent-bright);
+}
+
+.accent-gradient-text {
+  background: linear-gradient(120deg, var(--color-cyan), var(--color-accent-bright) 55%, var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-border {
+  border: 1px solid var(--color-line);
+  box-shadow: 0 0 0 1px rgba(169, 129, 47, 0.12);
+}
+
+/* Marquee (stats / logos strips) */
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll 30s linear infinite;
+}
+
+/* Subtle grid texture for section backgrounds */
+.grid-texture {
+  background-image:
+    linear-gradient(to right, rgba(30, 25, 17, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(30, 25, 17, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
