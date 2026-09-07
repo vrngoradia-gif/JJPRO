@@ -1,13 +1,14 @@
 import Link from "next/link";
 import SectionReveal from "@/components/ui/SectionReveal";
 import CtaButton from "@/components/ui/CtaButton";
+import ScrollCue from "@/components/ui/ScrollCue";
 import { home, serviceAreas } from "@/lib/content";
 
 export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden pt-44 pb-28 md:pt-56 md:pb-36">
+      <section className="relative overflow-hidden pt-44 pb-24 md:pt-56 md:pb-32">
         <div className="grid-texture pointer-events-none absolute inset-0 opacity-40" aria-hidden />
         <div
           className="pointer-events-none absolute left-1/2 top-0 h-[32rem] w-[48rem] -translate-x-1/2 rounded-full bg-accent/20 blur-[140px]"
@@ -15,23 +16,54 @@ export default function Home() {
         />
         <div className="relative mx-auto max-w-5xl px-6 text-center md:px-10">
           <SectionReveal>
-            <p className="eyebrow mb-6">Design as a Service · Agentic AI as a Service</p>
+            <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-4 py-1.5 text-xs uppercase tracking-widest text-accent-bright">
+              Design as a Service · Agentic AI as a Service
+            </span>
           </SectionReveal>
           <SectionReveal delay={0.05}>
-            <h1 className="h-display-xl accent-gradient-text text-balance">{home.hero.headline}</h1>
+            <h1 className="h-display-xl accent-gradient-text mt-6 text-balance">{home.hero.headline}</h1>
           </SectionReveal>
           <SectionReveal delay={0.1}>
             <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-paper-dim">{home.hero.sub}</p>
           </SectionReveal>
           <SectionReveal delay={0.15}>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              {home.hero.ctas.map((cta) => (
+              {home.hero.ctas.slice(0, 2).map((cta) => (
                 <CtaButton key={cta.label} href={cta.href} variant={cta.variant} external={"external" in cta ? cta.external : false}>
                   {cta.label}
                 </CtaButton>
               ))}
             </div>
           </SectionReveal>
+          {home.hero.ctas[2] && (
+            <SectionReveal delay={0.2}>
+              <Link
+                href={home.hero.ctas[2].href}
+                className="mt-6 inline-flex items-center gap-1.5 text-sm text-paper-dim transition-colors hover:text-accent-bright"
+              >
+                {home.hero.ctas[2].label}
+                <span aria-hidden>→</span>
+              </Link>
+            </SectionReveal>
+          )}
+        </div>
+
+        <ScrollCue />
+      </section>
+
+      {/* Capabilities Marquee */}
+      <section className="border-y border-line/60 py-6" aria-hidden>
+        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
+          <div className="animate-marquee flex shrink-0 items-center gap-12 pr-12">
+            {[...serviceAreas, ...serviceAreas].map((service, i) => (
+              <span
+                key={`${service.id}-${i}`}
+                className="whitespace-nowrap text-sm uppercase tracking-widest text-paper-dim/60"
+              >
+                {service.short}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 

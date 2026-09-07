@@ -4,7 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
-import WhatsAppCta from "@/components/layout/WhatsAppCta";
+import ChatWidget from "@/components/chat/ChatWidget";
 import { siteMeta } from "@/lib/content";
 
 const spaceGrotesk = Space_Grotesk({
@@ -59,7 +59,7 @@ export default function RootLayout({
           <main>{children}</main>
         </PageTransition>
         <Footer />
-        <WhatsAppCta />
+        <ChatWidget />
       </body>
     </html>
   );

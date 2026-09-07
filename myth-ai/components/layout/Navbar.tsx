@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { navLinks, siteMeta, services, solutions } from "@/lib/content";
+import Logomark from "@/components/ui/Logomark";
 
 function subscribeToScroll(callback: () => void) {
   window.addEventListener("scroll", callback, { passive: true });
@@ -44,8 +45,11 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
-        <Link href="/" className="font-display text-lg tracking-wide text-paper">
-          {siteMeta.shortName}
+        <Link href="/" className="flex items-center gap-2.5">
+          <Logomark size={30} />
+          <span className="font-display text-lg tracking-wide text-paper">
+            {siteMeta.shortName}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">
