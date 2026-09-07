@@ -31,7 +31,7 @@ export const navLinks = [
   { label: "Platform", href: "/platform" },
   { label: "Services", href: "/services" },
   { label: "Solutions", href: "/solutions" },
-  { label: "Académie", href: "/academie" },
+  { label: "Academie", href: "/academie" },
   { label: "Pricing", href: "/pricing" },
   { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
@@ -521,12 +521,12 @@ export const solutions = {
 };
 
 // ---------------------------------------------------------------------------
-// Académie
+// Academie
 // ---------------------------------------------------------------------------
 
 export const academie = {
   hero: {
-    heading: "MYTH Académie India",
+    heading: "MYTH Academie India",
     sub: "Hands-on training on the Myth AI toolkit and how to brief DaaS / AAaaS for real production output.",
   },
   tracks: [
@@ -593,7 +593,7 @@ export const pricing = {
     { name: "Enterprise", price: "Custom" },
   ],
   academieDigi: [
-    { name: "Académie", price: "₹1,999/session · ₹4,999 bundle · ₹299/student/year (institutional)" },
+    { name: "Academie", price: "₹1,999/session · ₹4,999 bundle · ₹299/student/year (institutional)" },
     { name: "MYTH Digi", price: "₹99/file · ₹2,999/mo · ₹7,999/mo unlimited" },
   ],
   payment: {
@@ -821,11 +821,11 @@ export const about = {
 export const contactPage = {
   hero: {
     heading: "Let's Accelerate Your Pipeline",
-    sub: "Tell us about your brief and we'll route it to the right service — DaaS, AAaaS, 3D Visualization, Platform, or Académie.",
+    sub: "Tell us about your brief and we'll route it to the right service — DaaS, AAaaS, 3D Visualization, Platform, or Academie.",
   },
   form: {
     fields: ["Name", "Company", "Role", "Industry", "Phone", "Email"],
-    interestedIn: ["DaaS", "AAaaS", "3D Visualization", "Platform", "Académie"],
+    interestedIn: ["DaaS", "AAaaS", "3D Visualization", "Platform", "Academie"],
   },
 };
 
@@ -848,7 +848,7 @@ export const footerLinks = {
     { label: "MYTH Digi", href: "/platform/myth-digi" },
     { label: "Pricing", href: "/pricing" },
     { label: "Free Trial", href: "/pricing#self-serve" },
-    { label: "MYTH Académie India", href: "/academie" },
+    { label: "MYTH Academie India", href: "/academie" },
   ],
   solutions: [
     { label: "Textile & Apparel", href: "/solutions/textile-apparel" },

@@ -99,7 +99,7 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* Académie + Digi add-ons */}
+      {/* Academie + Digi add-ons */}
       <section className="border-b border-line/60 py-20 md:py-28">
         <div className="mx-auto max-w-3xl px-6 md:px-10">
           <SectionReveal>
