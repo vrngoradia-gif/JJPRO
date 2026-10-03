@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Noto_Sans, Roboto } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
@@ -12,17 +12,16 @@ import JsonLd from "@/components/seo/JsonLd";
 import { siteMeta } from "@/lib/content";
 import { organizationSchema, personSchema, websiteSchema } from "@/lib/schema";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const noto = Noto_Sans({
+  variable: "--font-noto",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["400", "600", "700", "800"],
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const roboto = Roboto({
+  variable: "--font-roboto",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -60,7 +59,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`${noto.variable} ${roboto.variable}`}>
       <body className="min-h-screen bg-ink font-sans text-paper antialiased">
         <JsonLd data={[organizationSchema(), personSchema(), websiteSchema()]} />
         <div className="grain-overlay" />

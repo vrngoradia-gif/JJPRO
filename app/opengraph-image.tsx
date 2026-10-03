@@ -17,9 +17,9 @@ export default function OpengraphImage() {
           justifyContent: "center",
           alignItems: "flex-start",
           padding: "80px",
-          background: "#060605",
+          background: "#0f1829",
           backgroundImage:
-            "radial-gradient(circle at 80% 20%, rgba(203,161,88,0.35), transparent 60%)",
+            "radial-gradient(circle at 80% 20%, rgba(214,51,108,0.35), transparent 60%)",
         }}
       >
         <div
@@ -28,7 +28,7 @@ export default function OpengraphImage() {
             fontSize: 28,
             letterSpacing: 4,
             textTransform: "uppercase",
-            color: "#cba158",
+            color: "#d6336c",
           }}
         >
           {siteMeta.name}
@@ -40,7 +40,7 @@ export default function OpengraphImage() {
             fontSize: 64,
             fontWeight: 600,
             lineHeight: 1.15,
-            color: "#f3efe6",
+            color: "#ffffff",
             maxWidth: 980,
           }}
         >
