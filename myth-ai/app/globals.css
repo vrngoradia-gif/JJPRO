@@ -122,3 +122,7 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+:root {
+  --net-bg: var(--color-ink-soft, #f4efe6); --net-fg: var(--color-paper, #1b1710); --net-dim: var(--color-paper-dim, #6b6454); --net-line: var(--color-line, #ddd5c4); --net-accent: var(--color-accent, #a9812f);
+}
