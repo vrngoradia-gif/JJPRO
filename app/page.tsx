@@ -89,27 +89,33 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
-          {home.stats.map((stat) => (
-            <StatCounter key={stat.label} {...stat} />
-          ))}
-        </div>
-      </section>
+      {/* Stats (only shown when verified numbers are added in lib/content.ts) */}
+      {home.stats.length > 0 && (
+        <section className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+          <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
+            {home.stats.map((stat) => (
+              <StatCounter key={stat.label} {...stat} />
+            ))}
+          </div>
+        </section>
+      )}
 
-      {/* Clients marquee */}
-      <section className="border-y border-line/60 py-14">
-        <p className="eyebrow mb-8 text-center">{home.clients.kicker}</p>
-        <Marquee items={home.clients.logos} />
-      </section>
+      {/* Clients marquee (hidden until real logos are added) */}
+      {home.clients.logos.length > 0 && (
+        <section className="border-y border-line/60 py-14">
+          <p className="eyebrow mb-8 text-center">{home.clients.kicker}</p>
+          <Marquee items={home.clients.logos} />
+        </section>
+      )}
 
-      {/* Testimonials */}
-      <section className="mx-auto max-w-5xl px-6 py-24 md:px-10 md:py-32">
-        <SectionReveal>
-          <TestimonialCarousel items={home.testimonials} />
-        </SectionReveal>
-      </section>
+      {/* Testimonials (hidden until real, approved quotes are added) */}
+      {home.testimonials.length > 0 && (
+        <section className="mx-auto max-w-5xl px-6 py-24 md:px-10 md:py-32">
+          <SectionReveal>
+            <TestimonialCarousel items={home.testimonials} />
+          </SectionReveal>
+        </section>
+      )}
 
       {/* FAQ */}
       <FAQSection items={faqs.home} />

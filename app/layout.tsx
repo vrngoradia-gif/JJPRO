@@ -5,6 +5,8 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import CustomCursor from "@/components/layout/CustomCursor";
+import Assistant from "@/components/chat/Assistant";
+import NetworkStrip from "@/components/network/NetworkStrip";
 import PageTransition from "@/components/layout/PageTransition";
 import JsonLd from "@/components/seo/JsonLd";
 import { siteMeta } from "@/lib/content";
@@ -68,7 +70,9 @@ export default function RootLayout({
           <PageTransition>
             <main>{children}</main>
           </PageTransition>
+          <NetworkStrip current="jjpro" />
           <Footer />
+          <Assistant />
         </SmoothScroll>
       </body>
     </html>
