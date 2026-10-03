@@ -1,5 +1,6 @@
 "use client";
 
+import Logo from "@/components/ui/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useSyncExternalStore } from "react";
@@ -37,7 +38,7 @@ export default function Navbar() {
           className="font-display text-lg tracking-wide text-paper"
           data-cursor-hover
         >
-          {siteMeta.name}
+          <span className="inline-flex items-center gap-3"><Logo size={30} />{siteMeta.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">

@@ -46,14 +46,16 @@ export default function AboutUsPage() {
             ))}
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-6 border-t border-line/60 pt-8">
-            {aboutUs.highlights.map((h) => (
-              <div key={h.label}>
-                <p className="font-display text-2xl text-gold">{h.value}</p>
-                <p className="mt-1 text-xs text-paper-dim">{h.label}</p>
-              </div>
-            ))}
-          </div>
+          {aboutUs.highlights.length > 0 && (
+            <div className="mt-10 grid grid-cols-3 gap-6 border-t border-line/60 pt-8">
+              {aboutUs.highlights.map((h) => (
+                <div key={h.label}>
+                  <p className="font-display text-2xl text-gold">{h.value}</p>
+                  <p className="mt-1 text-xs text-paper-dim">{h.label}</p>
+                </div>
+              ))}
+            </div>
+          )}
         </SectionReveal>
       </section>
 

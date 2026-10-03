@@ -151,3 +151,10 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Assistant widget + network strip theme */
+:root {
+  --aw-bg: #0e0d0b; --aw-soft: #181613; --aw-fg: #f3efe6; --aw-dim: #b7b2a6; --aw-line: #2e2b25;
+  --aw-accent: #cba158; --aw-accent-fg: #060605; --aw-font: var(--font-inter), system-ui, sans-serif;
+  --net-bg: #0e0d0b; --net-fg: #f3efe6; --net-dim: #b7b2a6; --net-line: #26241f; --net-accent: #cba158;
+}

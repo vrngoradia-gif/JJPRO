@@ -33,9 +33,6 @@ export const footerLinks = {
   },
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/jignesh1409/" },
-    // TODO: replace with real client content — confirm Instagram / X handles
-    { label: "Instagram", href: "https://instagram.com" },
-    { label: "Twitter / X", href: "https://x.com" },
   ],
   sitemap: [
     { label: "What We Do", href: "/what-we-do" },
@@ -56,9 +53,9 @@ export const home = {
   hero: {
     eyebrow: "JJ PRO — Growth & Fundraising Consultancy",
     // TODO: replace with real client content
-    title: "We turn founders' conviction into funded, scalable companies.",
+    title: "Capital, strategy and go-to-market for founders and investors building across borders.",
     subtitle:
-      "Brand strategy, business transformation and cross-border fundraising for startups ready to move from promising to unstoppable.",
+      "Jignesh P Jain advises founders on brand, fundraising and cross-border growth, and helps VCs and family offices source and scale AI and SaaS investments.",
     primaryCta: { label: "Start a Conversation", href: "/contact" },
     secondaryCta: { label: "See What We Do", href: "/what-we-do" },
   },
@@ -101,39 +98,13 @@ export const home = {
     body: "JJ PRO is the practice of Jignesh, a Mumbai-based startup, GTM and fundraising consultant who mentors founders through international accelerator and incubation programs including Skolkovo, the Wadhwani Foundation and OIC International.",
     cta: { label: "Meet Jignesh", href: "/about-us" },
   },
-  stats: [
-    // TODO: replace with real client content — verified numbers
-    { value: 40, suffix: "+", label: "Founders advised" },
-    { value: 120, suffix: "M", prefix: "$", label: "Capital raised" },
-    { value: 15, suffix: "+", label: "Countries worked in" },
-    { value: 9, suffix: "", label: "Years in practice" },
-  ],
+  stats: [] as { value: number; suffix: string; prefix?: string; label: string }[], // Add only verified numbers
   clients: {
     kicker: "Trusted by builders",
     // TODO: replace with real client logos
-    logos: ["Company One", "Company Two", "Company Three", "Company Four", "Company Five"],
+    logos: [] as string[], // Add real client logos or names (with consent)
   },
-  testimonials: [
-    {
-      // TODO: replace with real client testimonial
-      quote:
-        "JJ PRO reframed our entire fundraising narrative in two weeks. We closed our round faster than we thought possible.",
-      name: "Founder Name",
-      role: "CEO, Startup Name",
-    },
-    {
-      quote:
-        "The GTM playbook they built for our cross-border launch is still the backbone of how we enter new markets.",
-      name: "Founder Name",
-      role: "Co-Founder, Startup Name",
-    },
-    {
-      quote:
-        "Rare to find someone who understands brand, ops and capital equally well. That combination changed our trajectory.",
-      name: "Founder Name",
-      role: "CEO, Startup Name",
-    },
-  ],
+  testimonials: [] as { quote: string; name: string; role: string }[], // Add real, approved testimonials only
   cta: {
     kicker: "Ready when you are",
     heading: "Let's build the next chapter of your company.",
@@ -274,15 +245,11 @@ export const aboutUs = {
   bio: {
     paragraphs: [
       "Jignesh founded JJ PRO to work directly with founders on brand strategy, fundraising, GTM and business transformation — bringing an operator's view of what makes a company both fundable and durable.",
-      "Alongside his consulting practice, Jignesh mentors founders through international startup programs including Skolkovo (Russia), T3 Vakfı (Turkey), the Wadhwani Foundation, IYESF, OIC International (Kazan, Tatarstan) and the Atal Incubation Centre at BIMTECH — giving him direct, ongoing exposure to founders building across very different markets.",
-      "He is a Certified Ethical Hacker and was recognized as \"Best EDUTECH Leader\" at the World Education Congress in 2019. Today, JJ PRO is the vehicle for that experience: a boutique practice built to give founders direct access to strategic, capital and operational expertise without the overhead of a large firm.",
+      "He is also a Venture Partner and Chapter Director (Mumbai) at VNTR.vc, a global investor network, and works with VCs and family offices to source, evaluate and scale AI and SaaS investments. Alongside his consulting practice, Jignesh mentors founders through international startup programs including Skolkovo (Russia), T3 Vakfı (Turkey), the Wadhwani Foundation, IYESF, OIC International (Kazan, Tatarstan) and the Atal Incubation Centre at BIMTECH — giving him direct, ongoing exposure to founders building across very different markets.",
+      "Today, JJ PRO is the vehicle for that experience: a boutique practice built to give founders direct access to strategic, capital and operational expertise without the overhead of a large firm.",
     ],
   },
-  highlights: [
-    { label: "Startup mentor programs", value: "7 countries" },
-    { label: "Languages spoken", value: "7" },
-    { label: "Recognition", value: "Best EDUTECH Leader, 2019" },
-  ],
+  highlights: [] as { label: string; value: string }[],
   coachingCta: {
     kicker: "Beyond Advisory",
     heading: "Startup Coaching & Mentoring",
