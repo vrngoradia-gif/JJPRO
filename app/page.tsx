@@ -1,5 +1,5 @@
 import SceneCanvas from "@/components/three/SceneCanvas";
-import CinematicPortrait from "@/components/ui/CinematicPortrait";
+import HeroBackdrop from "@/components/ui/HeroBackdrop";
 import TiltPortrait from "@/components/ui/TiltPortrait";
 import SectionReveal from "@/components/ui/SectionReveal";
 import ServiceCard from "@/components/ui/ServiceCard";
@@ -16,7 +16,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative flex min-h-screen items-center overflow-hidden pt-28">
-        <CinematicPortrait src="/jignesh-jain.jpg" alt={person.name} />
+        <HeroBackdrop />
         <SceneCanvas className="absolute inset-0 opacity-80 mix-blend-screen" />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/75" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(203,161,88,0.2),transparent_55%)]" />

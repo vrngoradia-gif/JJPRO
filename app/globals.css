@@ -158,3 +158,15 @@ body {
   --aw-accent: #cba158; --aw-accent-fg: #060605; --aw-font: var(--font-inter), system-ui, sans-serif;
   --net-bg: #0e0d0b; --net-fg: #f3efe6; --net-dim: #b7b2a6; --net-line: #26241f; --net-accent: #cba158;
 }
+
+/* Hero backdrop (no photo) */
+.hero-backdrop { background: #0a0908; }
+.hero-glow { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: 0.5; }
+.hero-glow-a { width: 55vmax; height: 55vmax; left: -15vmax; top: -20vmax; background: radial-gradient(circle, rgba(203,161,88,0.55), transparent 65%); animation: heroDriftA 22s ease-in-out infinite alternate; }
+.hero-glow-b { width: 45vmax; height: 45vmax; right: -12vmax; bottom: -18vmax; background: radial-gradient(circle, rgba(120,90,40,0.5), transparent 65%); animation: heroDriftB 26s ease-in-out infinite alternate; }
+.hero-grid { background-image: linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(circle at 50% 45%, #000 20%, transparent 75%); }
+.hero-orbits { animation: heroSpin 120s linear infinite; }
+@keyframes heroDriftA { to { transform: translate(8vmax, 6vmax) scale(1.1); } }
+@keyframes heroDriftB { to { transform: translate(-7vmax, -5vmax) scale(1.08); } }
+@keyframes heroSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .hero-glow, .hero-orbits { animation: none; } }
