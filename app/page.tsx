@@ -38,6 +38,7 @@ export default function Home() {
             <div className="border-l-4 border-gold pl-5">
               <p className="font-display text-lg font-bold text-paper">{person.name}</p>
               <p className="mt-1 text-sm text-paper-dim">Venture Partner, VNTR Mumbai</p>
+              <a href="https://www.linkedin.com/in/jignesh1409/" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm font-medium text-gold-bright">LinkedIn →</a>
               {/* PLACEHOLDER: add an approved personal quote and signature image here (theme has a quote + signature block). */}
             </div>
           </SectionReveal>

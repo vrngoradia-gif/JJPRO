@@ -67,9 +67,14 @@ export default function AboutUsPage() {
               {aboutUs.coachingCta.heading}
             </h2>
             <p className="mt-4 text-base text-paper-dim">{aboutUs.coachingCta.body}</p>
-            <MagneticButton href={aboutUs.coachingCta.button.href} className="mt-8">
-              {aboutUs.coachingCta.button.label}
-            </MagneticButton>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <MagneticButton href={aboutUs.coachingCta.button.href}>
+                {aboutUs.coachingCta.button.label}
+              </MagneticButton>
+              <MagneticButton href="https://www.linkedin.com/in/jignesh1409/" variant="outline">
+                Connect on LinkedIn
+              </MagneticButton>
+            </div>
           </SectionReveal>
         </div>
       </section>
