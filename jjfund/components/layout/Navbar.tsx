@@ -1,5 +1,6 @@
 "use client";
 
+import Logo from "@/components/ui/Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useSyncExternalStore } from "react";
@@ -32,8 +33,8 @@ export default function Navbar() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 md:px-10">
-        <Link href="/" className="font-display text-lg tracking-wide text-paper">
-          {siteMeta.name}
+        <Link href="/" className="inline-flex items-center gap-3 font-display text-lg tracking-wide text-paper">
+          <Logo size={30} />{siteMeta.name}
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex">
