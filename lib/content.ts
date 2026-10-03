@@ -13,7 +13,7 @@ export const siteMeta = {
   // TODO: replace with real client content — confirm final positioning line
   description:
     "JJ PRO partners with ambitious founders on brand strategy, fundraising, GTM and business transformation — turning early conviction into category leadership.",
-  url: "https://jjpro.in",
+  url: process.env.NEXT_PUBLIC_URL_JJPRO || "https://jjpro.in",
 };
 
 export const navLinks = [
@@ -55,48 +55,48 @@ export const home = {
   hero: {
     eyebrow: "JJ PRO — Growth & Fundraising Consultancy",
     // TODO: replace with real client content
-    title: "Capital, strategy and go-to-market for founders and investors building across borders.",
+    title: "Build. Raise. Scale globally.",
     subtitle:
-      "Jignesh P Jain advises founders on brand, fundraising and cross-border growth, and helps VCs and family offices source and scale AI and SaaS investments.",
+      "Brand, fundraising and cross-border growth for founders. Deal flow for VCs and family offices.",
     primaryCta: { label: "Start a Conversation", href: "/contact" },
     secondaryCta: { label: "See What We Do", href: "/what-we-do" },
   },
   intro: {
     kicker: "The Practice",
     // TODO: replace with real client content
-    heading: "Boutique consulting, built for founders who move fast.",
-    body: "JJ PRO sits at the intersection of brand, capital and operations — helping early and growth-stage teams sharpen their story, structure their business and raise the capital to scale it.",
+    heading: "Sharp advice. Fast execution.",
+    body: "Brand, capital and operations, handled by one practice.",
   },
   services: [
     {
       title: "Brand Strategy",
       // TODO: replace with real client content
       description:
-        "Positioning, narrative and identity systems that make ambitious companies impossible to ignore.",
+        "Positioning and identity that make you impossible to ignore.",
       href: "/what-we-do",
     },
     {
       title: "Consulting",
       description:
-        "Hands-on business transformation, tech acceleration and D2C strategy for teams scaling past their first plateau.",
+        "Transformation, tech acceleration and D2C strategy.",
       href: "/consulting",
     },
     {
       title: "Fundraising",
       description:
-        "End-to-end fundraise support — from narrative and data room to investor introductions and close.",
+        "Narrative, data room, investor intros, close.",
       href: "/what-we-do",
     },
     {
       title: "GTM — Cross Border",
       description:
-        "Go-to-market playbooks for founders expanding into new geographies, built on real market entry experience.",
+        "Go-to-market playbooks for new geographies.",
       href: "/what-we-do",
     },
   ],
   about: {
     kicker: "Who We Are",
-    heading: "Led by Jignesh P Jain — mentor to founders across global startup programs.",
+    heading: "Mentor to founders across global programs.",
     body: "JJ PRO is the practice of Jignesh, a Mumbai-based startup, GTM and fundraising consultant who mentors founders through international accelerator and incubation programs including Skolkovo, the Wadhwani Foundation and OIC International.",
     cta: { label: "Meet Jignesh", href: "/about-us" },
   },
@@ -109,7 +109,7 @@ export const home = {
   testimonials: [] as { quote: string; name: string; role: string }[], // Add real, approved testimonials only
   cta: {
     kicker: "Ready when you are",
-    heading: "Let's build the next chapter of your company.",
+    heading: "Let's build what's next.",
     button: { label: "Get in Touch", href: "/contact" },
   },
 };
@@ -121,7 +121,7 @@ export const home = {
 export const whatWeDo = {
   hero: {
     eyebrow: "What We Do",
-    title: "Four disciplines. One outcome: durable growth.",
+    title: "Four disciplines. One outcome.",
     subtitle:
       "We work across brand, capital and market entry — engaging wherever founders need the most leverage.",
   },
@@ -187,7 +187,7 @@ export const whatWeDo = {
 export const consulting = {
   hero: {
     eyebrow: "Consulting",
-    title: "Operational depth for founders scaling past the first plateau.",
+    title: "Operations that scale.",
     subtitle:
       "Three focused practices, each designed to remove a specific bottleneck standing between you and your next stage of growth.",
   },
@@ -228,7 +228,7 @@ export const consulting = {
     },
   ],
   cta: {
-    heading: "Bring us your hardest operating problem.",
+    heading: "Bring the hard problem.",
     button: { label: "Talk to Us", href: "/contact" },
   },
 };
@@ -267,14 +267,14 @@ export const aboutUs = {
 export const coaching = {
   hero: {
     eyebrow: "Startup Coaching & Mentoring",
-    title: "Ongoing guidance for founders in the arena.",
+    title: "Guidance for founders in the arena.",
     subtitle:
       "A structured coaching relationship for founders who want a consistent thinking partner — not a one-off engagement.",
   },
   format: {
     kicker: "How It Works",
     // TODO: replace with real client content — confirm program structure
-    heading: "A rhythm built around your decisions, not a fixed curriculum.",
+    heading: "Built around your decisions.",
     body: "Coaching engagements are structured around regular 1:1 sessions, async support between calls, and access for urgent strategic decisions — fundraising, hiring, pivots, and everything in between.",
   },
   pillars: [
@@ -301,7 +301,7 @@ export const coaching = {
     "Founders expanding into new markets or business lines",
   ],
   cta: {
-    heading: "Coaching cohorts are limited — let's talk about fit.",
+    heading: "Limited spots. Let's talk fit.",
     button: { label: "Apply for Coaching", href: "/contact" },
   },
 };
@@ -313,7 +313,7 @@ export const coaching = {
 export const contact = {
   hero: {
     eyebrow: "Contact Us",
-    title: "Let's talk about what's next.",
+    title: "Let's talk.",
     subtitle:
       "Tell us a bit about your company and what you're working on — we'll follow up to find the right next step.",
   },
@@ -356,7 +356,7 @@ export const contact = {
 export const partner = {
   hero: {
     eyebrow: "Partner With Us",
-    title: "Build the founder ecosystem with JJ PRO.",
+    title: "Build the ecosystem with us.",
     subtitle:
       "We work alongside investors, agencies and independent operators who share a commitment to founder success.",
   },

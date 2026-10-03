@@ -77,8 +77,9 @@ body {
   font-family: var(--font-display);
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 1.02;
-  font-size: clamp(2.75rem, 4vw + 1.5rem, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+  font-size: clamp(3rem, 4.6vw + 1rem, 6rem);
 }
 
 .h-display-lg {
@@ -86,7 +87,7 @@ body {
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.05;
-  font-size: clamp(2.25rem, 2.6vw + 1.4rem, 4.25rem);
+  font-size: clamp(2rem, 2.2vw + 1.2rem, 3.5rem);
 }
 
 .h-display-md {

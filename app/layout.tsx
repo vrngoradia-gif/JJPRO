@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans, Roboto } from "next/font/google";
 import "./globals.css";
+import Analytics from "@/components/analytics/Analytics";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -35,6 +36,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Jignesh P Jain", url: siteMeta.url }],
   creator: "Jignesh P Jain",
   publisher: siteMeta.name,
+  // Search engine ownership verification (off until the env vars are set; see .env.example)
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || undefined,
+    other: process.env.NEXT_PUBLIC_BING_VERIFICATION ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_VERIFICATION } : undefined,
+  },
   robots: {
     index: true,
     follow: true,
@@ -73,6 +79,7 @@ export default function RootLayout({
           <Footer />
           <Assistant />
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );

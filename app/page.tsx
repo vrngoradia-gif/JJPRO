@@ -22,10 +22,10 @@ export default function Home() {
               <p className="eyebrow mt-8">{home.hero.eyebrow}</p>
             </SectionReveal>
             <SectionReveal delay={0.1}>
-              <h1 className="h-display-xl mt-6 max-w-4xl text-paper">{home.hero.title}</h1>
+              <h1 className="h-display-xl mt-6 max-w-6xl text-paper">{home.hero.title}</h1>
             </SectionReveal>
             <SectionReveal delay={0.2}>
-              <p className="mt-8 max-w-xl text-base leading-relaxed text-paper-dim md:text-lg">{home.hero.subtitle}</p>
+              <p className="mt-8 max-w-lg text-base leading-relaxed text-paper-dim md:text-lg">{home.hero.subtitle}</p>
             </SectionReveal>
             <SectionReveal delay={0.3}>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
@@ -88,7 +88,7 @@ export default function Home() {
 
       {/* Stats (only shown when verified numbers are added in lib/content.ts) */}
       {home.stats.length > 0 && (
-        <section className="mx-auto max-w-6xl px-6 py-24 md:px-10 md:py-32">
+        <section className="mx-auto max-w-6xl px-6 py-20 md:px-10 md:py-28">
           <div className="grid grid-cols-2 gap-10 md:grid-cols-4">
             {home.stats.map((stat) => (
               <StatCounter key={stat.label} {...stat} />
@@ -97,22 +97,16 @@ export default function Home() {
         </section>
       )}
 
-      {/* Clients (PLACEHOLDER until real logos are supplied in lib/content.ts) */}
-      <SectionRow num="03" label="Clients">
-        {home.clients.logos.length > 0 ? (
+      {/* Clients: hidden until real logos are supplied in lib/content.ts (no ghost placeholders on the live site) */}
+      {home.clients.logos.length > 0 && (
+        <SectionRow num="03" label="Clients">
           <Marquee items={home.clients.logos} />
-        ) : (
-          <div className="grid grid-cols-2 gap-px md:grid-cols-4">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="flex h-24 items-center justify-center border border-line text-xs uppercase tracking-widest text-paper-dim/60">Client logo</div>
-            ))}
-          </div>
-        )}
-      </SectionRow>
+        </SectionRow>
+      )}
 
       {/* Testimonials (hidden until real, approved quotes are added) */}
       {home.testimonials.length > 0 && (
-        <section className="mx-auto max-w-5xl px-6 py-24 md:px-10 md:py-32">
+        <section className="mx-auto max-w-5xl px-6 py-20 md:px-10 md:py-28">
           <SectionReveal>
             <TestimonialCarousel items={home.testimonials} />
           </SectionReveal>
