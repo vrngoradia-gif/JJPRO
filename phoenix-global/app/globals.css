@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Palette — institutional deep navy + brass/gold + steel-blue */
+  --color-ink: #fbf7f0;
+  --color-ink-soft: #f3ece0;
+  --color-panel: #ffffff;
+  --color-line: #e4d9c7;
+  --color-paper: #1c1815;
+  --color-paper-dim: #6f655a;
+  --color-accent: #c2531a;
+  --color-accent-bright: #a8430f;
+  --color-accent-dim: #8a380d;
+  --color-steel: #1d5c58;
+
+  --font-display: var(--font-newsreader);
+  --font-sans: var(--font-inter);
+
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-ink);
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
+}
+
+::selection { color: #fff;
+  background: var(--color-accent-bright);
+  color: var(--color-ink);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Fluid display heading scale */
+.h-display-xl {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.04;
+  font-size: clamp(2.4rem, 3.6vw + 1.4rem, 5.5rem);
+}
+
+.h-display-lg {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+  font-size: clamp(2rem, 2.4vw + 1.3rem, 3.5rem);
+}
+
+.h-display-md {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  line-height: 1.15;
+  font-size: clamp(1.5rem, 1.5vw + 1.1rem, 2.35rem);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--color-accent-bright);
+}
+
+.accent-gradient-text {
+  background: linear-gradient(120deg, var(--color-steel), var(--color-accent-bright) 55%, var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow-border {
+  border: 1px solid var(--color-line);
+  box-shadow: 0 0 0 1px rgba(194, 83, 26, 0.14);
+}
+
+/* Bridge motif — horizontal connecting line between city nodes */
+.bridge-line {
+  background: linear-gradient(90deg, transparent, var(--color-accent) 15%, var(--color-steel) 50%, var(--color-accent) 85%, transparent);
+}
+
+/* Subtle grid texture for section backgrounds */
+.grid-texture {
+  background-image:
+    linear-gradient(to right, rgba(28, 24, 21, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 24, 21, 0.045) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --aw-bg: #ffffff; --aw-soft: #f3ece0; --aw-fg: #1c1815; --aw-dim: #6f655a; --aw-line: #e4d9c7;
+  --aw-accent: #c2531a; --aw-accent-fg: #ffffff; --aw-font: var(--font-inter), system-ui, sans-serif;
+  --net-bg: #f3ece0; --net-fg: #1c1815; --net-dim: #6f655a; --net-line: #e4d9c7; --net-accent: #a8430f;
+}
