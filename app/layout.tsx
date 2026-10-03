@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans, Roboto } from "next/font/google";
 import "./globals.css";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import Analytics from "@/components/analytics/Analytics";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
@@ -79,6 +80,7 @@ export default function RootLayout({
           <Footer />
           <Assistant />
         </SmoothScroll>
+        <ScrollProgress />
         <Analytics />
       </body>
     </html>
