@@ -3,6 +3,8 @@ import { Newsreader, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import Assistant from "@/components/chat/Assistant";
+import NetworkStrip from "@/components/network/NetworkStrip";
 import PageTransition from "@/components/layout/PageTransition";
 import { siteMeta } from "@/lib/content";
 
@@ -60,7 +62,10 @@ export default function RootLayout({
         <PageTransition>
           <main>{children}</main>
         </PageTransition>
+        <NetworkStrip current="jjfund" />
         <Footer />
+        <Assistant />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", name: siteMeta.name, url: siteMeta.url, description: siteMeta.description, founder: { "@type": "Person", name: "Jignesh P Jain", sameAs: ["https://www.linkedin.com/in/jignesh1409/"] } }, { "@type": "WebSite", name: siteMeta.name, url: siteMeta.url } ] }) }} />
       </body>
     </html>
   );
