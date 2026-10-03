@@ -19,7 +19,7 @@ export default function InquiryForm({ defaultType = "buyer" }: { defaultType?: s
     setStatus("submitting");
     const form = e.currentTarget;
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } });
+      const res = await fetch(`https://formspree.io/f/${formspreeId}`, { method: "POST", body: (() => { const fd = new FormData(form); fd.append("_subject", `New enquiry from ${window.location.hostname}`); fd.append("_site", window.location.hostname); return fd; })(), headers: { Accept: "application/json" } });
       if (res.ok) { setStatus("success"); form.reset(); } else setStatus("error");
     } catch { setStatus("error"); }
   }
