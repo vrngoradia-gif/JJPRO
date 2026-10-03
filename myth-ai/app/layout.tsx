@@ -4,8 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageTransition from "@/components/layout/PageTransition";
+import NetworkStrip from "@/components/network/NetworkStrip";
+import WhatsAppFab from "@/components/chat/WhatsAppFab";
 import ChatWidget from "@/components/chat/ChatWidget";
-import { siteMeta } from "@/lib/content";
+import { contact, siteMeta } from "@/lib/content";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -58,7 +60,10 @@ export default function RootLayout({
         <PageTransition>
           <main>{children}</main>
         </PageTransition>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", name: siteMeta.name, url: siteMeta.url, description: siteMeta.description, email: contact.email, address: { "@type": "PostalAddress", addressLocality: "Mumbai", addressCountry: "IN" } }, { "@type": "WebSite", name: siteMeta.name, url: siteMeta.url } ] }) }} />
+        <NetworkStrip current="myth" />
         <Footer />
+        <WhatsAppFab />
         <ChatWidget />
       </body>
     </html>
