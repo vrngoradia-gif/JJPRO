@@ -40,8 +40,8 @@ export default function MagneticButton({
     "inline-flex items-center justify-center gap-2 rounded-full px-8 py-3.5 text-sm tracking-wide transition-colors";
   const styles =
     variant === "solid"
-      ? "bg-gold text-ink hover:bg-gold-bright"
-      : "border border-gold/50 text-gold hover:bg-gold hover:text-ink";
+      ? "bg-gold text-white hover:bg-gold-bright"
+      : "border border-gold/50 text-gold hover:bg-gold hover:text-white";
 
   return (
     <motion.div
