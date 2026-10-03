@@ -3,7 +3,7 @@ import PageHero from "@/components/ui/PageHero";
 import InquiryForm from "@/components/forms/InquiryForm";
 import CtaButton from "@/components/ui/CtaButton";
 import { contactInfo } from "@/lib/content";
-import { whatsappLink } from "@/components/chat/AssistantWidget";
+import { whatsappLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = { title: "Contact", description: "Send an enquiry or ask for a price.", alternates: { canonical: "/contact" } };
 
