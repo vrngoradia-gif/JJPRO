@@ -64,6 +64,9 @@ export default function ContactPage() {
             >
               {contact.directEmail.general}
             </a>
+            <a href="https://www.linkedin.com/in/jignesh1409/" target="_blank" rel="noopener noreferrer" className="mt-3 block text-sm text-gold">
+              Connect on LinkedIn →
+            </a>
           </div>
         </SectionReveal>
 

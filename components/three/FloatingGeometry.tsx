@@ -30,7 +30,7 @@ export default function FloatingGeometry() {
     <mesh ref={meshRef} scale={1.65}>
       <torusKnotGeometry args={[1, 0.32, 220, 32]} />
       <MeshDistortMaterial
-        color="#cba158"
+        color="#d6336c"
         emissive="#3a2a10"
         emissiveIntensity={0.25}
         roughness={0.15}

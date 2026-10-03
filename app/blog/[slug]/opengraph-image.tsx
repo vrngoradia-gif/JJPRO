@@ -30,9 +30,9 @@ export default async function OpengraphImage({
           justifyContent: "center",
           alignItems: "flex-start",
           padding: "80px",
-          background: "#060605",
+          background: "#0f1829",
           backgroundImage:
-            "radial-gradient(circle at 80% 20%, rgba(203,161,88,0.35), transparent 60%)",
+            "radial-gradient(circle at 80% 20%, rgba(214,51,108,0.35), transparent 60%)",
         }}
       >
         <div
@@ -41,7 +41,7 @@ export default async function OpengraphImage({
             fontSize: 26,
             letterSpacing: 4,
             textTransform: "uppercase",
-            color: "#cba158",
+            color: "#d6336c",
           }}
         >
           {siteMeta.name} — Blog
@@ -53,7 +53,7 @@ export default async function OpengraphImage({
             fontSize: 56,
             fontWeight: 600,
             lineHeight: 1.2,
-            color: "#f3efe6",
+            color: "#ffffff",
             maxWidth: 1000,
           }}
         >

@@ -49,7 +49,7 @@ export default function SceneCanvas({ className = "" }: { className?: string }) 
           </div>
         )
       ) : (
-        <div className="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_50%_45%,rgba(203,161,88,0.28),transparent_60%)]" />
+        <div className="absolute inset-0 animate-pulse bg-[radial-gradient(circle_at_50%_45%,rgba(214,51,108,0.28),transparent_60%)]" />
       )}
     </div>
   );

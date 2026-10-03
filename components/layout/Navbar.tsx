@@ -66,7 +66,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             data-cursor-hover
-            className="rounded-full border border-gold/50 px-5 py-2 text-sm text-gold transition-colors hover:bg-gold hover:text-ink"
+            className="rounded-full border border-gold/50 px-5 py-2 text-sm text-gold transition-colors hover:bg-gold hover:text-white"
           >
             Get in Touch
           </Link>

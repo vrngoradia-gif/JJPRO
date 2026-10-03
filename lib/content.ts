@@ -19,6 +19,7 @@ export const siteMeta = {
 export const navLinks = [
   { label: "What We Do", href: "/what-we-do" },
   { label: "Consulting", href: "/consulting" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "About Us", href: "/about-us" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -37,7 +38,8 @@ export const footerLinks = {
   sitemap: [
     { label: "What We Do", href: "/what-we-do" },
     { label: "Consulting", href: "/consulting" },
-    { label: "About Us", href: "/about-us" },
+    { label: "Case Studies", href: "/case-studies" },
+  { label: "About Us", href: "/about-us" },
     { label: "Coaching", href: "/about-us/coaching" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },

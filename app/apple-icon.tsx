@@ -13,9 +13,9 @@ export default function AppleIcon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#060605",
+          background: "#0f1829",
           backgroundImage:
-            "radial-gradient(circle at 70% 25%, rgba(203,161,88,0.35), transparent 65%)",
+            "radial-gradient(circle at 70% 25%, rgba(214,51,108,0.35), transparent 65%)",
         }}
       >
         <div
@@ -25,7 +25,7 @@ export default function AppleIcon() {
             fontSize: 84,
             fontWeight: 600,
             letterSpacing: -2,
-            color: "#e8c77e",
+            color: "#f0558c",
           }}
         >
           JJ
