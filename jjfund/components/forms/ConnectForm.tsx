@@ -9,8 +9,8 @@ type Status = "idle" | "submitting" | "success" | "error";
 export default function ConnectForm({ defaultAudience }: { defaultAudience?: string }) {
   const [status, setStatus] = useState<Status>("idle");
 
-  // TODO: replace with the real Formspree form ID in .env.local (see .env.example)
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID || "YOUR_FORM_ID";
+  // Form service ID comes from NEXT_PUBLIC_FORMSPREE_ID. Enquiries are delivered to the address set on that Formspree form (jignesh@myth-ai.com, see .env.example).
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
   const endpoint = `https://formspree.io/f/${formspreeId}`;
 
   const initialAudience = connect.audienceOptions.some((o) => o.value === defaultAudience)
@@ -21,7 +21,10 @@ export default function ConnectForm({ defaultAudience }: { defaultAudience?: str
     e.preventDefault();
     setStatus("submitting");
 
+    if (!formspreeId) { setStatus("error"); return; }
     const formData = new FormData(e.currentTarget);
+    formData.append("_subject", `New enquiry from ${window.location.hostname}`);
+    formData.append("_site", window.location.hostname);
 
     try {
       const res = await fetch(endpoint, {
