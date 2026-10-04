@@ -1,3 +1,5 @@
+import HeroOrbLoader from "@/components/three/HeroOrbLoader";
+import HeroParallax from "@/components/ui/HeroParallax";
 import SectionRow from "@/components/ui/SectionRow";
 import TiltPortrait from "@/components/ui/TiltPortrait";
 import SectionReveal from "@/components/ui/SectionReveal";
@@ -15,7 +17,9 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="hero-streaks relative flex min-h-[88vh] items-center overflow-hidden pt-28">
-        <div className="relative z-10 mx-auto grid w-full max-w-7xl gap-12 px-6 md:grid-cols-[1fr_300px] md:px-10">
+        <HeroOrbLoader />
+        <HeroParallax>
+        <div className="mx-auto grid w-full max-w-7xl gap-12 px-6 md:grid-cols-[1fr_300px] md:px-10">
           <div>
             <SectionReveal>
               <span className="rule-bar" />
@@ -43,6 +47,7 @@ export default function Home() {
             </div>
           </SectionReveal>
         </div>
+        </HeroParallax>
       </section>
 
       {/* Intro */}
