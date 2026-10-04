@@ -89,10 +89,9 @@ export default function DaasPage() {
                     ))}
                   </ul>
                   <CtaButton
-                    href={pkg.name === "Scale" ? "/contact" : "https://wa.me/91XXXXXXXXXX"}
+                    href="/contact"
                     variant={pkg.featured ? "solid" : "outline"}
                     className="mt-8"
-                    external={pkg.name !== "Scale"}
                   >
                     {pkg.name === "Scale" ? "Talk to Us" : "Get Started"}
                   </CtaButton>
