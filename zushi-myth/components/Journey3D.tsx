@@ -22,9 +22,9 @@ function Card({ s, i, p }: { s: Stop; i: number; p: MotionValue<number> }) {
   const d = useTransform(p, (v) => i - v * (N - 1));
   const transform = useTransform(d, (x) => {
     const a = Math.abs(x);
-    return `translate3d(${x * 150}px, ${-Math.min(a, 3) * 14}px, ${-a * 280}px) rotateY(${Math.max(-1.2, Math.min(1.2, x)) * -24}deg) scale(${1 - Math.min(a, 2) * 0.06})`;
+    return `translate3d(${x * 270}px, ${-Math.min(a, 3) * 14}px, ${-a * 220}px) rotateY(${Math.max(-1.2, Math.min(1.2, x)) * -34}deg) scale(${1 - Math.min(a, 2) * 0.06})`;
   });
-  const opacity = useTransform(d, (x) => Math.max(0, 1 - Math.abs(x) * 0.5));
+  const opacity = useTransform(d, (x) => Math.max(0, 1 - Math.abs(x) * 0.75));
   const accent = s.owner === "MYTH" ? "#4f5eff" : s.owner === "ZUSHI" ? "#a3141f" : "#c9a96a";
   return (
     <motion.div style={{ transform, opacity, borderColor: accent }} className="absolute left-1/2 top-1/2 -ml-[130px] -mt-[170px] h-[340px] w-[260px] overflow-hidden border-2 bg-[#fbf6ec] shadow-[0_40px_60px_-30px_rgba(40,25,10,.45)] will-change-transform md:-ml-[150px] md:-mt-[190px] md:h-[380px] md:w-[300px]">
@@ -74,7 +74,7 @@ export default function Journey3D() {
   const head = (
     <div className="mx-auto max-w-7xl px-5">
       <p className="text-xs font-bold tracking-widest text-neutral-500">THE FULL JOURNEY</p>
-      <h2 className="mt-3 max-w-3xl font-serif text-4xl md:text-5xl">From first sketch to delivered order, in one line.</h2>
+      <h2 className="mt-3 max-w-3xl font-serif text-4xl md:text-5xl">From sketch to delivered order, in one line.</h2>
     </div>
   );
   if (reduce) {
