@@ -20,7 +20,7 @@ export default function Demo() {
                 <div className={`relative aspect-[3/4] overflow-hidden rounded-3xl border border-black/10 shadow-lg bg-white`}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   {f.img && <img src={f.img} alt={f.tag} loading="lazy" className="h-full w-full object-cover transition group-hover:scale-105" />}
-                  {!f.img && <svg viewBox="0 0 120 160" className="absolute inset-0 m-auto h-3/5"><path d="M40 20 L20 40 L30 60 L40 55 L40 140 L80 140 L80 55 L90 60 L100 40 L80 20 Q60 40 40 20Z" fill="#4F5EFF" /></svg>}
+                  {!f.img && <svg viewBox="0 0 120 160" className="absolute inset-0 m-auto h-3/5"><path d="M40 20 L20 40 L30 60 L40 55 L40 140 L80 140 L80 55 L90 60 L100 40 L80 20 Q60 40 40 20Z" fill="#353f86" /></svg>}
                   <span className="absolute bottom-3 left-3 rounded-full bg-white px-3 py-1 text-xs font-semibold shadow">{f.tag}</span>
                 </div>
                 <p className="mt-4 font-semibold">{f.t}</p>

@@ -25,7 +25,7 @@ function Card({ s, i, p }: { s: Stop; i: number; p: MotionValue<number> }) {
     return `translate3d(${x * 270}px, ${-Math.min(a, 3) * 14}px, ${-a * 220}px) rotateY(${Math.max(-1.2, Math.min(1.2, x)) * -34}deg) scale(${1 - Math.min(a, 2) * 0.06})`;
   });
   const opacity = useTransform(d, (x) => Math.max(0, 1 - Math.abs(x) * 0.75));
-  const accent = s.owner === "MYTH" ? "#4f5eff" : s.owner === "ZUSHI" ? "#a3141f" : "#c9a96a";
+  const accent = s.owner === "MYTH" ? "#353f86" : s.owner === "ZUSHI" ? "#9a3b30" : "#c9a96a";
   return (
     <motion.div style={{ transform, opacity, borderColor: accent }} className="absolute left-1/2 top-1/2 -ml-[130px] -mt-[170px] h-[340px] w-[260px] overflow-hidden border-2 bg-[#fbf6ec] shadow-[0_40px_60px_-30px_rgba(40,25,10,.45)] will-change-transform md:-ml-[150px] md:-mt-[190px] md:h-[380px] md:w-[300px]">
       {s.img ? (
