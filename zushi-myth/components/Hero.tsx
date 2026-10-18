@@ -31,9 +31,14 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="mt-9 flex flex-wrap gap-3">
             <a href="#contact" onClick={() => track("cta_demo_click", { location: "hero" })} className="rounded-full bg-ink px-6 py-3 font-semibold text-white hover:bg-neutral-800">Book a joint demo</a>
             <WaButton location="hero" label="WhatsApp us" />
-            <a href="#how-it-works" className="rounded-full border border-black/15 bg-white px-6 py-3 font-semibold hover:border-black/40">See how it works</a>
+            <a href="#how-it-works" className="px-3 py-3 font-semibold underline underline-offset-4 decoration-black/30 hover:decoration-ink">See how it works</a>
           </motion.div>
-          <p className="mt-6 text-sm text-neutral-500">Designers still decide. The platforms remove the waiting.</p>
+          <dl className="mt-10 grid max-w-xl grid-cols-3 gap-4 border-t border-black/15 pt-5">
+            {[["150+", "brands onboarded on MYTH AI"], ["200+", "clothing categories on ZUSHI"], ["20+", "factories onboarded, pre-launch"]].map(([n, l]) => (
+              <div key={n}><dt className="font-serif text-3xl">{n}</dt><dd className="mt-1 text-xs text-neutral-600">{l}</dd></div>
+            ))}
+          </dl>
+          <p className="mt-5 text-sm text-neutral-500">Designers still decide. The platforms remove the waiting.</p>
         </div>
         <div className="relative" onMouseMove={move} onMouseLeave={() => { mx.set(0); my.set(0); }} style={{ perspective: 1200 }}>
           <motion.div style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }} className="grid grid-cols-2 gap-4">
@@ -42,7 +47,7 @@ export default function Hero() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <div className="relative mt-3 aspect-[3/4] overflow-hidden rounded-2xl"><img src="/img/design.jpg" style={{ objectPosition: "50% 30%" }} alt="digital apparel design" className="h-full w-full object-cover" />
                 <span className="absolute bottom-2 left-2 rounded bg-white/90 px-2 py-0.5 text-[10px] font-semibold">Design studio</span></div>
-              <p className="mt-3 text-xs text-neutral-500">Stock photo, Unsplash</p>
+              <p className="mt-3 text-xs text-neutral-500">Illustrative</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.45, duration: 0.7 }} className="floaty card-light flex flex-col rounded-3xl border border-zushi/30 bg-white p-4 shadow-2xl" style={{ animationDelay: "1.2s" }}>
               <p className="text-[10px] font-bold tracking-widest text-zushi">ZUSHI ORDER TRACKING</p>
@@ -56,7 +61,7 @@ export default function Hero() {
               </ul>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/img/factory.jpg" alt="apparel factory floor" className="mt-4 hidden h-24 w-full rounded-xl object-cover sm:block" />
-              <p className="mt-auto pt-3 text-xs text-neutral-500">Order tracking view. Stock photo, Unsplash.</p>
+              <p className="mt-auto pt-3 text-xs text-neutral-500">Order tracking view. Illustrative.</p>
             </motion.div>
           </motion.div>
         </div>

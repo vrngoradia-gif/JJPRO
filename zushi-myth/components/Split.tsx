@@ -11,7 +11,7 @@ function Img({ src, alt, tone }: { src: string; alt: string; tone: "myth" | "zus
     <div ref={ref} className={`relative aspect-[4/5] overflow-hidden rounded-[2rem] border-2 shadow-2xl ${tone === "myth" ? "border-myth/40" : "border-zushi/40"}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <motion.img style={{ y, scale: 1.2 }} src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
-      <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold">Stock photo</span>
+      <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold">Illustrative</span>
     </div>
   );
 }

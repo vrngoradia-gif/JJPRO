@@ -8,9 +8,9 @@ import CtaBanner from "@/components/CtaBanner"; import Gallery from "@/component
 const T = ({ t, children, c = "" }: { t: "ink" | "navy" | "ivory" | "sand"; children: React.ReactNode; c?: string }) => <div className={`tone tone-${t} ${t === "ink" || t === "navy" ? "tone-dark" : "tone-light"} ${c}`}>{children}</div>;
 export default function Home() {
   return (<><ScrollBar /><Nav /><main>
-    <T t="ink" c="tone-hero"><Hero /></T><T t="navy"><Problem /></T><T t="ivory"><HowItWorks /></T><T t="sand"><Split /></T>
-    <T t="navy"><Services /></T><T t="ivory"><Bento /></T><T t="sand"><Partners /></T><T t="ink"><Demo /></T>
-    <T t="navy"><Compare /></T><T t="ivory"><Benefits /></T><T t="sand"><Gallery /></T><T t="ivory"><Proof /></T>
-    <CtaBanner /><T t="ink"><Reach /></T><T t="ivory"><BlogTeaser /></T><T t="sand"><Faq /></T><T t="ink"><Contact /></T>
+    <T t="ivory"><Hero /></T><T t="sand"><Proof /></T><T t="ivory"><Problem /></T><T t="sand"><HowItWorks /></T><T t="ivory"><Split /></T>
+    <T t="sand"><Services /></T><T t="ivory"><Bento /></T><T t="sand"><Demo /></T><T t="ivory"><Compare /></T>
+    <T t="sand"><Benefits /></T><T t="ivory"><Partners /></T><T t="sand"><Reach /></T><T t="ivory"><BlogTeaser /></T><T t="sand"><Faq /></T>
+    <CtaBanner /><T t="ivory"><Contact /></T>
   </main><Footer /></>);
 }

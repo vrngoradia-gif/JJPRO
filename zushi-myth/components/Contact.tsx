@@ -26,13 +26,13 @@ export default function Contact() {
       track("form_submit"); window.location.href = "/thank-you";
     } catch { setState("error"); }
   }
-  const f = "w-full rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/40 outline-none focus:border-white";
+  const f = "w-full rounded-xl border border-black/20 bg-white/80 px-4 py-3 text-ink placeholder-neutral-500 outline-none focus:border-ink";
   return (
-    <section id="contact" className="py-24 bg-ink text-white">
+    <section id="contact" className="py-24">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 lg:grid-cols-2">
         <div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight">See your next collection go from sketch to shipment.</h2>
-          <p className="mt-5 text-lg text-white/70">Book a 30-minute joint demo with the MYTH and ZUSHI teams.</p>
+          <p className="mt-5 text-lg text-neutral-700">Book a 30-minute joint demo with the MYTH and ZUSHI teams.</p>
           <div className="mt-8"><WaButton location="contact" label="Or chat on WhatsApp" /></div>
         </div>
         <form onSubmit={submit} onFocus={() => { if (!started.current) { started.current = true; track("form_start"); } }} className="grid gap-4 sm:grid-cols-2">
@@ -49,14 +49,14 @@ export default function Contact() {
             <option value="" className="text-black">Monthly volume (optional)</option>{["<5k pcs", "5k-50k", "50k+", "Not sure"].map((v) => <option key={v} className="text-black">{v}</option>)}
           </select>
           <fieldset className="sm:col-span-2 flex flex-wrap gap-4 text-sm">
-            <legend className="mb-2 text-white/60">Interested in</legend>
+            <legend className="mb-2 text-neutral-600">Interested in</legend>
             {["Design & sampling (MYTH)", "Sourcing & production (ZUSHI)", "Both"].map((o, i) => <label key={o} className="flex items-center gap-2"><input type="radio" name="interest" value={o} required defaultChecked={i === 2} />{o}</label>)}
           </fieldset>
           <textarea name="message" rows={3} placeholder="Message (optional)" className={`${f} sm:col-span-2`} />
           {Object.entries(utm).map(([k, v]) => <input key={k} type="hidden" name={k} value={v} />)}
-          <label className="sm:col-span-2 flex items-start gap-3 text-xs text-white/60"><input type="checkbox" name="consent" required className="mt-0.5 shrink-0" /><span>I agree to be contacted by MYTH AI and ZUSHI about this request and accept the <a href="/privacy" className="underline">privacy notice</a>.</span></label>
-          <button disabled={state === "sending"} onClick={() => track("cta_demo_click", { location: "final" })} className="sm:col-span-2 rounded-full bg-white px-6 py-3 font-bold text-ink hover:bg-neutral-200 disabled:opacity-60">{state === "sending" ? "Sending..." : "Book a joint demo"}</button>
-          {state === "error" && <p className="sm:col-span-2 text-sm text-red-300">Something went wrong. Please try again or email admin@withzushi.com.</p>}
+          <label className="sm:col-span-2 flex items-start gap-3 text-xs text-neutral-600"><input type="checkbox" name="consent" required className="mt-0.5 shrink-0" /><span>I agree to be contacted by MYTH AI and ZUSHI about this request and accept the <a href="/privacy" className="underline">privacy notice</a>.</span></label>
+          <button disabled={state === "sending"} onClick={() => track("cta_demo_click", { location: "final" })} className="sm:col-span-2 rounded-full bg-ink px-6 py-3 font-bold text-white hover:bg-neutral-800 disabled:opacity-60">{state === "sending" ? "Sending..." : "Book a joint demo"}</button>
+          {state === "error" && <p className="sm:col-span-2 text-sm text-red-700">Something went wrong. Please try again or email admin@withzushi.com.</p>}
         </form>
       </div>
     </section>
