@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent, useReducedMotion, useMotionValue, useSpring, type MotionValue } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent, useReducedMotion, useMotionValue, useSpring, type MotionValue } from "framer-motion";
 import { track } from "@/lib/track";
 
 type Stop = { owner: "MYTH" | "HANDOFF" | "ZUSHI"; title: string; sub: string; get: string[]; img?: string; soon?: boolean };
@@ -60,7 +60,7 @@ export default function Journey3D() {
   const { scrollYProgress } = useScroll({ target: wrap, offset: ["start start", "end end"] });
   const p = useSpring(scrollYProgress, { stiffness: 120, damping: 28, mass: 0.4 });
   const [active, setActive] = useState(0);
-  useMotionValueEvent(p, "change", (v) => { const k = Math.min(N - 1, Math.max(0, Math.round(v * (N - 1)))); setActive((a) => (a === k ? a : k)); });
+  useMotionValueEvent(scrollYProgress, "change", (v) => { const k = Math.min(N - 1, Math.max(0, Math.round(v * (N - 1)))); setActive((a) => (a === k ? a : k)); });
   const mx = useMotionValue(0); const rot = useSpring(mx, { stiffness: 60, damping: 20 });
   const worldRot = useTransform(rot, (v) => `rotateY(${v * 5}deg)`);
   useEffect(() => { track("journey3d_view"); }, []);
@@ -100,13 +100,12 @@ export default function Journey3D() {
         <div className="relative mt-2 flex-1 md:mt-0">
           <Floor p={p} />
           <div className="absolute inset-0 [perspective:1100px]">
-            <motion.div style={{ transform: worldRot }} className="absolute inset-0 [transform-style:preserve-3d] md:right-[34%]">
+            <motion.div style={{ transform: worldRot }} className="absolute inset-0 -translate-y-16 [transform-style:preserve-3d] md:right-[34%] md:translate-y-0">
               {stops.map((x, i) => <Card key={x.title} s={x} i={i} p={p} />)}
             </motion.div>
           </div>
           <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 mx-auto flex max-w-7xl justify-end px-5 pb-16 md:inset-y-0 md:items-center md:pb-0">
-            <AnimatePresence mode="wait">
-              <motion.div key={active} initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}
+              <motion.div key={active} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}
                 className="pointer-events-auto w-full border border-black/10 bg-[#fbf6ec]/92 p-5 backdrop-blur md:w-[34%] md:p-7">
                 <span className={`inline-block border px-2 py-0.5 font-sans text-[10px] font-bold tracking-widest ${ownerCls[s.owner]}`}>{ownerLabel[s.owner]}</span>
                 <p className="mt-3 font-serif text-2xl text-ink md:text-3xl">{s.title}</p>
@@ -114,7 +113,6 @@ export default function Journey3D() {
                 <ul className="mt-2 space-y-1.5 text-sm text-neutral-700 md:text-base">{s.get.map((g) => <li key={g} className="flex gap-2"><span className="mt-2 h-1.5 w-1.5 shrink-0 bg-[#c9a96a]" />{g}</li>)}</ul>
                 {s.soon && <span className="mt-3 inline-block bg-ink px-2 py-0.5 font-sans text-[10px] font-semibold text-white">Coming soon</span>}
               </motion.div>
-            </AnimatePresence>
           </div>
           <div className="absolute inset-x-0 bottom-3 z-20 mx-auto flex max-w-7xl items-center gap-2 px-5">
             <span className="font-sans text-xs font-semibold tabular-nums text-neutral-600">{String(active + 1).padStart(2, "0")} / {String(N).padStart(2, "0")}</span>
