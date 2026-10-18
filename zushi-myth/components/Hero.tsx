@@ -40,7 +40,7 @@ export default function Hero() {
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="floaty card-light rounded-3xl border border-myth/30 bg-white p-4 shadow-2xl">
               <p className="text-[10px] font-bold tracking-widest text-myth">MYTH STUDIO</p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <div className="relative mt-3 aspect-[3/4] overflow-hidden rounded-2xl"><img src="/img/design.jpg" alt="digital apparel design" className="h-full w-full object-cover" />
+              <div className="relative mt-3 aspect-[3/4] overflow-hidden rounded-2xl"><img src="/img/design.jpg" style={{ objectPosition: "50% 30%" }} alt="digital apparel design" className="h-full w-full object-cover" />
                 <span className="absolute bottom-2 left-2 rounded bg-white/90 px-2 py-0.5 text-[10px] font-semibold">Design studio</span></div>
               <p className="mt-3 text-xs text-neutral-500">Stock photo, Unsplash</p>
             </motion.div>
