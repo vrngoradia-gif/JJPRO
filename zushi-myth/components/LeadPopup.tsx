@@ -26,7 +26,7 @@ export default function LeadPopup() {
   return (
     <div className="fixed inset-0 z-[80] flex items-end justify-center bg-black/50 p-4 sm:items-center" onClick={close}>
       <div role="dialog" aria-modal="true" aria-label="Talk to MYTH and ZUSHI" onClick={(e) => e.stopPropagation()} className="relative w-full max-w-md overflow-hidden rounded-3xl bg-white shadow-2xl">
-        <div className="h-1.5 bg-gradient-to-r from-myth to-zushi" />
+        <div className="h-1.5 bg-gold" />
         <button onClick={close} aria-label="Close" className="absolute right-4 top-4 text-2xl leading-none text-neutral-400 hover:text-ink">×</button>
         <div className="p-6">
           {state === "ok" ? (

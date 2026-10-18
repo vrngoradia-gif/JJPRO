@@ -16,17 +16,14 @@ export default function Hero() {
     mx.set(((e.clientX - r.left) / r.width) * 2 - 1); my.set(((e.clientY - r.top) / r.height) * 2 - 1);
   }
   return (
-    <section ref={ref} id="hero" className="relative overflow-hidden pt-28 pb-24 grid-bg sm:pt-32">
-      <motion.div style={{ y: y1 }} className="pointer-events-none absolute -top-40 -left-32 h-[520px] w-[520px] rounded-full bg-myth/25 blur-3xl" />
-      <motion.div style={{ y: y2 }} className="pointer-events-none absolute -bottom-40 -right-32 h-[520px] w-[520px] rounded-full bg-zushi/25 blur-3xl" />
-      <div className="orb pointer-events-none absolute left-[46%] top-24 hidden h-24 w-24 rounded-full bg-gradient-to-br from-myth to-zushi opacity-30 blur-xl lg:block" />
+    <section ref={ref} id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32">
       <div className="relative mx-auto max-w-7xl px-5 grid lg:grid-cols-2 gap-14 items-center">
         <div>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold tracking-widest text-neutral-600">
             <span className="h-2 w-2 rounded-full bg-myth" /> MYTH AI <span className="text-neutral-400">×</span> <span className="h-2 w-2 rounded-full bg-zushi" /> ZUSHI
           </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-[2.6rem] leading-[1.04] sm:text-6xl xl:text-7xl font-black tracking-tight">
-            Design it digitally. <span className="grad-text shimmer">Get it made</span> by a verified factory.
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-[2.6rem] leading-[1.04] sm:text-6xl xl:text-7xl ">
+            Design it digitally. <em className="gold-em">Get it made</em> by a verified factory.
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-6 max-w-xl text-lg text-neutral-600">
             MYTH creates the product, sample and visuals without a physical sample. ZUSHI matches it to a verified manufacturer and tracks production, quality and shipment until it lands.
