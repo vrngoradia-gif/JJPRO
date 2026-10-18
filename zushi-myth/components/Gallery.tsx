@@ -8,7 +8,7 @@ export default function Gallery() {
         {[...imgs, ...imgs].map(([s, l], i) => (
           <div key={i} className="relative h-56 w-72 shrink-0 overflow-hidden rounded-2xl sm:h-64 sm:w-96">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={s} alt={`Illustrative ${l}`} loading="lazy" className="h-full w-full object-cover" />
+            <img src={s} alt={l} loading="lazy" className="h-full w-full object-cover" />
             <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold">{l}</span>
           </div>
         ))}

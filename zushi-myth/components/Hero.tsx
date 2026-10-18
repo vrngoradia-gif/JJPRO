@@ -40,9 +40,9 @@ export default function Hero() {
             <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="floaty card-light rounded-3xl border border-myth/30 bg-white p-4 shadow-2xl">
               <p className="text-[10px] font-bold tracking-widest text-myth">MYTH STUDIO</p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <div className="relative mt-3 aspect-[3/4] overflow-hidden rounded-2xl"><img src="/img/design.jpg" alt="Illustrative digital apparel design" className="h-full w-full object-cover" />
-                <span className="absolute bottom-2 left-2 rounded bg-white/90 px-2 py-0.5 text-[10px] font-semibold">Digital sample</span></div>
-              <p className="mt-3 text-xs text-neutral-500">Illustrative render, ready for production files</p>
+              <div className="relative mt-3 aspect-[3/4] overflow-hidden rounded-2xl"><img src="/img/design.jpg" alt="digital apparel design" className="h-full w-full object-cover" />
+                <span className="absolute bottom-2 left-2 rounded bg-white/90 px-2 py-0.5 text-[10px] font-semibold">Design studio</span></div>
+              <p className="mt-3 text-xs text-neutral-500">Stock photo, Unsplash</p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.45, duration: 0.7 }} className="floaty card-light flex flex-col rounded-3xl border border-zushi/30 bg-white p-4 shadow-2xl" style={{ animationDelay: "1.2s" }}>
               <p className="text-[10px] font-bold tracking-widest text-zushi">ZUSHI ORDER TRACKING</p>
@@ -55,8 +55,8 @@ export default function Hero() {
                 ))}
               </ul>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/img/factory.jpg" alt="Illustrative apparel factory floor" className="mt-4 hidden h-24 w-full rounded-xl object-cover sm:block" />
-              <p className="mt-auto pt-3 text-xs text-neutral-500">Illustrative screen and image</p>
+              <img src="/img/factory.jpg" alt="apparel factory floor" className="mt-4 hidden h-24 w-full rounded-xl object-cover sm:block" />
+              <p className="mt-auto pt-3 text-xs text-neutral-500">Order tracking view. Stock photo, Unsplash.</p>
             </motion.div>
           </motion.div>
         </div>
