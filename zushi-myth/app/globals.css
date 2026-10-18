@@ -41,8 +41,8 @@ h1, h2 { font-family: var(--font-serif), Georgia, serif; font-weight: 700 !impor
 .tone-dark :where(.text-neutral-700):not(.card-light *) { color: rgba(255,255,255,.82); }
 .tone-dark .bg-white:not(.card-light):not(.card-light *):not(button):not(.absolute) { background-color: rgba(255,255,255,.05); border-color: rgba(255,255,255,.14); }
 .tone-dark :where(.border-black\/10,.border-black\/15,.divide-black\/10) { border-color: rgba(255,255,255,.14); }
-.tone-dark .bg-ink:not(.card-light *) { background-color: var(--gold); color: var(--ink); }
-.tone-dark .bg-ink:not(.card-light *):hover { background-color: var(--gold-light); }
+.tone-dark :is(a,button).bg-ink:not(.card-light *) { background-color: var(--gold); color: var(--ink); }
+.tone-dark :is(a,button).bg-ink:not(.card-light *):hover { background-color: var(--gold-light); }
 .tone-dark .ring-white { --tw-ring-color: var(--tb); }
 .tone-dark .grad-text, .shimmer { background-image: linear-gradient(90deg, #e8d5a8, #c9a96a, #f6ebcc, #c9a96a); background-size: 200% auto; }
 .tone-dark .tracking-widest:where(.text-neutral-400,.text-neutral-500,.text-white\/50,.text-white\/60) { color: var(--gold); }
@@ -59,3 +59,5 @@ a.rounded-full:hover, button.rounded-full:hover { translate: 0 -2px; filter: bri
 .tone a.underline:hover { color: var(--gold); }
 .tone-dark .text-zushi:not(.card-light *), header .text-zushi, footer .text-zushi { color: #f0646a; }
 .tone-dark .text-myth:not(.card-light *), header .text-myth, footer .text-myth { color: #8a95ff; }
+
+.card-light { color: var(--ink); }
