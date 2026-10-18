@@ -2,7 +2,7 @@
 import Reveal from "./Reveal";
 import { track } from "@/lib/track";
 const frames = [
-  { t: "1. Design a polo in MYTH", c: "bg-myth/20", tag: "MYTH render" },
+  { t: "1. Design a polo in MYTH", img: "/img/design.jpg", tag: "MYTH render (illustrative)" },
   { t: "2. Drop the render into ZUSHI AI", img: "https://cdn.sanity.io/images/enhe9bs4/production/e0abac19274a2dd0da65959998ff154708a07920-428x570.png?auto=format&fit=max&w=640&q=75", tag: "Photo upload" },
   { t: "3. Get matched factories", img: "https://cdn.sanity.io/images/enhe9bs4/production/c19fd5dd437143b82f8d62c9c59ba9c515dc2bc5-428x570.png?auto=format&fit=max&w=640&q=75", tag: "Matched factory list" },
 ];
