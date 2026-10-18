@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
-import { Schibsted_Grotesk, Instrument_Serif, IBM_Plex_Mono } from "next/font/google";
+import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import ChatWidget from "@/components/ChatWidget";
 import LeadPopup from "@/components/LeadPopup";
 import CursorGlow from "@/components/CursorGlow";
-const inter = Schibsted_Grotesk({ subsets: ["latin"], variable: "--font-inter" });
-const mono = IBM_Plex_Mono({ subsets: ["latin"], variable: "--font-mono", weight: ["400", "500"] });
-const serif = Instrument_Serif({ subsets: ["latin"], variable: "--font-serif", weight: "400", style: ["normal", "italic"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const serif = Newsreader({ subsets: ["latin"], variable: "--font-serif", weight: ["400", "500", "600"] });
 const SITE = "https://zushixmyth.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
@@ -19,7 +18,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const org = { "@context": "https://schema.org", "@type": "Organization", name: "MYTH AI × ZUSHI", url: SITE, sameAs: ["https://myth-ai.com", "https://withzushi.com", "https://linkedin.com/company/withzushi"] };
   return (
-    <html lang="en" className={`${inter.variable} ${serif.variable} ${mono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${serif.variable}`}>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(org) }} />
         {/* Analytics placeholder: set NEXT_PUBLIC_GA_ID in Vercel env to enable GA4 */}
