@@ -15,7 +15,7 @@ export function WaButton({ label = "Chat on WhatsApp", location, className = "" 
 export default function WhatsAppFab() {
   return (
     <a href={waLink()} target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp" onClick={() => track("whatsapp_click", { location: "fab" })}
-      className="fixed right-5 bottom-[86px] z-[60] flex h-[54px] w-[54px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl transition-transform hover:scale-105">
+      className="fixed right-3 bottom-[62px] sm:right-5 sm:bottom-[86px] z-[60] flex h-[44px] w-[44px] sm:h-[54px] sm:w-[54px] items-center justify-center rounded-full bg-[#25D366] text-white shadow-2xl transition-transform hover:scale-105">
       <span className="absolute inset-0 animate-ping rounded-full bg-[#25D366]/40" style={{ animationDuration: "2.4s" }} />
       <span className="relative"><WaIcon size={28} /></span>
     </a>

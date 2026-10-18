@@ -25,7 +25,7 @@ export default function ChatWidget() {
   return (
     <>
       {open && (
-        <div role="dialog" aria-label="MYTH x ZUSHI assistant" className="fixed right-5 bottom-[150px] z-[60] flex w-[340px] max-w-[calc(100vw-40px)] flex-col overflow-hidden rounded-3xl border border-black/10 bg-white shadow-2xl" style={{ maxHeight: "min(540px, calc(100vh - 180px))" }}>
+        <div role="dialog" aria-label="MYTH x ZUSHI assistant" className="fixed right-3 sm:right-5 bottom-[116px] sm:bottom-[150px] z-[60] flex w-[340px] max-w-[calc(100vw-40px)] flex-col overflow-hidden rounded-3xl border border-black/10 bg-white shadow-2xl" style={{ maxHeight: "min(540px, calc(100vh - 180px))" }}>
           <div className="flex items-center justify-between bg-ink px-4 py-3 text-white">
             <div><p className="text-sm font-bold">MYTH × ZUSHI assistant</p><p className="text-xs text-white/60">Quick answers, no signup</p></div>
             <button onClick={() => setOpen(false)} aria-label="Close" className="text-2xl leading-none text-white/70 hover:text-white">×</button>
@@ -48,7 +48,7 @@ export default function ChatWidget() {
         </div>
       )}
       <button onClick={() => { setOpen(!open); track("chatbot_toggle", { open: String(!open) }); }} aria-label="Open assistant"
-        className="fixed right-5 bottom-5 z-[60] flex h-[54px] w-[54px] items-center justify-center rounded-full bg-ink text-white shadow-2xl transition-transform hover:scale-105">
+        className="fixed right-3 bottom-3 sm:right-5 sm:bottom-5 z-[60] flex h-[44px] w-[44px] sm:h-[54px] sm:w-[54px] items-center justify-center rounded-full bg-ink text-white shadow-2xl transition-transform hover:scale-105">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z" /></svg>
       </button>
     </>
