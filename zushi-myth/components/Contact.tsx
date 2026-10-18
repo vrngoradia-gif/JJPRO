@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/track";
+import { WaButton } from "./WhatsAppFab";
 const roles = ["Brand / Retailer", "Manufacturer / Export house", "Buying house / Agent", "Other"];
 const roleFromTab: Record<string, string> = { "Brands & Retailers": roles[0], Manufacturers: roles[1], "Buying Houses": roles[2] };
 const countries = ["India","United Arab Emirates","United Kingdom","Spain","Germany","Italy","France","Netherlands","Turkey","Brazil","Panama","United States","Canada","Bangladesh","Vietnam","Other"];
@@ -32,6 +33,7 @@ export default function Contact() {
         <div>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight">See your next collection go from sketch to shipment.</h2>
           <p className="mt-5 text-lg text-white/70">Book a 30-minute joint demo with the MYTH and ZUSHI teams.</p>
+          <div className="mt-8"><WaButton location="contact" label="Or chat on WhatsApp" /></div>
         </div>
         <form onSubmit={submit} onFocus={() => { if (!started.current) { started.current = true; track("form_start"); } }} className="grid gap-4 sm:grid-cols-2">
           <input name="name" required placeholder="Full name" className={f} />
@@ -52,7 +54,7 @@ export default function Contact() {
           </fieldset>
           <textarea name="message" rows={3} placeholder="Message (optional)" className={`${f} sm:col-span-2`} />
           {Object.entries(utm).map(([k, v]) => <input key={k} type="hidden" name={k} value={v} />)}
-          <label className="sm:col-span-2 flex gap-3 text-xs text-white/60"><input type="checkbox" name="consent" required className="mt-1" />I agree to be contacted by MYTH AI and ZUSHI about this request and accept the <a href="/privacy" className="underline">privacy notice</a>.</label>
+          <label className="sm:col-span-2 flex items-start gap-3 text-xs text-white/60"><input type="checkbox" name="consent" required className="mt-0.5 shrink-0" /><span>I agree to be contacted by MYTH AI and ZUSHI about this request and accept the <a href="/privacy" className="underline">privacy notice</a>.</span></label>
           <button disabled={state === "sending"} onClick={() => track("cta_demo_click", { location: "final" })} className="sm:col-span-2 rounded-full bg-white px-6 py-3 font-bold text-ink hover:bg-neutral-200 disabled:opacity-60">{state === "sending" ? "Sending..." : "Book a joint demo"}</button>
           {state === "error" && <p className="sm:col-span-2 text-sm text-red-300">Something went wrong. Please try again or email admin@withzushi.com.</p>}
         </form>

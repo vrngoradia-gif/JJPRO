@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import WhatsAppFab from "@/components/WhatsAppFab";
+import ChatWidget from "@/components/ChatWidget";
+import LeadPopup from "@/components/LeadPopup";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const SITE = "https://zushixmyth.com";
 export const metadata: Metadata = {
@@ -22,6 +25,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <script dangerouslySetInnerHTML={{ __html: `window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_ID}');` }} />
         </>)}
         {children}
+        <WhatsAppFab /><ChatWidget /><LeadPopup />
       </body>
     </html>
   );

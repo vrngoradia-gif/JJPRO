@@ -8,7 +8,7 @@ export async function POST(req: Request) {
   if (!body || !body.email || !body.name) return NextResponse.json({ ok: false }, { status: 400 });
   const to = process.env.LEAD_TO_EMAIL || "jigjn14@gmail.com";
   const url = process.env.LEAD_WEBHOOK_URL || `https://formsubmit.co/ajax/${to}`;
-  const payload = { ...body, _subject: `MYTH x ZUSHI demo request: ${body.company || ""} (${body.interest || ""})`, _replyto: body.email, _template: "table", _captcha: "false" };
+  const payload = { ...body, _subject: `MYTH x ZUSHI ${body.source === "popup_60s" ? "popup lead" : "demo request"}: ${body.company || body.name} (${body.interest || ""})`, _replyto: body.email, _template: "table", _captcha: "false" };
   try {
     const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload) });
     if (!r.ok) { console.error("LEAD forward failed", r.status, JSON.stringify(body)); return NextResponse.json({ ok: false }, { status: 502 }); }
