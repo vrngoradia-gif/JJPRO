@@ -1,0 +1,3 @@
+import Nav from "@/components/Nav"; import Footer from "@/components/Footer";
+export const metadata = { title: "Thank you", robots: { index: false } };
+export default function T() { return (<><Nav /><main className="mx-auto max-w-2xl px-5 pt-40 pb-32 text-center"><h1 className="text-5xl font-black tracking-tight">Thank you.</h1><p className="mt-5 text-lg text-neutral-600">We have your request. The MYTH and ZUSHI teams will reply within one working day.</p>{/* Add booking-calendar link here when available */}<a href="/" className="mt-8 inline-block rounded-full bg-ink px-6 py-3 font-semibold text-white">Back to home</a></main><Footer /></>); }

@@ -1,0 +1,29 @@
+# MYTH AI x ZUSHI
+
+> MYTH AI creates fashion products digitally (design, digital samples, factory-ready files). ZUSHI matches them to verified factories and tracks RFQs, production, QC and shipment. One line from sketch to shipment.
+
+## Pages
+- https://zushixmyth.com/ : joint landing page
+- https://zushixmyth.com/blog : guides
+
+## Guides
+- https://zushixmyth.com/blog/find-verified-garment-manufacturers-india : How to find verified garment manufacturers in India
+- https://zushixmyth.com/blog/apparel-rfq-template : An RFQ template for apparel buyers
+- https://zushixmyth.com/blog/compare-factory-quotes-fob : How to compare factory quotes (and what FOB really includes)
+- https://zushixmyth.com/blog/moq-explained-small-fashion-brands : MOQ explained for small fashion brands
+- https://zushixmyth.com/blog/apparel-sampling-stages : Sampling stages explained: proto, fit, pre-production and TOP
+- https://zushixmyth.com/blog/garment-production-tracking-checklist : Garment production tracking: what to ask your factory every week
+- https://zushixmyth.com/blog/apparel-export-documents-checklist : Export documents checklist for apparel shipments
+- https://zushixmyth.com/blog/payment-protection-garment-orders : How to protect payment on cross-border garment orders
+- https://zushixmyth.com/blog/source-fabric-for-new-collection : How to source fabric for a new collection
+- https://zushixmyth.com/blog/embroidered-fabric-sourcing-guide : Embroidered and embellished fabric: a sourcing guide
+- https://zushixmyth.com/blog/gsm-weave-blend-spec-sheet-basics : GSM, weave and blends: fabric spec sheet basics
+- https://zushixmyth.com/blog/certified-textiles-gots-oeko-tex-explained : Certified textiles explained: GOTS and OEKO-TEX
+- https://zushixmyth.com/blog/what-is-an-ai-seamless-pattern-generator : What is an AI seamless pattern generator?
+- https://zushixmyth.com/blog/ai-colour-separation-for-textile-print : AI colour separation for textile print
+- https://zushixmyth.com/blog/who-owns-ai-made-designs : Who owns an AI-made design?
+- https://zushixmyth.com/blog/moodboard-to-tech-pack : From moodboard to tech pack, faster
+- https://zushixmyth.com/blog/pattern-design-home-textiles-wallpaper : Pattern design for home textiles and wallpaper
+- https://zushixmyth.com/blog/apparel-lifecycle-idea-to-delivery : The complete apparel lifecycle: idea to delivery
+- https://zushixmyth.com/blog/garment-erp-vs-spreadsheets : Garment ERP vs spreadsheets: when to switch
+- https://zushixmyth.com/blog/india-apparel-sourcing-hub : Why buyers source apparel from India

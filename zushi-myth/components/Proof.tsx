@@ -1,0 +1,36 @@
+import Reveal from "./Reveal";
+const base = "https://myth-ai.com/wp-content/uploads/";
+const logos = [["Koton", "2025/12/koton9388-150x150.jpg"], ["Mavi", "2025/12/mavi-logo-png_seeklogo-168440-150x150.png"], ["Lee Cooper", "2026/05/lee-cooper.jpg"], ["Zorlu", "2025/12/Zorlu-Logo-150x150.png"]];
+export default function Proof() {
+  return (
+    <section id="proof" className="py-24">
+      <div className="mx-auto max-w-7xl px-5">
+        <Reveal><p className="text-xs font-bold tracking-widest text-neutral-500">PROOF</p>
+          <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">Built for real fashion supply chains.</h2></Reveal>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          <Reveal className="rounded-3xl border border-myth/30 p-8">
+            <p className="text-xs font-bold tracking-widest text-myth">MYTH AI</p>
+            <p className="mt-4 text-6xl font-black text-myth">150+</p><p className="text-neutral-600">brands onboarded</p>
+          </Reveal>
+          <Reveal delay={0.1} className="rounded-3xl border border-zushi/30 p-8">
+            <p className="text-xs font-bold tracking-widest text-zushi">ZUSHI</p>
+            <div className="mt-4 flex gap-10">
+              <div><p className="text-6xl font-black text-zushi">200+</p><p className="text-neutral-600">clothing categories</p></div>
+              <div><p className="text-6xl font-black text-zushi">20+</p><p className="text-neutral-600">factories onboarded (pre-launch)</p></div>
+            </div>
+            <p className="mt-6 text-sm text-neutral-500">Partners: Dun &amp; Bradstreet (trade verification), Indikos Forwarding and Fairmacs (logistics), Integrated Risk Insurance Brokers (insurance).</p>
+          </Reveal>
+        </div>
+        <div className="mt-12 overflow-hidden">
+          <p className="mb-4 text-center text-xs font-bold tracking-widest text-neutral-400">BRANDS USING MYTH AI</p>
+          <div className="marquee flex w-max items-center gap-16">
+            {[...logos, ...logos, ...logos, ...logos].map(([n, p], i) => (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img key={i} src={base + p} alt={n} loading="lazy" className="h-14 w-auto grayscale opacity-60" />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
