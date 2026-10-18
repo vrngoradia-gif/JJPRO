@@ -83,3 +83,6 @@ a.rounded-full, button.rounded-full, header a.rounded-full { border-radius: 2px 
 a.rounded-full:hover, button.rounded-full:hover { translate: 0 0; filter: none; }
 .floaty, .orb, .shimmer { animation: none !important; }
 img { filter: saturate(.92); }
+[class*="rounded-["], [class*="rounded-3xl"], [class*="rounded-2xl"], [class*="rounded-xl"], [class*="rounded-lg"] { border-radius: 3px !important; }
+input, select, textarea { border-radius: 2px !important; }
+.rounded-full.h-2, .rounded-full.w-2 { border-radius: 9999px !important; }
