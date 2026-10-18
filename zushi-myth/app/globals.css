@@ -57,8 +57,8 @@ h1, h2 { font-family: var(--font-serif), Georgia, serif; font-weight: 700 !impor
 a.rounded-full, button.rounded-full { transition: translate .25s, filter .25s, background-color .25s; }
 a.rounded-full:hover, button.rounded-full:hover { translate: 0 -2px; filter: brightness(1.06); }
 .tone a.underline:hover { color: var(--gold); }
-.tone-dark .text-zushi:not(.card-light *), header .text-zushi, footer .text-zushi { color: #f0646a; }
-.tone-dark .text-myth:not(.card-light *), header .text-myth, footer .text-myth { color: #8a95ff; }
+.tone-dark .text-zushi:not(.card-light *), footer .text-zushi { color: #f0646a; }
+.tone-dark .text-myth:not(.card-light *), footer .text-myth { color: #8a95ff; }
 
 .card-light { color: var(--ink); }
 
