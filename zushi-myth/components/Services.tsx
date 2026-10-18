@@ -15,7 +15,7 @@ export default function Services() {
         <Reveal><p className="text-xs font-bold tracking-widest text-neutral-500">THE FULL LIFECYCLE</p>
           <h2 className="mt-3 max-w-3xl text-4xl md:text-5xl font-black tracking-tight">From material to delivered apparel, on both platforms.</h2></Reveal>
         <div className="relative mt-14">
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-myth to-zushi md:left-1/2" />
+          <div className="absolute left-4 top-0 bottom-0 w-px bg-black/20 md:left-1/2" />
           <ol className="space-y-8">
             {lifecycle.map(([t, d, o], i) => (
               <Reveal key={t} delay={0.05}>

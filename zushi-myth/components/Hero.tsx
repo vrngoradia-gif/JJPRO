@@ -1,42 +1,55 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { useRef } from "react";
 import { track } from "@/lib/track";
+import { WaButton } from "./WhatsAppFab";
 export default function Hero() {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 160]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const mx = useMotionValue(0), my = useMotionValue(0);
+  const rx = useSpring(useTransform(my, [-1, 1], [6, -6]), { stiffness: 120, damping: 18 });
+  const ry = useSpring(useTransform(mx, [-1, 1], [-8, 8]), { stiffness: 120, damping: 18 });
+  function move(e: React.MouseEvent) {
+    const r = e.currentTarget.getBoundingClientRect();
+    mx.set(((e.clientX - r.left) / r.width) * 2 - 1); my.set(((e.clientY - r.top) / r.height) * 2 - 1);
+  }
   return (
-    <section id="hero" className="relative overflow-hidden pt-32 pb-24 grid-bg">
-      <div className="pointer-events-none absolute -top-40 -left-32 h-[480px] w-[480px] rounded-full bg-myth/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-40 -right-32 h-[480px] w-[480px] rounded-full bg-zushi/20 blur-3xl" />
+    <section ref={ref} id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32">
       <div className="relative mx-auto max-w-7xl px-5 grid lg:grid-cols-2 gap-14 items-center">
         <div>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold tracking-widest text-neutral-600">
             <span className="h-2 w-2 rounded-full bg-myth" /> MYTH AI <span className="text-neutral-400">×</span> <span className="h-2 w-2 rounded-full bg-zushi" /> ZUSHI
           </motion.p>
-          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-5xl md:text-6xl xl:text-7xl font-black leading-[1.02] tracking-tight">
-            Design it digitally. <span className="grad-text">Get it made</span> by a verified factory.
+          <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-[2.6rem] leading-[1.04] sm:text-6xl xl:text-7xl ">
+            Design it digitally. <em className="gold-em">Get it made</em> by a verified factory.
           </motion.h1>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }} className="mt-6 max-w-xl text-lg text-neutral-600">
             MYTH creates the product, sample and visuals without a physical sample. ZUSHI matches it to a verified manufacturer and tracks production, quality and shipment until it lands.
           </motion.p>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.45 }} className="mt-9 flex flex-wrap gap-3">
             <a href="#contact" onClick={() => track("cta_demo_click", { location: "hero" })} className="rounded-full bg-ink px-6 py-3 font-semibold text-white hover:bg-neutral-800">Book a joint demo</a>
-            <a href="#how-it-works" className="rounded-full border border-black/15 bg-white px-6 py-3 font-semibold hover:border-black/40">See how it works</a>
+            <WaButton location="hero" label="WhatsApp us" />
+            <a href="#how-it-works" className="px-3 py-3 font-semibold underline underline-offset-4 decoration-black/30 hover:decoration-ink">See how it works</a>
           </motion.div>
-          <p className="mt-6 text-sm text-neutral-500">Designers still decide. The platforms remove the waiting.</p>
+          <dl className="mt-10 grid max-w-xl grid-cols-3 gap-4 border-t border-black/15 pt-5">
+            {[["150+", "brands onboarded on MYTH AI"], ["200+", "clothing categories on ZUSHI"], ["20+", "factories onboarded, pre-launch"]].map(([n, l]) => (
+              <div key={n}><dt className="font-serif text-3xl">{n}</dt><dd className="mt-1 text-xs text-neutral-600">{l}</dd></div>
+            ))}
+          </dl>
+          <p className="mt-5 text-sm text-neutral-500">Designers still decide. The platforms remove the waiting.</p>
         </div>
-        <div className="relative">
-          <div className="grid grid-cols-2 gap-4">
-            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="floaty rounded-3xl border border-myth/30 bg-white p-4 shadow-xl">
+        <div className="relative" onMouseMove={move} onMouseLeave={() => { mx.set(0); my.set(0); }} style={{ perspective: 1200 }}>
+          <motion.div style={{ rotateX: rx, rotateY: ry, transformStyle: "preserve-3d" }} className="grid grid-cols-2 gap-4">
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3, duration: 0.7 }} className="floaty card-light rounded-3xl border border-myth/30 bg-white p-4 shadow-2xl">
               <p className="text-[10px] font-bold tracking-widest text-myth">MYTH STUDIO</p>
-              <div className="mt-3 aspect-[3/4] rounded-2xl bg-gradient-to-br from-myth/20 via-white to-myth-light/40 relative overflow-hidden">
-                <svg viewBox="0 0 120 160" className="absolute inset-0 m-auto h-4/5">
-                  <path d="M40 20 L20 40 L30 60 L40 55 L40 140 L80 140 L80 55 L90 60 L100 40 L80 20 Q60 40 40 20Z" fill="#4F5EFF" opacity=".85" />
-                  <path d="M45 70 h30 M45 85 h30 M45 100 h30" stroke="#fff" strokeWidth="2" opacity=".6" />
-                </svg>
-                <span className="absolute bottom-2 left-2 rounded bg-white/90 px-2 py-0.5 text-[10px] font-semibold">Digital sample</span>
-              </div>
-              <p className="mt-3 text-xs text-neutral-500">Polo render, ready for production files</p>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <div className="relative mt-3 aspect-[3/4] overflow-hidden rounded-2xl"><img src="/img/design.jpg" style={{ objectPosition: "50% 30%" }} alt="digital apparel design" className="h-full w-full object-cover" />
+                <span className="absolute bottom-2 left-2 rounded bg-white/90 px-2 py-0.5 text-[10px] font-semibold">Design studio</span></div>
+              <p className="mt-3 text-xs text-neutral-500">Illustrative</p>
             </motion.div>
-            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.45, duration: 0.7 }} className="floaty rounded-3xl border border-zushi/30 bg-white p-4 shadow-xl" style={{ animationDelay: "1.2s" }}>
+            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.45, duration: 0.7 }} className="floaty card-light flex flex-col rounded-3xl border border-zushi/30 bg-white p-4 shadow-2xl" style={{ animationDelay: "1.2s" }}>
               <p className="text-[10px] font-bold tracking-widest text-zushi">ZUSHI ORDER TRACKING</p>
               <ul className="mt-3 space-y-3 text-xs">
                 {[["RFQ sent", 100], ["Factory matched", 100], ["Production", 62], ["Quality check", 20], ["Shipment", 0]].map(([l, p]) => (
@@ -46,10 +59,11 @@ export default function Hero() {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 text-xs text-neutral-500">Illustrative screen</p>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/img/factory.jpg" alt="apparel factory floor" className="mt-4 hidden h-24 w-full rounded-xl object-cover sm:block" />
+              <p className="mt-auto pt-3 text-xs text-neutral-500">Order tracking view. Illustrative.</p>
             </motion.div>
-          </div>
-          <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-8" viewBox="0 0 96 32"><path d="M0 16 H96" stroke="#0c0c10" strokeWidth="2" className="dashflow" /></svg>
+          </motion.div>
         </div>
       </div>
     </section>
