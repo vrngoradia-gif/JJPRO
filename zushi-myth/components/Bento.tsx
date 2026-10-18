@@ -1,6 +1,7 @@
 import Reveal from "./Reveal";
 const cells = [
   { t: "Digital sampling", d: "See the product before anything is cut.", c: "col-span-2 bg-myth text-white", img: "/img/design.jpg" },
+  { t: "Design as a service", d: "Collections, patterns and colourways from MYTH.", c: "bg-white", img: "/img/fabric.jpg" },
   { t: "Verified factories", d: "Matched on category, MOQ and lead time.", c: "bg-white", img: "/img/factory.jpg" },
   { t: "Stage tracking", d: "Production stages and delay alerts.", c: "bg-ink text-white" },
   { t: "Quality checks", d: "Inspection before shipment.", c: "bg-white" },
