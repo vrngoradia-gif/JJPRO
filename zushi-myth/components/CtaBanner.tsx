@@ -4,7 +4,7 @@ import { WaButton } from "./WhatsAppFab";
 export default function CtaBanner() {
   return (
     <section className="relative overflow-hidden py-20">
-      <div className="absolute inset-0 bg-myth" />
+      <div className="absolute inset-0 bg-[#262e8f]" />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src="/img/ship.jpg" alt="" loading="lazy" className="kb absolute inset-0 h-full w-full object-cover opacity-15 mix-blend-luminosity" />
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-5 text-center text-white">
