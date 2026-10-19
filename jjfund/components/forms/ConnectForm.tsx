@@ -10,8 +10,8 @@ export default function ConnectForm({ defaultAudience }: { defaultAudience?: str
   const [status, setStatus] = useState<Status>("idle");
 
   // Form service ID comes from NEXT_PUBLIC_FORMSPREE_ID. Enquiries are delivered to the address set on that Formspree form (jignesh@myth-ai.com, see .env.example).
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-  const endpoint = `https://formspree.io/f/${formspreeId}`;
+  const formspreeId = "lead"; // posts to /api/lead (FormSubmit)
+  const endpoint = "/api/lead";
 
   const initialAudience = connect.audienceOptions.some((o) => o.value === defaultAudience)
     ? defaultAudience
