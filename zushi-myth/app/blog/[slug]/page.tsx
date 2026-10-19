@@ -11,7 +11,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
   const p = getPost((await params).slug); if (!p) notFound();
   const cta = clusterCta[p.cluster];
   const ld = [
-    { "@context": "https://schema.org", "@type": "Article", headline: p.title, description: p.description, author: { "@type": "Organization", name: "MYTH AI × ZUSHI" }, publisher: { "@type": "Organization", name: "MYTH AI × ZUSHI" }, mainEntityOfPage: `https://zushixmyth.com/blog/${p.slug}` },
+    { "@context": "https://schema.org", "@type": "Article", headline: p.title, description: p.description, author: { "@type": "Organization", name: "MYTH AI × ZUSHI" }, publisher: { "@type": "Organization", name: "MYTH AI × ZUSHI" }, mainEntityOfPage: `https://www.zushixmyth.com/blog/${p.slug}` },
     { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: p.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ];
   const Cta = ({ where }: { where: string }) => (
