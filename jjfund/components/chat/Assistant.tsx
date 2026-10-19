@@ -46,11 +46,11 @@ const questionnaire: Questionnaire = {
 export default function Assistant() {
   return (
     <AssistantWidget
-      brand="JJ Fund"
+      brand="Avenor Nexus"
       subtitle="Quick questionnaire"
-      greeting="Hi, I'm the JJ Fund assistant."
+      greeting="Hi, I'm the Avenor Nexus assistant."
       whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
-      whatsappText="Hi, I found you through the JJ Fund website and would like to talk."
+      whatsappText="Hi, I found you through the Avenor Nexus website and would like to talk."
       menu={[]}
       questionnaire={questionnaire}
       formspreeId={process.env.NEXT_PUBLIC_FORMSPREE_ID}
