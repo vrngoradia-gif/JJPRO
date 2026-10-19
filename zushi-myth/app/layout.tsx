@@ -7,7 +7,7 @@ import LeadPopup from "@/components/LeadPopup";
 import CursorGlow from "@/components/CursorGlow";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const serif = Newsreader({ subsets: ["latin"], variable: "--font-serif", weight: ["400", "500", "600"] });
-const SITE = "https://zushixmyth.com";
+const SITE = "https://www.zushixmyth.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: { default: "MYTH AI × ZUSHI: design it digitally, get it made by a verified factory", template: "%s | MYTH AI × ZUSHI" },
