@@ -6,12 +6,12 @@ import { track } from "@/lib/track";
 type Stop = { owner: "MYTH" | "HANDOFF" | "ZUSHI"; title: string; sub: string; get: string[]; img?: string; soon?: boolean };
 const stops: Stop[] = [
   { owner: "MYTH", title: "Design the collection", sub: "MYTH", get: ["Text or image to design", "Collection Lab"], img: "/img/design.jpg" },
-  { owner: "MYTH", title: "Digital sample and visuals", sub: "MYTH Studio", get: ["AI product photos, models and video", "No physical sample"], img: "/img/fabric.jpg" },
-  { owner: "MYTH", title: "Factory-ready files", sub: "MYTH PLM", get: ["Tech pack and BOM", "Vector/TIFF and colour separation"], img: "/img/fabric-roll.jpg" },
+  { owner: "MYTH", title: "Digital sample and visuals", sub: "MYTH Studio", get: ["AI product photos, models and video", "No physical sample"], img: "/img/m-colorway.webp" },
+  { owner: "MYTH", title: "Factory-ready files", sub: "MYTH PLM", get: ["Tech pack and BOM", "Vector/TIFF and colour separation"], img: "/img/z-techpack.jpg" },
   { owner: "HANDOFF", title: "Send to ZUSHI", sub: "Handoff", get: ["The tech pack becomes an RFQ"], soon: true },
   { owner: "ZUSHI", title: "Match verified factories", sub: "ZUSHI AI", get: ["Fit on product, MOQ, price and timeline", "Trade checks by Dun & Bradstreet"], img: "/img/factory.jpg" },
-  { owner: "ZUSHI", title: "Quote, book a slot, order", sub: "ZUSHI", get: ["Compare quotes on price, MOQ and lead time", "Lock a production window"], img: "/img/factory.jpg" },
-  { owner: "ZUSHI", title: "Track production and QC", sub: "ZUSHI", get: ["Stage tracking and delay alerts", "AI quality check"], img: "/img/fabric-roll.jpg" },
+  { owner: "ZUSHI", title: "Quote, book a slot, order", sub: "ZUSHI", get: ["Compare quotes on price, MOQ and lead time", "Lock a production window"], img: "/img/z-meeting.jpg" },
+  { owner: "ZUSHI", title: "Track production and QC", sub: "ZUSHI", get: ["Stage tracking and delay alerts", "AI quality check"], img: "/img/z-sewing.jpg" },
   { owner: "ZUSHI", title: "Ship and release payment", sub: "ZUSHI", get: ["Shipment tracking, documents and insurance", "Escrow by milestone"], img: "/img/ship.jpg" },
 ];
 const N = stops.length;

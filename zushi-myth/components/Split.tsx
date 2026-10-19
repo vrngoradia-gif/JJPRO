@@ -8,7 +8,7 @@ function Img({ src, alt, tone }: { src: string; alt: string; tone: "myth" | "zus
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
   return (
-    <div ref={ref} className={`relative aspect-[4/5] overflow-hidden rounded-[2rem] border-2 shadow-2xl ${tone === "myth" ? "border-myth/40" : "border-zushi/40"}`}>
+    <div ref={ref} data-tilt className={`relative aspect-[4/5] overflow-hidden rounded-[2rem] border-2 shadow-2xl ${tone === "myth" ? "border-myth/40" : "border-zushi/40"}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <motion.img style={{ y, scale: 1.2 }} src={src} alt={alt} loading="lazy" className="h-full w-full object-cover" />
       <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold">Illustrative</span>
@@ -20,7 +20,7 @@ export default function Split() {
     <section id="design-sourcing" className="overflow-hidden bg-paper py-24">
       <div className="mx-auto max-w-7xl space-y-28 px-5">
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          <Reveal><Img src="/img/design.jpg" alt="digital apparel design on a studio screen" tone="myth" /></Reveal>
+          <Reveal><Img src="/img/m-runway.webp" alt="MYTH turns one look into runway visuals" tone="myth" /></Reveal>
           <Reveal delay={0.1}>
             <p className="text-xs font-bold tracking-widest text-myth">MYTH AI · DESIGN AS A SERVICE</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Don&apos;t have a design team? Rent one.</h2>
@@ -34,7 +34,7 @@ export default function Split() {
           </Reveal>
         </div>
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          <Reveal className="lg:order-2"><div className="grid grid-cols-2 gap-4"><div className="pt-10"><Img src="/img/fabric-roll.jpg" alt="rolls of fabric" tone="zushi" /></div><Img src="/img/fabric.jpg" alt="fabric swatches and trims" tone="zushi" /></div></Reveal>
+          <Reveal className="lg:order-2"><div className="grid grid-cols-2 gap-4"><div className="pt-10"><Img src="/img/z-rolls.jpg" alt="rolls of fabric in a textile warehouse" tone="zushi" /></div><Img src="/img/fabric.jpg" alt="fabric swatches and trims" tone="zushi" /></div></Reveal>
           <Reveal delay={0.1} className="lg:order-1">
             <p className="text-xs font-bold tracking-widest text-zushi">ZUSHI · MATERIAL SOURCING</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Fabric and trims, sourced with the product.</h2>

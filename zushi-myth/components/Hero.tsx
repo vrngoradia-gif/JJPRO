@@ -60,7 +60,7 @@ export default function Hero() {
                 ))}
               </ul>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/img/factory.jpg" alt="apparel factory floor" className="mt-4 hidden h-24 w-full rounded-xl object-cover sm:block" />
+              <img src="/img/z-sewing.jpg" alt="sewing line in an apparel factory" className="mt-4 hidden h-24 w-full rounded-xl object-cover sm:block" />
               <p className="mt-auto pt-3 text-xs text-neutral-500">Order tracking view. Illustrative.</p>
             </motion.div>
           </motion.div>

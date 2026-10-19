@@ -99,4 +99,10 @@ h1, h2 { font-family: var(--font-serif), Georgia, serif; font-weight: 500 !impor
 .tone-dark .gold-em { color: var(--gold); }
 .tracking-widest { font-family: var(--font-inter), system-ui, sans-serif; font-weight: 600 !important; letter-spacing: .12em !important; font-size: .72rem !important; }
 .font-serif, dt.font-serif { font-family: var(--font-serif), Georgia, serif; }
-/* palette v2 */
+
+/* ---- Interactive image tilt + depth ---- */
+[data-tilt] { transform: perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0)); transition: transform .35s cubic-bezier(.2,.8,.2,1); transform-style: preserve-3d; will-change: transform; }
+[data-tilt] img { translate: var(--px,0) var(--py,0); transition: translate .35s cubic-bezier(.2,.8,.2,1), scale .7s; }
+@media (prefers-reduced-motion: reduce) { [data-tilt], [data-tilt] img { transform: none !important; translate: none !important; } }
+[data-parallax] img { scale: 1.1; translate: var(--px,0) var(--py,0); transition: translate .35s cubic-bezier(.2,.8,.2,1); }
+@media (prefers-reduced-motion: reduce) { [data-parallax] img { translate: none !important; } }
