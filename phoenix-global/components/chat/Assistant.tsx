@@ -12,11 +12,11 @@ const menu: MenuItem[] = [
 export default function Assistant() {
   return (
     <AssistantWidget
-      brand="Phoenix Global"
+      brand="Merovant"
       subtitle="Automated assistant"
-      greeting="Hello, I'm the Phoenix Global assistant. What are you looking for?"
+      greeting="Hello, I'm the Merovant assistant. What are you looking for?"
       whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
-      whatsappText="Hello, I found you through the Phoenix Global website and would like a quote."
+      whatsappText="Hello, I found you through the Merovant website and would like a quote."
       menu={menu}
     />
   );

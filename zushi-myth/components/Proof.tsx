@@ -12,6 +12,13 @@ export default function Proof() {
           <Reveal className="rounded-3xl border border-myth/30 p-8">
             <p className="text-xs font-bold tracking-widest text-myth">MYTH AI</p>
             <p className="mt-4 text-6xl font-black text-myth"><CountUp to={150} suffix="+" /></p><p className="text-neutral-600">brands onboarded</p>
+            <p className="mt-8 text-xs font-bold tracking-widest text-neutral-500">BRANDS USING MYTH AI</p>
+            <div className="mt-4 grid grid-cols-4 gap-3">
+              {logos.map(([n, p]) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={n} src={base + p} alt={n} loading="lazy" className="aspect-square w-full bg-white object-contain p-2 grayscale transition hover:grayscale-0" />
+              ))}
+            </div>
           </Reveal>
           <Reveal delay={0.1} className="rounded-3xl border border-zushi/30 p-8">
             <p className="text-xs font-bold tracking-widest text-zushi">ZUSHI</p>
@@ -21,15 +28,6 @@ export default function Proof() {
             </div>
             <p className="mt-6 text-sm text-neutral-500">Partners: Dun &amp; Bradstreet (trade verification), Indikos Forwarding and Fairmacs (logistics), Integrated Risk Insurance Brokers (insurance).</p>
           </Reveal>
-        </div>
-        <div className="mt-12 overflow-hidden">
-          <p className="mb-4 text-center text-xs font-bold tracking-widest text-neutral-400">BRANDS USING MYTH AI</p>
-          <div className="marquee flex w-max items-center gap-16">
-            {[...logos, ...logos, ...logos, ...logos].map(([n, p], i) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={i} src={base + p} alt={n} loading="lazy" className="h-14 w-auto grayscale opacity-60" />
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -19,8 +19,8 @@ export default function Benefits() {
       <div className="mx-auto max-w-5xl px-5">
         <Reveal><p className="text-xs font-bold tracking-widest text-neutral-500">FOR YOU</p>
           <h2 className="mt-3 text-4xl md:text-5xl font-black tracking-tight">What you get.</h2></Reveal>
-        <div role="tablist" className="mt-8 inline-flex flex-wrap rounded-full bg-white p-1 shadow">
-          {keys.map((k) => <button key={k} role="tab" aria-selected={tab === k} onClick={() => pick(k)} className={`rounded-full px-5 py-2 text-sm font-semibold transition ${tab === k ? "bg-ink text-white" : "text-neutral-600 hover:text-ink"}`}>{k}</button>)}
+        <div role="tablist" className="mt-8 flex w-full rounded-full bg-white p-1 shadow sm:inline-flex sm:w-auto">
+          {keys.map((k) => <button key={k} role="tab" aria-selected={tab === k} onClick={() => pick(k)} className={`flex-1 whitespace-nowrap rounded-full px-2 py-2 text-center text-[13px] font-semibold transition sm:flex-none sm:px-5 sm:text-sm ${tab === k ? "bg-ink text-white" : "text-neutral-600 hover:text-ink"}`}>{k}</button>)}
         </div>
         <ul className="mt-8 grid gap-4 md:grid-cols-2">
           {tabs[tab].map((b) => <li key={b} className="rounded-2xl bg-white p-6 shadow-sm"><p className="text-xs font-bold tracking-widest text-neutral-400">YOU GET</p><p className="mt-2 text-lg font-semibold">{b}</p></li>)}

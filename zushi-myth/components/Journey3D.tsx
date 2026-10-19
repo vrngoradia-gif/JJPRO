@@ -6,12 +6,12 @@ import { track } from "@/lib/track";
 type Stop = { owner: "MYTH" | "HANDOFF" | "ZUSHI"; title: string; sub: string; get: string[]; img?: string; soon?: boolean };
 const stops: Stop[] = [
   { owner: "MYTH", title: "Design the collection", sub: "MYTH", get: ["Text or image to design", "Collection Lab"], img: "/img/design.jpg" },
-  { owner: "MYTH", title: "Digital sample and visuals", sub: "MYTH Studio", get: ["AI product photos, models and video", "No physical sample"], img: "/img/fabric.jpg" },
-  { owner: "MYTH", title: "Factory-ready files", sub: "MYTH PLM", get: ["Tech pack and BOM", "Vector/TIFF and colour separation"], img: "/img/fabric-roll.jpg" },
+  { owner: "MYTH", title: "Digital sample and visuals", sub: "MYTH Studio", get: ["AI product photos, models and video", "No physical sample"], img: "/img/m-dress.jpg" },
+  { owner: "MYTH", title: "Factory-ready files", sub: "MYTH PLM", get: ["Tech pack and BOM", "Vector/TIFF and colour separation"], img: "/img/z-techpack.jpg" },
   { owner: "HANDOFF", title: "Send to ZUSHI", sub: "Handoff", get: ["The tech pack becomes an RFQ"], soon: true },
   { owner: "ZUSHI", title: "Match verified factories", sub: "ZUSHI AI", get: ["Fit on product, MOQ, price and timeline", "Trade checks by Dun & Bradstreet"], img: "/img/factory.jpg" },
-  { owner: "ZUSHI", title: "Quote, book a slot, order", sub: "ZUSHI", get: ["Compare quotes on price, MOQ and lead time", "Lock a production window"], img: "/img/factory.jpg" },
-  { owner: "ZUSHI", title: "Track production and QC", sub: "ZUSHI", get: ["Stage tracking and delay alerts", "AI quality check"], img: "/img/fabric-roll.jpg" },
+  { owner: "ZUSHI", title: "Quote, book a slot, order", sub: "ZUSHI", get: ["Compare quotes on price, MOQ and lead time", "Lock a production window"], img: "/img/z-woman.jpg" },
+  { owner: "ZUSHI", title: "Track production and QC", sub: "ZUSHI", get: ["Stage tracking and delay alerts", "AI quality check"], img: "/img/z-sewing.jpg" },
   { owner: "ZUSHI", title: "Ship and release payment", sub: "ZUSHI", get: ["Shipment tracking, documents and insurance", "Escrow by milestone"], img: "/img/ship.jpg" },
 ];
 const N = stops.length;
@@ -25,7 +25,7 @@ function Card({ s, i, p }: { s: Stop; i: number; p: MotionValue<number> }) {
     return `translate3d(${x * 270}px, ${-Math.min(a, 3) * 14}px, ${-a * 220}px) rotateY(${Math.max(-1.2, Math.min(1.2, x)) * -34}deg) scale(${1 - Math.min(a, 2) * 0.06})`;
   });
   const opacity = useTransform(d, (x) => Math.max(0, 1 - Math.abs(x) * 0.75));
-  const accent = s.owner === "MYTH" ? "#4f5eff" : s.owner === "ZUSHI" ? "#a3141f" : "#c9a96a";
+  const accent = s.owner === "MYTH" ? "#353f86" : s.owner === "ZUSHI" ? "#9a3b30" : "#c9a96a";
   return (
     <motion.div style={{ transform, opacity, borderColor: accent }} className="absolute left-1/2 top-1/2 -ml-[130px] -mt-[170px] h-[340px] w-[260px] overflow-hidden border-2 bg-[#fbf6ec] shadow-[0_40px_60px_-30px_rgba(40,25,10,.45)] will-change-transform md:-ml-[150px] md:-mt-[190px] md:h-[380px] md:w-[300px]">
       {s.img ? (
