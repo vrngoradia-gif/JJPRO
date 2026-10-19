@@ -1,5 +1,5 @@
 // ---------------------------------------------------------------------------
-// JJ Fund — Centralized site copy
+// Avenor Nexus — Centralized site copy
 // ---------------------------------------------------------------------------
 // Copy sourced from the "Website Sitemap & Content" strategy deck (July 2026).
 // Anything marked "// TODO: replace with real client content" is an open item
@@ -8,12 +8,12 @@
 // ---------------------------------------------------------------------------
 
 export const siteMeta = {
-  name: "JJ Fund",
+  name: "Avenor Nexus",
   tagline: "Capital, capability, and the corridor — in one AI-native partner.",
   description:
-    "JJ Fund is an AI-native venture platform connecting Western startups with Asia — part fund, part advisory, part build partner. We help founders raise capital, establish India capability centres, and scale across the corridor, while giving VCs and family offices vetted access to high-quality AI and SaaS opportunities.",
+    "Avenor Nexus is an AI-native venture platform connecting Western startups with Asia — part fund, part advisory, part build partner. We help founders raise capital, establish India capability centres, and scale across the corridor, while giving VCs and family offices vetted access to high-quality AI and SaaS opportunities.",
   // TODO: replace with real client content — confirm live domain
-  url: "https://jjfund.com",
+  url: "https://www.avenornexus.com",
 };
 
 export const navLinks = [
@@ -62,7 +62,7 @@ export const messaging = {
   positioning:
     "The AI-native gateway between Western startups and Asia. A fund, an advisory, and a build partner in one — we help founders raise capital, establish capability in India, and scale across the corridor, and we give investors vetted access to the AI and SaaS companies crossing it.",
   boilerplate:
-    "JJ Fund is an AI-native venture platform connecting Western startups with Asia. Part fund, part advisory, part build partner, the firm helps founders raise capital, establish India capability centres, and scale across the corridor — while giving VCs and family offices vetted access to high-quality AI and SaaS opportunities. Regulated delivery is handled through a vetted network of professional partners. The firm is led by Jignesh (JJ) P Jain, a cross-border investor focused on AI and SaaS.",
+    "Avenor Nexus is an AI-native venture platform connecting Western startups with Asia. Part fund, part advisory, part build partner, the firm helps founders raise capital, establish India capability centres, and scale across the corridor — while giving VCs and family offices vetted access to high-quality AI and SaaS opportunities. Regulated delivery is handled through a vetted network of professional partners. The firm is led by Jignesh (JJ) P Jain, a cross-border investor focused on AI and SaaS.",
   whyWeWin:
     "Every competitor sells one slice — a fund, a hiring shop, a market-entry consultancy, a community. We own the whole corridor, run it on AI, and put a single name on the outcome.",
 };
