@@ -13,7 +13,7 @@ export const siteMeta = {
   // TODO: replace with real client content — confirm final positioning line
   description:
     "JJ PRO partners with ambitious founders on brand strategy, fundraising, GTM and business transformation — turning early conviction into category leadership.",
-  url: process.env.NEXT_PUBLIC_URL_JJPRO || "https://jjpro.in",
+  url: process.env.NEXT_PUBLIC_URL_JJPRO || "https://www.jjpro.in",
 };
 
 export const navLinks = [
