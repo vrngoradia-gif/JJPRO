@@ -11,7 +11,7 @@ export const network: { key: SiteKey; name: string; url: string; blurb: string }
   },
   {
     key: "jjfund",
-    name: "JJ Fund - Venture Studio",
+    name: "Avenor Nexus - Venture Studio",
     url: process.env.NEXT_PUBLIC_URL_JJFUND || "https://www.avenornexus.com",
     blurb: "Capital, venture building and India capability centres for founders crossing West to Asia.",
   },
@@ -20,11 +20,5 @@ export const network: { key: SiteKey; name: string; url: string; blurb: string }
     name: "MYTH AI India",
     url: process.env.NEXT_PUBLIC_URL_MYTH || "https://myth-ai.com/in",
     blurb: "AI design studio for textile prints, 3D garments and fashion collections.",
-  },
-  {
-    key: "phoenix",
-    name: "Phoenix Global",
-    url: process.env.NEXT_PUBLIC_URL_PHOENIX || "https://merovant.co",
-    blurb: "Global sourcing and export of textiles and commodities, with D2C sourcing in India.",
   },
 ];
