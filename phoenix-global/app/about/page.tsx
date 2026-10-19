@@ -3,12 +3,12 @@ import PageHero from "@/components/ui/PageHero";
 import FeatureGrid from "@/components/ui/FeatureGrid";
 import { contactInfo, compliance } from "@/lib/content";
 
-export const metadata: Metadata = { title: "About", description: "Phoenix Global is a trading and export company sourcing textiles and commodities from India, China and Latin America.", alternates: { canonical: "/about" } };
+export const metadata: Metadata = { title: "About", description: "Merovant is a trading and export company sourcing textiles and commodities from India, China and Latin America.", alternates: { canonical: "/about" } };
 
 export default function About() {
   return (
     <>
-      <PageHero eyebrow="About us" title="A sourcing and export partner for textiles and commodities." subtitle="Phoenix Global Corporation trades and exports goods around the world, with supply chain, sourcing and market knowledge at the core." cta={{ label: "Ask for price", href: "/contact" }} />
+      <PageHero eyebrow="About us" title="A sourcing and export partner for textiles and commodities." subtitle="Merovant trades and exports goods around the world, with supply chain, sourcing and market knowledge at the core." cta={{ label: "Ask for price", href: "/contact" }} />
       <section className="mx-auto max-w-5xl px-6 pb-16 md:px-10">
         <h2 className="h-display-md">Core strengths</h2>
         <div className="mt-8"><FeatureGrid items={[

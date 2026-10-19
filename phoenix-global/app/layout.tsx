@@ -5,7 +5,6 @@ import Analytics from "@/components/analytics/Analytics";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Assistant from "@/components/chat/Assistant";
-import NetworkStrip from "@/components/network/NetworkStrip";
 import PriceCta from "@/components/ui/PriceCta";
 import PageTransition from "@/components/layout/PageTransition";
 import { siteMeta } from "@/lib/content";
@@ -68,7 +67,6 @@ export default function RootLayout({
           <main>{children}</main>
         </PageTransition>
         <PriceCta />
-        <NetworkStrip current="phoenix" />
         <Footer />
         <Assistant />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", name: siteMeta.legalName, url: siteMeta.url, description: siteMeta.description }, { "@type": "WebSite", name: siteMeta.name, url: siteMeta.url } ] }) }} />

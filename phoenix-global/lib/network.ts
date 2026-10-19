@@ -23,7 +23,7 @@ export const network: { key: SiteKey; name: string; url: string; blurb: string }
   },
   {
     key: "phoenix",
-    name: "Phoenix Global",
+    name: "Merovant",
     url: process.env.NEXT_PUBLIC_URL_PHOENIX || "https://merovant.co",
     blurb: "Global sourcing and export of textiles and commodities, with D2C sourcing in India.",
   },
