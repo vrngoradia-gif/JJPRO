@@ -1,10 +1,10 @@
 import Reveal from "./Reveal";
 const cells = [
   { t: "Digital sampling", d: "See the product before anything is cut.", c: "col-span-2 bg-myth text-white", img: "/img/m-colorway.webp" },
-  { t: "Design as a service", d: "Collections, patterns and colourways from MYTH.", c: "bg-white", img: "/img/m-pattern.webp" },
-  { t: "Verified factories", d: "Matched on category, MOQ and lead time.", c: "bg-white", img: "/img/z-meeting.jpg" },
-  { t: "Stage tracking", d: "Production stages and delay alerts.", c: "bg-[#e3cdc0]", img: "/img/z-cutting.jpg" },
-  { t: "Quality checks", d: "Inspection before shipment.", c: "bg-white", img: "/img/z-qc.jpg" },
+  { t: "Design as a service", d: "Collections, patterns and colourways from MYTH.", c: "bg-white text-white", img: "/img/m-pattern.webp" },
+  { t: "Verified factories", d: "Matched on category, MOQ and lead time.", c: "bg-white text-white", img: "/img/z-meeting.jpg" },
+  { t: "Stage tracking", d: "Production stages and delay alerts.", c: "bg-[#e3cdc0] text-white", img: "/img/z-cutting.jpg" },
+  { t: "Quality checks", d: "Inspection before shipment.", c: "bg-white text-white", img: "/img/z-qc.jpg" },
   { t: "Shipment and documents", d: "Tracking, documents and insurance in one place.", c: "col-span-2 bg-zushi text-white", img: "/img/z-port.jpg" },
 ];
 export default function Bento() {
@@ -16,8 +16,8 @@ export default function Bento() {
         <div className="mt-12 grid auto-rows-[220px] grid-cols-2 gap-4 lg:grid-cols-4">
           {cells.map((x, i) => (
             <Reveal key={x.t} delay={i * 0.06} parallax className={`group relative overflow-hidden rounded-3xl border border-black/10 p-6 ${x.c} ${x.c.includes("col-span-2") ? "lg:col-span-2" : ""}`}>
-              {x.img && /* eslint-disable-next-line @next/next/no-img-element */ <><img src={x.img} alt="" loading="lazy" className={`absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 ${x.c.includes("text-white") ? "opacity-30" : "opacity-70"}`} />{!x.c.includes("text-white") && <span className="absolute inset-0 bg-gradient-to-t from-[#fbf6ec] via-[#fbf6ec]/80 to-transparent" />}</>}
-              <div className="relative flex h-full flex-col justify-end"><h3 className="text-xl font-bold">{x.t}</h3><p className="mt-1 text-sm opacity-80">{x.d}</p></div>
+              {x.img && /* eslint-disable-next-line @next/next/no-img-element */ <><img src={x.img} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700" /><span className="absolute inset-0 bg-gradient-to-t from-[#14172e]/90 via-[#14172e]/35 to-transparent" /></>}
+              <div className="relative flex h-full flex-col justify-end text-white"><h3 className="text-xl font-bold">{x.t}</h3><p className="mt-1 text-sm opacity-80">{x.d}</p></div>
             </Reveal>
           ))}
         </div>
