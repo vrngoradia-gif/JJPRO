@@ -14,8 +14,10 @@ export const siteMeta = {
   tagline: "India's Design Work, Done. By Us.",
   description:
     "Myth AI compresses every stage of India's fashion pipeline — AI print & embroidery, seamless repeats, 3D garment visualization, collection development and campaign imagery — delivered as Design as a Service (DaaS) or Agentic AI as a Service (AAaaS).",
-  // TODO: confirm final production domain (myth-ai.com vs a subdomain)
-  url: "https://myth-ai.com",
+  // Canonical site URL. Stays on myth-ai.com until myth-ai.in is registered and live on Vercel.
+  // To switch canonical, sitemap, robots and metadata to the new domain with no code change,
+  // set NEXT_PUBLIC_SITE_URL=https://www.myth-ai.in in Vercel and redeploy.
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://myth-ai.com",
 };
 
 export const contact = {
