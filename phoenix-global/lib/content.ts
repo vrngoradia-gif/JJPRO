@@ -1,15 +1,15 @@
-// Phoenix Global Corporation - site copy.
-// Source: Phoenix Global sitemap v1.0 and brief. Anything marked PLACEHOLDER must be
+// Merovant - site copy.
+// Source: Merovant sitemap v1.0 and brief. Anything marked PLACEHOLDER must be
 // replaced with real details before launch. No client names, case studies or
 // statistics are published here until they are verified.
 
 export const siteMeta = {
-  name: "Phoenix Global",
-  legalName: "Phoenix Global Corporation",
+  name: "Merovant",
+  legalName: "Merovant",
   tagline: "Global sourcing. Local insight. Trusted delivery.",
   description:
-    "Phoenix Global sources and exports textiles, fashion goods and commodities from India, China and Latin America, and helps Indian D2C brands source and white-label products.",
-  url: process.env.NEXT_PUBLIC_URL_PHOENIX || "https://phoenixglobal.biz",
+    "Merovant sources and exports textiles, fashion goods and commodities from India, China and Latin America, and helps Indian D2C brands source and white-label products.",
+  url: process.env.NEXT_PUBLIC_URL_PHOENIX || "https://merovant.co",
 };
 
 export const contactInfo = {

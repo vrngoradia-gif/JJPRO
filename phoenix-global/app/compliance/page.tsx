@@ -3,7 +3,7 @@ import PageHero from "@/components/ui/PageHero";
 import FeatureGrid from "@/components/ui/FeatureGrid";
 import { compliance } from "@/lib/content";
 
-export const metadata: Metadata = { title: "Compliance and quality", description: "Certifications, quality control and sustainability at Phoenix Global.", alternates: { canonical: "/compliance" } };
+export const metadata: Metadata = { title: "Compliance and quality", description: "Certifications, quality control and sustainability at Merovant.", alternates: { canonical: "/compliance" } };
 
 export default function Compliance() {
   return (

@@ -21,7 +21,7 @@ export default async function Contact({ searchParams }: { searchParams: Promise<
               <li><a href={`mailto:${contactInfo.email}`} className="hover:text-accent-bright">{contactInfo.email}</a></li>
               {contactInfo.phone && <li>{contactInfo.phone}</li>}
             </ul>
-            <div className="mt-4"><CtaButton external href={whatsappLink(contactInfo.whatsapp, "Hello, I would like a quote from Phoenix Global.")} variant="outline">WhatsApp us</CtaButton></div>
+            <div className="mt-4"><CtaButton external href={whatsappLink(contactInfo.whatsapp, "Hello, I would like a quote from Merovant.")} variant="outline">WhatsApp us</CtaButton></div>
           </div>
           <div>
             <p className="eyebrow">Offices</p>
