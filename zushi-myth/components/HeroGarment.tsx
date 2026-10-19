@@ -50,7 +50,7 @@ export default function HeroGarment() {
   function leave() { st.current.hover = false; st.current.drag = false; setTilt({ x: 0, y: 0 }); }
 
   return (
-    <div className="relative mx-auto w-full max-w-[34rem]">
+    <div className="relative mx-auto w-full max-w-[34rem] lg:max-w-[min(34rem,calc((100svh-8rem)*0.8))]">
       <div ref={stage} className="relative aspect-[4/5] touch-pan-y select-none" style={{ perspective: 1400 }}
         onPointerMove={onMove} onPointerLeave={leave}
         onPointerDown={(e) => { if (e.pointerType !== "mouse") { st.current.drag = true; st.current.lastX = e.clientX; } }}

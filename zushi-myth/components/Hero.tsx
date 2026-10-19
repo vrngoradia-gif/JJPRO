@@ -5,7 +5,7 @@ import { WaButton } from "./WhatsAppFab";
 import HeroGarment from "./HeroGarment";
 export default function Hero() {
   return (
-    <section id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32">
+    <section id="hero" className="relative overflow-hidden pt-28 pb-24 sm:pt-32 lg:pt-24">
       <div className="relative mx-auto max-w-7xl px-5 grid lg:grid-cols-2 gap-14 items-center">
         <div>
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="mb-5 inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold tracking-widest text-neutral-600">
