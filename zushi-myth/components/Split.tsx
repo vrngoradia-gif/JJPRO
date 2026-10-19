@@ -20,7 +20,7 @@ export default function Split() {
     <section id="design-sourcing" className="overflow-hidden bg-paper py-24">
       <div className="mx-auto max-w-7xl space-y-28 px-5">
         <div className="grid items-center gap-14 lg:grid-cols-2">
-          <Reveal><Img src="/img/m-runway.webp" alt="MYTH turns one pattern into product visuals" tone="myth" contain /></Reveal>
+          <Reveal><Img src="/img/a-mannequin.jpg" alt="design studio with a shirt on a dress form" tone="myth" /></Reveal>
           <Reveal delay={0.1}>
             <p className="text-xs font-bold tracking-widest text-myth">MYTH AI · DESIGN AS A SERVICE</p>
             <h2 className="mt-3 text-4xl font-black tracking-tight md:text-5xl">Don&apos;t have a design team? Rent one.</h2>

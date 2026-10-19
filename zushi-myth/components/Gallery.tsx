@@ -1,5 +1,5 @@
 import Reveal from "./Reveal";
-const imgs = [["/img/fabric-roll.jpg", "Fabric"], ["/img/m-similar.webp", "MYTH digital visuals"], ["/img/z-cartons.jpg", "Packing"], ["/img/factory.jpg", "Production"], ["/img/z-port.jpg", "Shipment"]];
+const imgs = [["/img/fabric-roll.jpg", "Fabric"], ["/img/m-collection.jpg", "MYTH collection"], ["/img/a-flatlay.jpg", "Garments"], ["/img/z-cartons.jpg", "Packing"], ["/img/factory.jpg", "Production"], ["/img/a-rack.jpg", "The finished line"], ["/img/z-port.jpg", "Shipment"]];
 export default function Gallery() {
   return (
     <section className="overflow-hidden py-16">
