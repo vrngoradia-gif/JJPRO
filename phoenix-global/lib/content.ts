@@ -9,7 +9,7 @@ export const siteMeta = {
   tagline: "Global sourcing. Local insight. Trusted delivery.",
   description:
     "Phoenix Global sources and exports textiles, fashion goods and commodities from India, China and Latin America, and helps Indian D2C brands source and white-label products.",
-  url: process.env.NEXT_PUBLIC_URL_PHOENIX || "https://phoenixglobal.biz",
+  url: process.env.NEXT_PUBLIC_URL_PHOENIX || "https://merovant.co",
 };
 
 export const contactInfo = {
