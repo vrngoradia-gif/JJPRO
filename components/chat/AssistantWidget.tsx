@@ -45,7 +45,8 @@ const WA_ICON = (
 );
 
 export default function AssistantWidget(props: AssistantProps) {
-  const { brand, subtitle, greeting, whatsappNumber, whatsappText, menu, questionnaire, formspreeId } = props;
+  const { brand, subtitle, greeting, whatsappNumber, whatsappText, menu, questionnaire } = props;
+  const formspreeId = "lead"; // posts to /api/lead (FormSubmit)
   const [open, setOpen] = useState(false);
   const [msgs, setMsgs] = useState<Msg[]>([{ from: "bot", text: greeting }]);
   const [stage, setStage] = useState<"menu" | "q" | "done">(questionnaire ? "q" : "menu");
@@ -110,7 +111,7 @@ export default function AssistantWidget(props: AssistantProps) {
     }
     setSent("sending");
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, {
+      const res = await fetch("/api/lead", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ source: `${brand} assistant`, summary: text }),

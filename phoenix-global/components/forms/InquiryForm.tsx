@@ -11,7 +11,7 @@ const label = "mb-2 block text-xs uppercase tracking-widest text-paper-dim";
 export default function InquiryForm({ defaultType = "buyer" }: { defaultType?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   // PLACEHOLDER: set NEXT_PUBLIC_FORMSPREE_ID in Vercel. File attachments need a Formspree plan that supports uploads.
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+  const formspreeId = "lead"; // posts to /api/lead (FormSubmit)
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -19,7 +19,7 @@ export default function InquiryForm({ defaultType = "buyer" }: { defaultType?: s
     setStatus("submitting");
     const form = e.currentTarget;
     try {
-      const res = await fetch(`https://formspree.io/f/${formspreeId}`, { method: "POST", body: (() => { const fd = new FormData(form); fd.append("_subject", `New enquiry from ${window.location.hostname}`); fd.append("_site", window.location.hostname); return fd; })(), headers: { Accept: "application/json" } });
+      const res = await fetch("/api/lead", { method: "POST", body: (() => { const fd = new FormData(form); fd.append("_subject", `New enquiry from ${window.location.hostname}`); fd.append("_site", window.location.hostname); return fd; })(), headers: { Accept: "application/json" } });
       if (res.ok) { setStatus("success"); form.reset(); } else setStatus("error");
     } catch { setStatus("error"); }
   }
