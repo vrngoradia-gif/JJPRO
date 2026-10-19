@@ -13,7 +13,7 @@ export const siteMeta = {
   description:
     "JJ Fund is an AI-native venture platform connecting Western startups with Asia — part fund, part advisory, part build partner. We help founders raise capital, establish India capability centres, and scale across the corridor, while giving VCs and family offices vetted access to high-quality AI and SaaS opportunities.",
   // TODO: replace with real client content — confirm live domain
-  url: "https://jjfund.com",
+  url: "https://www.avenornexus.com",
 };
 
 export const navLinks = [
