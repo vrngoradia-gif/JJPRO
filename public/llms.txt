@@ -28,18 +28,18 @@
 
 ## Pages
 
-- [Home](https://jjpro.in/): Overview of JJ PRO's practice and services.
-- [What We Do](https://jjpro.in/what-we-do): Brand strategy, consulting,
+- [Home](https://www.jjpro.in/): Overview of JJ PRO's practice and services.
+- [What We Do](https://www.jjpro.in/what-we-do): Brand strategy, consulting,
   fundraising and cross-border GTM services.
-- [Consulting](https://jjpro.in/consulting): Business transformation, virtual
+- [Consulting](https://www.jjpro.in/consulting): Business transformation, virtual
   tech acceleration and D2C consulting practices.
-- [About Us](https://jjpro.in/about-us): Background on Jignesh P Jain.
-- [Coaching](https://jjpro.in/about-us/coaching): Startup coaching and
+- [About Us](https://www.jjpro.in/about-us): Background on Jignesh P Jain.
+- [Coaching](https://www.jjpro.in/about-us/coaching): Startup coaching and
   mentoring program details.
-- [Blog](https://jjpro.in/blog): Articles on fundraising, GTM and brand
+- [Blog](https://www.jjpro.in/blog): Articles on fundraising, GTM and brand
   strategy for founders.
-- [Contact](https://jjpro.in/contact): Get in touch or book an intro call.
-- [Partner With Us](https://jjpro.in/contact/partner): Partnership program
+- [Contact](https://www.jjpro.in/contact): Get in touch or book an intro call.
+- [Partner With Us](https://www.jjpro.in/contact/partner): Partnership program
   for investors, agencies and operators.
 
 ## Contact
