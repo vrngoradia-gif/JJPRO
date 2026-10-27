@@ -1,6 +1,6 @@
 "use client";
 
-const FALLBACK_URL = "https://calendly.com/jigjain/30min";
+const FALLBACK_URL = "https://calendly.com/avenornexus-info/30min";
 
 export default function CalendlyEmbed({ className = "" }: { className?: string }) {
   const url = process.env.NEXT_PUBLIC_CALENDLY_URL || FALLBACK_URL;
