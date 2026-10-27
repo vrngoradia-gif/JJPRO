@@ -36,7 +36,10 @@ async function handleLead(request, env) {
       headers: { Accept: "application/json", Origin: siteUrl, Referer: `${siteUrl}/` },
       body: out,
     });
-    if (!r.ok) { console.error("LEAD forward failed", r.status); return json({ ok: false }, 502); }
+    if (!r.ok) { const t = await r.text().catch(() => ""); console.error("LEAD forward failed", r.status, t.slice(0, 300)); return json({ ok: false, upstream: r.status }, 502); }
+    let rejected = false;
+    try { const j = await r.clone().json(); if (String(j.success) === "false") rejected = true; } catch {}
+    if (rejected) { console.error("LEAD upstream rejected (activation pending)"); return json({ ok: false, upstream: "activation" }, 502); }
   } catch (e) {
     console.error("LEAD forward error", e);
     return json({ ok: false }, 502);
