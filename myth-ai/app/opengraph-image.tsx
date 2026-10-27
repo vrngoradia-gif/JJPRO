@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import { ImageResponse } from "next/og";
 
 export const alt = "MYTH AI India - AI design studio for fashion and textiles";

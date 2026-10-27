@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import PageHero from "@/components/ui/PageHero";
+import InquiryWithParams from "./InquiryWithParams";
 import InquiryForm from "@/components/forms/InquiryForm";
 import CtaButton from "@/components/ui/CtaButton";
 import { contactInfo } from "@/lib/content";
@@ -7,13 +9,12 @@ import { whatsappLink } from "@/lib/whatsapp";
 
 export const metadata: Metadata = { title: "Contact", description: "Send an enquiry or ask for a price.", alternates: { canonical: "/contact" } };
 
-export default async function Contact({ searchParams }: { searchParams: Promise<{ type?: string; product?: string }> }) {
-  const { type } = await searchParams;
+export default function Contact() {
   return (
     <>
       <PageHero eyebrow="Contact us" title="Ask for a price or send an enquiry." subtitle="Include product, quantity and destination. Attach drawings or samples if you have them." />
       <section className="mx-auto grid max-w-6xl gap-12 px-6 pb-24 md:px-10 lg:grid-cols-[1.4fr_1fr]">
-        <InquiryForm defaultType={type ?? "buyer"} />
+        <Suspense fallback={<InquiryForm defaultType="buyer" />}><InquiryWithParams /></Suspense>
         <aside className="space-y-8 text-sm">
           <div>
             <p className="eyebrow">Reach us directly</p>

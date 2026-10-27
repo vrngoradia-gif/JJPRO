@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import { ImageResponse } from "next/og";
 export const alt = "Merovant - global sourcing, local insight, trusted delivery";
 export const size = { width: 1200, height: 630 };
