@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import { ImageResponse } from "next/og";
 
 export const alt = "Avenor Nexus - AI-native venture platform connecting Western startups with Asia";

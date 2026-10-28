@@ -1,0 +1,58 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - dir: .
+            project: jjpro
+            lock: false
+          - dir: jjfund
+            project: avenor-nexus
+            lock: false
+          - dir: myth-ai
+            project: myth-ai
+            lock: true
+          - dir: phoenix-global
+            project: merovant
+            lock: true
+          - dir: zushi-myth
+            project: zushi-myth
+            lock: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies (npm ci)
+        if: matrix.lock
+        working-directory: ${{ matrix.dir }}
+        run: npm ci
+      - name: Install dependencies (npm install)
+        if: ${{ !matrix.lock }}
+        working-directory: ${{ matrix.dir }}
+        run: npm install
+      - name: Build static export
+        working-directory: ${{ matrix.dir }}
+        run: npm run build
+      - name: Deploy to Cloudflare Pages
+        working-directory: ${{ matrix.dir }}
+        run: npx wrangler@3 pages deploy out --project-name=${{ matrix.project }} --branch=main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
