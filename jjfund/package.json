@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && cp cloudflare/worker.js out/_worker.js",
     "start": "next start",
     "lint": "eslint"
   },

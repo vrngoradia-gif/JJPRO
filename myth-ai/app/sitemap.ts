@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 import { siteMeta, platform, solutions, blogPosts } from "@/lib/content";
 

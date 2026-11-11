@@ -2,7 +2,11 @@
   "name": "zushi-myth",
   "version": "0.1.0",
   "private": true,
-  "scripts": { "dev": "next dev", "build": "next build", "start": "next start" },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && cp cloudflare/worker.js out/_worker.js",
+    "start": "next start"
+  },
   "dependencies": {
     "framer-motion": "^12.0.0",
     "next": "^15.5.0",

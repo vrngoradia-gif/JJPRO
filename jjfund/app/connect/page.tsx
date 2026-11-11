@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import SectionReveal from "@/components/ui/SectionReveal";
+import ConnectWithParams from "./ConnectWithParams";
 import ConnectForm from "@/components/forms/ConnectForm";
 import { connect } from "@/lib/content";
 
@@ -9,12 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/connect" },
 };
 
-export default async function ConnectPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ as?: string }>;
-}) {
-  const { as } = await searchParams;
+export default function ConnectPage() {
 
   return (
     <>
@@ -32,7 +29,7 @@ export default async function ConnectPage({
         <SectionReveal>
           <h2 className="font-display text-2xl text-paper">{connect.form.heading}</h2>
           <div className="mt-8">
-            <ConnectForm defaultAudience={as} />
+            <Suspense fallback={<ConnectForm />}><ConnectWithParams /></Suspense>
           </div>
         </SectionReveal>
 

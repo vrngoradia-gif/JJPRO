@@ -1,3 +1,4 @@
+export const dynamic = "force-static";
 import type { MetadataRoute } from "next";
 import { siteMeta, footerLinks } from "@/lib/content";
 export default function sitemap(): MetadataRoute.Sitemap {
