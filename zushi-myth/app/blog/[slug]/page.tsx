@@ -11,7 +11,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
   const p = getPost((await params).slug); if (!p) notFound();
   const cta = clusterCta[p.cluster];
   const ld = [
-    { "@context": "https://schema.org", "@type": "Article", headline: p.title, description: p.description, author: { "@type": "Organization", name: "MYTH AI × ZUSHI" }, publisher: { "@type": "Organization", name: "MYTH AI × ZUSHI" }, mainEntityOfPage: `https://www.zushixmyth.com/blog/${p.slug}` },
+    { "@context": "https://schema.org", "@type": "Article", headline: p.title, description: p.description, datePublished: "2026-10", dateModified: "2026-10", author: { "@type": "Organization", name: "MYTH AI × ZUSHI" }, publisher: { "@type": "Organization", name: "MYTH AI × ZUSHI" }, mainEntityOfPage: `https://www.zushixmyth.com/blog/${p.slug}` },
     { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: p.faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
   ];
   const Cta = ({ where }: { where: string }) => (
@@ -23,10 +23,13 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
     <a href="/blog" className="text-sm text-neutral-500">← All insights</a>
     <p className="mt-6 text-xs font-bold tracking-widest text-neutral-400">{p.cluster.toUpperCase()}</p>
     <h1 className="mt-2 text-4xl md:text-5xl font-black tracking-tight">{p.title}</h1>
+    <p className="mt-3 text-sm text-neutral-500">MYTH AI × ZUSHI team · October 2026</p>
     <p className="mt-6 rounded-2xl bg-paper p-6 text-lg font-medium">{p.answer}</p>
-    {p.sections.map((s, i) => (<section key={s.h}><h2 className="mt-10 text-2xl font-black">{s.h}</h2>{s.p.map((t) => <p key={t} className="mt-4 leading-relaxed text-neutral-700">{t}</p>)}{i === 0 && <Cta where="mid" />}</section>))}
+    {p.sections.map((s) => (<section key={s.h}><h2 className="mt-10 text-2xl font-black">{s.h}</h2>{s.p.map((t) => <p key={t} className="mt-4 leading-relaxed text-neutral-700">{t}</p>)}</section>))}
     <h2 className="mt-12 text-2xl font-black">FAQ</h2>
     {p.faqs.map((f) => (<div key={f.q} className="mt-4"><h3 className="font-bold">{f.q}</h3><p className="mt-1 text-neutral-700">{f.a}</p></div>))}
+    {p.sources && p.sources.length > 0 && (<><h2 className="mt-12 text-2xl font-black">Sources</h2>
+    <ul className="mt-4 list-disc pl-5 text-neutral-700">{p.sources.map((src) => <li key={src.url}><a href={src.url} target="_blank" rel="noopener" className="underline">{src.label}</a></li>)}</ul></>)}
     <Cta where="end" />
   </main><Footer /></>);
 }

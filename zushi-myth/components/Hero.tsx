@@ -22,12 +22,7 @@ export default function Hero() {
             <WaButton location="hero" label="WhatsApp us" />
             <a href="#how-it-works" className="px-3 py-3 font-semibold underline underline-offset-4 decoration-black/30 hover:decoration-ink">See how it works</a>
           </motion.div>
-          <dl className="mt-10 grid max-w-xl grid-cols-3 gap-4 border-t border-black/15 pt-5">
-            {[["150+", "brands onboarded on MYTH AI"], ["200+", "clothing categories on ZUSHI"], ["20+", "factories onboarded, pre-launch"]].map(([n, l]) => (
-              <div key={n}><dt className="font-serif text-3xl">{n}</dt><dd className="mt-1 text-xs text-neutral-600">{l}</dd></div>
-            ))}
-          </dl>
-          <p className="mt-5 text-sm text-neutral-500">Designers still decide. The platforms remove the waiting.</p>
+          <p className="mt-8 text-sm text-neutral-500">Designers still decide. The platforms remove the waiting.</p>
         </div>
         <HeroGarment />
       </div>

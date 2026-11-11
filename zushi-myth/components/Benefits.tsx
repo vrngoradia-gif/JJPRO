@@ -3,9 +3,9 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 import { track } from "@/lib/track";
 export const tabs = {
-  "Brands & Retailers": ["Fewer physical sample rounds before you approve a design", "A factory-ready tech pack, not a mood board", "Choose factories on capacity, certifications and track record", "See every order stage without chasing anyone"],
+  "Brands & Retailers": ["Fewer physical sample rounds before you approve a design", "A factory-ready tech pack, not a mood board", "Factory choice on capacity, certifications and track record", "See every order stage without chasing anyone"],
   Manufacturers: ["Complete tech packs and production files up front", "Matched to global buyers whose orders fit your lines", "Manage RFQs, orders and updates from the ZUSHI factory app", "Use MYTH to show buyers new styles before you sample"],
-  "Buying Houses": ["Several clients' collections and orders in one place", "Show clients realistic visuals before any sampling", "Compare factories side by side on price, MOQ and lead time", "One record per order, from quote to shipment"],
+  "Buying Houses": ["Several clients' collections and orders in one place", "Realistic visuals to show clients before any sampling", "Compare factories side by side on price, MOQ and lead time", "One record per order, from quote to shipment"],
 } as const;
 export default function Benefits() {
   const keys = Object.keys(tabs) as (keyof typeof tabs)[];
