@@ -52,6 +52,7 @@ export default function AssistantWidget(props: AssistantProps) {
   const [current, setCurrent] = useState<Step | null>(questionnaire ? questionnaire.first : null);
   const [free, setFree] = useState("");
   const [sent, setSent] = useState<"idle" | "sending" | "ok" | "fail">("idle");
+  const [blocked, setBlocked] = useState(false); // true while a form overlaps the FAB band or a field has focus
   const endRef = useRef<HTMLDivElement>(null);
   const started = useRef(false);
 
@@ -119,6 +120,35 @@ export default function AssistantWidget(props: AssistantProps) {
     }
   }
 
+  useEffect(() => {
+    let raf = 0;
+    const check = () => {
+      raf = 0;
+      const band = { x: window.innerWidth - 110, y: window.innerHeight - 170, w: 110, h: 170 };
+      const active = document.activeElement;
+      const focused = !!active && /^(INPUT|TEXTAREA|SELECT)$/.test(active.tagName);
+      let overlap = false;
+      for (const form of Array.from(document.querySelectorAll("form"))) {
+        const r = form.getBoundingClientRect();
+        if (r.bottom > band.y && r.top < band.y + band.h && r.right > band.x) { overlap = true; break; }
+      }
+      setBlocked(focused || overlap);
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(check); };
+    check();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    document.addEventListener("focusin", onScroll);
+    document.addEventListener("focusout", onScroll);
+    return () => {
+      if (raf) cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      document.removeEventListener("focusin", onScroll);
+      document.removeEventListener("focusout", onScroll);
+    };
+  }, []);
+
   const css = {
     fab: {
       position: "fixed" as const, right: 20, zIndex: 60, width: 54, height: 54, borderRadius: 999, border: 0,
@@ -149,9 +179,9 @@ export default function AssistantWidget(props: AssistantProps) {
   return (
     <>
       <a href={wa} target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp"
-        style={{ ...css.fab, bottom: 86, background: "#25D366", color: "#fff" }}>{WA_ICON}</a>
+        style={{ ...css.fab, bottom: 86, background: "#25D366", color: "#fff", visibility: blocked && !open ? "hidden" : "visible", pointerEvents: blocked && !open ? "none" : "auto" }}>{WA_ICON}</a>
       <button type="button" aria-label={open ? "Close assistant" : "Open assistant"} aria-expanded={open} onClick={() => setOpen((o) => !o)}
-        style={{ ...css.fab, bottom: 20, background: "var(--aw-accent)", color: "var(--aw-accent-fg)" }}>
+        style={{ ...css.fab, bottom: 20, background: "var(--aw-accent)", color: "var(--aw-accent-fg)", visibility: blocked && !open ? "hidden" : "visible", pointerEvents: blocked && !open ? "none" : "auto" }}>
         {open ? (
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round"><path d="M6 6l12 12M18 6 6 18" /></svg>
         ) : (
