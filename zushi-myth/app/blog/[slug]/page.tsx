@@ -24,7 +24,7 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
     <p className="mt-6 text-xs font-bold tracking-widest text-neutral-400">{p.cluster.toUpperCase()}</p>
     <h1 className="mt-2 text-4xl md:text-5xl font-black tracking-tight">{p.title}</h1>
     <p className="mt-6 rounded-2xl bg-paper p-6 text-lg font-medium">{p.answer}</p>
-    {p.sections.map((s, i) => (<section key={s.h}><h2 className="mt-10 text-2xl font-black">{s.h}</h2>{s.p.map((t) => <p key={t} className="mt-4 leading-relaxed text-neutral-700">{t}</p>)}{i === 0 && <Cta where="mid" />}</section>))}
+    {p.sections.map((s) => (<section key={s.h}><h2 className="mt-10 text-2xl font-black">{s.h}</h2>{s.p.map((t) => <p key={t} className="mt-4 leading-relaxed text-neutral-700">{t}</p>)}</section>))}
     <h2 className="mt-12 text-2xl font-black">FAQ</h2>
     {p.faqs.map((f) => (<div key={f.q} className="mt-4"><h3 className="font-bold">{f.q}</h3><p className="mt-1 text-neutral-700">{f.a}</p></div>))}
     <Cta where="end" />

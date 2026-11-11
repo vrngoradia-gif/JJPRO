@@ -18,6 +18,11 @@ export default function ChatWidget() {
   ]);
   const end = useRef<HTMLDivElement>(null);
   useEffect(() => { end.current?.scrollIntoView({ block: "end" }); }, [msgs, open]);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setOpen(false); };
+    window.addEventListener("keydown", onKey); return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
   function pick(i: Item) {
     track("chatbot_question", { q: i.label });
     setMsgs((m) => [...m, { from: "user", text: i.label }, { from: "bot", text: i.answer, cta: i.cta }]);
@@ -25,7 +30,7 @@ export default function ChatWidget() {
   return (
     <>
       {open && (
-        <div role="dialog" aria-label="MYTH x ZUSHI assistant" className="fixed right-3 sm:right-5 bottom-[116px] sm:bottom-[150px] z-[60] flex w-[340px] max-w-[calc(100vw-40px)] flex-col overflow-hidden rounded-3xl border border-black/10 bg-white shadow-2xl" style={{ maxHeight: "min(540px, calc(100vh - 180px))" }}>
+        <div role="dialog" aria-label="MYTH x ZUSHI assistant" className="fixed right-3 sm:right-5 bottom-[68px] sm:bottom-[86px] z-[60] flex w-[340px] max-w-[calc(100vw-40px)] flex-col overflow-hidden rounded-3xl border border-black/10 bg-white shadow-2xl" style={{ maxHeight: "min(540px, calc(100vh - 180px))" }}>
           <div className="flex items-center justify-between bg-ink px-4 py-3 text-white">
             <div><p className="text-sm font-bold">MYTH × ZUSHI assistant</p><p className="text-xs text-white/60">Quick answers, no signup</p></div>
             <button onClick={() => setOpen(false)} aria-label="Close" className="text-2xl leading-none text-white/70 hover:text-white">×</button>

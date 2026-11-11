@@ -67,14 +67,14 @@ export default function HeroGarment() {
                 className="absolute inset-0 h-full w-full object-cover" style={{ opacity: frame === i ? 1 : 0, transition: "opacity .12s linear" }} />
             ))}
             <span className="absolute bottom-3 left-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold">Illustrative</span>
-            <span className="absolute right-3 top-3 rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold tabular-nums">{Math.round(angle)}°</span>
           </div>
           {/* stage chips (orbit on desktop) */}
           {STAGES.map((s, i) => {
             const on = i === active;
+            if (!on) return null;
             return (
-              <div key={s.title} className={`pointer-events-none absolute hidden w-[15rem] lg:block ${POS[i]}`} style={{ transform: `translateZ(${DEPTH[i] + (on ? 40 : 0)}px)`, transition: "transform .4s" }}>
-                <div className={`border bg-[#fbf6ec] p-3 shadow-xl transition ${on ? (s.owner === "MYTH" ? "border-myth" : "border-zushi") : "border-black/10 opacity-80"}`}>
+              <div key={s.title} className={`pointer-events-none absolute hidden w-[13rem] lg:block ${POS[i]}`} style={{ transform: `translateZ(${DEPTH[i] + 40}px)`, transition: "transform .4s" }}>
+                <div className={`border bg-[#fbf6ec] p-3 shadow-xl transition ${s.owner === "MYTH" ? "border-myth" : "border-zushi"}`}>
                   <p className={`text-[10px] font-bold tracking-widest ${s.owner === "MYTH" ? "text-myth" : "text-zushi"}`}>0{i + 1} · {s.owner}</p>
                   <p className="mt-1 font-serif text-lg leading-tight text-ink">{s.title}</p>
                   <p className="mt-1 text-xs text-neutral-600">{s.line}</p>

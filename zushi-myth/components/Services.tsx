@@ -2,8 +2,8 @@ import Reveal from "./Reveal";
 const lifecycle = [
   ["Trend & brief", "Start from a trend, a sketch or a photo.", "MYTH"],
   ["Design as a service", "Collections, patterns and colourways created with MYTH.", "MYTH"],
-  ["Material sourcing", "Fabric and trims specified in the tech pack, then sourced through ZUSHI's factory network.", "ZUSHI"],
   ["Digital sampling", "Visuals and product photos before anything is cut.", "MYTH"],
+  ["Material sourcing", "Fabric and trims specified in the tech pack, then sourced through ZUSHI's factory network.", "ZUSHI"],
   ["Factory match & RFQ", "Quotes compared on price, MOQ and lead time.", "ZUSHI"],
   ["Production & QC", "Stage tracking, delay alerts and quality checks.", "ZUSHI"],
   ["Shipment & documents", "Tracking, documents and insurance in one place.", "ZUSHI"],

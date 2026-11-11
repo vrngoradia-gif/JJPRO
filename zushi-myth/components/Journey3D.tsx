@@ -9,7 +9,7 @@ const stops: Stop[] = [
   { owner: "MYTH", title: "Digital sample and visuals", sub: "MYTH Studio", get: ["AI product photos, models and video", "No physical sample"], img: "/img/m-dress.jpg" },
   { owner: "MYTH", title: "Factory-ready files", sub: "MYTH PLM", get: ["Tech pack and BOM", "Vector/TIFF and colour separation"], img: "/img/z-techpack.jpg" },
   { owner: "HANDOFF", title: "Send to ZUSHI", sub: "Handoff", get: ["The tech pack becomes an RFQ"], soon: true },
-  { owner: "ZUSHI", title: "Match verified factories", sub: "ZUSHI AI", get: ["Fit on product, MOQ, price and timeline", "Trade checks by Dun & Bradstreet"], img: "/img/factory.jpg" },
+  { owner: "ZUSHI", title: "Match verified factories", sub: "ZUSHI AI", get: ["Fit on product, MOQ, price and timeline", "Trade checks by Dun & Bradstreet", "Fabric and trims sourced through the network"], img: "/img/factory.jpg" },
   { owner: "ZUSHI", title: "Quote, book a slot, order", sub: "ZUSHI", get: ["Compare quotes on price, MOQ and lead time", "Lock a production window"], img: "/img/z-woman.jpg" },
   { owner: "ZUSHI", title: "Track production and QC", sub: "ZUSHI", get: ["Stage tracking and delay alerts", "AI quality check"], img: "/img/z-sewing.jpg" },
   { owner: "ZUSHI", title: "Ship and release payment", sub: "ZUSHI", get: ["Shipment tracking, documents and insurance", "Escrow by milestone"], img: "/img/ship.jpg" },
@@ -114,12 +114,14 @@ export default function Journey3D() {
                 {s.soon && <span className="mt-3 inline-block bg-ink px-2 py-0.5 font-sans text-[10px] font-semibold text-white">Coming soon</span>}
               </motion.div>
           </div>
-          <div className="absolute inset-x-0 bottom-3 z-20 mx-auto flex max-w-7xl items-center gap-2 px-5">
+          <div className="absolute inset-x-0 bottom-3 z-20 mx-auto flex max-w-7xl items-center gap-2 px-5 pr-20 sm:pr-24">
             <span className="font-sans text-xs font-semibold tabular-nums text-neutral-600">{String(active + 1).padStart(2, "0")} / {String(N).padStart(2, "0")}</span>
             <div role="tablist" aria-label="Journey stops" className="flex flex-1 items-center gap-1.5">
               {stops.map((x, i) => (
                 <button key={x.title} role="tab" aria-selected={i === active} aria-label={`Go to stop ${i + 1}: ${x.title}`} onClick={() => jump(i)}
-                  className={`h-2 flex-1 transition-all ${i === active ? "bg-ink" : i < active ? "bg-[#c9a96a]" : "bg-black/15 hover:bg-black/30"}`} />
+                  className="flex flex-1 items-center py-2.5">
+                  <span className={`h-2 w-full transition-all ${i === active ? "bg-ink" : i < active ? "bg-[#c9a96a]" : "bg-black/15 hover:bg-black/30"}`} />
+                </button>
               ))}
             </div>
             <span className="hidden font-sans text-xs text-neutral-500 sm:inline">Scroll or click a stop</span>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
-import WhatsAppFab from "@/components/WhatsAppFab";
 import ChatWidget from "@/components/ChatWidget";
 import LeadPopup from "@/components/LeadPopup";
 import CursorGlow from "@/components/CursorGlow";
@@ -12,7 +11,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: { default: "MYTH AI × ZUSHI: design it digitally, get it made by a verified factory", template: "%s | MYTH AI × ZUSHI" },
   description: "MYTH AI creates the fashion product digitally. ZUSHI matches it to a verified factory and tracks production, quality and shipment. One line from sketch to shipment.",
-  openGraph: { title: "MYTH AI × ZUSHI", description: "One line from sketch to shipment.", url: SITE, type: "website" },
+  openGraph: { title: "MYTH AI × ZUSHI", description: "One line from sketch to shipment.", url: SITE, type: "website", images: [{ url: "/img/og.jpg", width: 1200, height: 630, alt: "MYTH AI × ZUSHI: design it digitally, get it made by a verified factory" }] },
+  twitter: { card: "summary_large_image", title: "MYTH AI × ZUSHI", description: "One line from sketch to shipment.", images: ["/img/og.jpg"] },
   alternates: { canonical: "/" },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <script dangerouslySetInnerHTML={{ __html: `!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','${process.env.NEXT_PUBLIC_META_PIXEL_ID}');fbq('track','PageView');` }} />
         )}
         {children}
-        <WhatsAppFab /><ChatWidget /><LeadPopup />
+        <ChatWidget /><LeadPopup />
       </body>
     </html>
   );

@@ -39,13 +39,13 @@ export default function Contact() {
           <input name="name" required placeholder="Full name" className={f} />
           <input name="email" type="email" required placeholder="Work email" className={f} />
           <input name="company" required placeholder="Company" className={f} />
-          <select name="role" required value={role} onChange={(e) => setRole(e.target.value)} className={f}>
+          <select name="role" required value={role} onChange={(e) => setRole(e.target.value)} className={`${f} sm:col-span-2`}>
             <option value="" disabled className="text-black">Role</option>{roles.map((r) => <option key={r} className="text-black">{r}</option>)}
           </select>
-          <select name="country" required defaultValue="" className={f}>
+          <select name="country" required defaultValue="" className={`${f} sm:col-span-2`}>
             <option value="" disabled className="text-black">Country</option>{countries.map((c) => <option key={c} className="text-black">{c}</option>)}
           </select>
-          <select name="monthly_volume" defaultValue="" className={f}>
+          <select name="monthly_volume" defaultValue="" className={`${f} sm:col-span-2`}>
             <option value="" className="text-black">Monthly volume (optional)</option>{["<5k pcs", "5k-50k", "50k+", "Not sure"].map((v) => <option key={v} className="text-black">{v}</option>)}
           </select>
           <fieldset className="sm:col-span-2 flex flex-wrap gap-4 text-sm">

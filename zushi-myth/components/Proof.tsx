@@ -1,7 +1,6 @@
 import Reveal from "./Reveal";
 import CountUp from "./CountUp";
-const base = "https://myth-ai.com/wp-content/uploads/";
-const logos = [["Koton", "2025/12/koton9388-150x150.jpg"], ["Mavi", "2025/12/mavi-logo-png_seeklogo-168440-150x150.png"], ["Lee Cooper", "2026/05/lee-cooper.jpg"], ["Zorlu", "2025/12/Zorlu-Logo-150x150.png"]];
+const logos = [["Koton", "/img/logos/koton.png"], ["Mavi", "/img/logos/mavi.svg"], ["Lee Cooper", "/img/logos/lee-cooper.png"], ["Zorlu", "/img/logos/zorlu.svg"]];
 export default function Proof() {
   return (
     <section id="proof" className="py-24">
@@ -16,7 +15,7 @@ export default function Proof() {
             <div className="mt-4 grid grid-cols-4 gap-3">
               {logos.map(([n, p]) => (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img key={n} src={base + p} alt={n} loading="lazy" className="aspect-square w-full bg-white object-contain p-2 grayscale transition hover:grayscale-0" />
+                <img key={n} src={p} alt={n} loading="lazy" className="aspect-square w-full bg-white object-contain p-2 grayscale transition hover:grayscale-0" />
               ))}
             </div>
           </Reveal>
