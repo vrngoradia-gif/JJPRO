@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { waLink } from "@/lib/wa";
 import { track } from "@/lib/track";
 type Cta = { label: string; href: string };
@@ -17,6 +18,8 @@ export default function ChatWidget() {
     { from: "bot", text: "Hi! I can answer quick questions about MYTH AI x ZUSHI. Pick one below, or chat with us on WhatsApp." },
   ]);
   const [hidden, setHidden] = useState(false);
+  const pathname = usePathname();
+  const readingPage = /^\/(privacy|terms|blog\/[^/]+)/.test(pathname || "");
   const end = useRef<HTMLDivElement>(null);
   useEffect(() => { end.current?.scrollIntoView({ block: "end" }); }, [msgs, open]);
   // Keep the fixed assistant clear of interactive content: hide it while the
@@ -45,7 +48,7 @@ export default function ChatWidget() {
   }
   return (
     <>
-      {!hidden && open && (
+      {!hidden && !readingPage && open && (
         <div role="dialog" aria-label="MYTH x ZUSHI assistant" className="fixed right-3 sm:right-5 bottom-[68px] sm:bottom-[86px] z-[60] flex w-[340px] max-w-[calc(100vw-40px)] flex-col overflow-hidden rounded-3xl border border-black/10 bg-white shadow-2xl" style={{ maxHeight: "min(540px, calc(100vh - 180px))" }}>
           <div className="flex items-center justify-between bg-ink px-4 py-3 text-white">
             <div><p className="text-sm font-bold">MYTH × ZUSHI assistant</p><p className="text-xs text-white/60">Quick answers, no signup</p></div>
@@ -68,7 +71,7 @@ export default function ChatWidget() {
           </div>
         </div>
       )}
-      {!hidden && <button onClick={() => { setOpen(!open); track("chatbot_toggle", { open: String(!open) }); }} aria-label="Open assistant"
+      {!hidden && !readingPage && <button onClick={() => { setOpen(!open); track("chatbot_toggle", { open: String(!open) }); }} aria-label="Open assistant"
         className="fixed right-3 bottom-3 sm:right-5 sm:bottom-5 z-[60] flex h-[44px] w-[44px] sm:h-[54px] sm:w-[54px] items-center justify-center rounded-full bg-ink text-white shadow-2xl transition-transform hover:scale-105">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z" /></svg>
       </button>}
