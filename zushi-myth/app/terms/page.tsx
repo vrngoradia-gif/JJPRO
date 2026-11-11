@@ -7,7 +7,7 @@ const sections: [string, string[]][] = [
   ["Our content", ["The text, visuals and branding on this site belong to MYTH AI and ZUSHI or their licensors. Product screenshots are illustrative. You may share the link; you may not copy the site's content for your own commercial use without permission."]],
   ["No warranties", ["The site is provided as is. We work to keep it accurate and available but do not warrant that it is complete, error-free or uninterrupted. To the extent permitted by law, we are not liable for decisions made based on this site's content."]],
   ["External sites", ["Links to myth-ai.com, withzushi.com, LinkedIn and WhatsApp lead to sites with their own terms and privacy notices."]],
-  ["Governing law", ["These terms are governed by the laws of India. Contact for any question about these terms: admin@withzushi.com. Last updated: November 2026."]],
+  ["Questions", ["Contact for any question about these terms: admin@withzushi.com. Last updated: November 2026."]],
 ];
 export default function T() { return (<><Nav /><main className="mx-auto max-w-3xl px-5 pt-32 pb-24"><h1 className="text-4xl font-black">Terms of use</h1>
   {sections.map(([h, ps]) => (<section key={h}><h2 className="mt-10 text-2xl font-black">{h}</h2>{ps.map((t) => <p key={t} className="mt-3 leading-relaxed text-neutral-700">{t}</p>)}</section>))}
