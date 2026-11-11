@@ -28,6 +28,8 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
     {p.sections.map((s) => (<section key={s.h}><h2 className="mt-10 text-2xl font-black">{s.h}</h2>{s.p.map((t) => <p key={t} className="mt-4 leading-relaxed text-neutral-700">{t}</p>)}</section>))}
     <h2 className="mt-12 text-2xl font-black">FAQ</h2>
     {p.faqs.map((f) => (<div key={f.q} className="mt-4"><h3 className="font-bold">{f.q}</h3><p className="mt-1 text-neutral-700">{f.a}</p></div>))}
+    {p.sources && p.sources.length > 0 && (<><h2 className="mt-12 text-2xl font-black">Sources</h2>
+    <ul className="mt-4 list-disc pl-5 text-neutral-700">{p.sources.map((src) => <li key={src.url}><a href={src.url} target="_blank" rel="noopener" className="underline">{src.label}</a></li>)}</ul></>)}
     <Cta where="end" />
   </main><Footer /></>);
 }
