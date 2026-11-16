@@ -19,13 +19,10 @@ export const siteMeta = {
 };
 
 export const contact = {
-  email: "india@myth-ai.com",
-  // TODO: replace with real WhatsApp Business number
-  // Set NEXT_PUBLIC_WHATSAPP_NUMBER (digits with country code) in Vercel
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ? "+" + process.env.NEXT_PUBLIC_WHATSAPP_NUMBER.replace(/[^0-9]/g, "") : "WhatsApp",
-  whatsappHref: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER
-    ? `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP_NUMBER.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi Myth AI, I would like to share a brief.")}`
-    : `https://api.whatsapp.com/send?text=${encodeURIComponent("Hi Myth AI, I would like to share a brief.")}`,
+  email: "sales@myth-ai.com",
+  // WhatsApp Business number (digits with country code); override with NEXT_PUBLIC_WHATSAPP_NUMBER
+  whatsapp: "+" + (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414").replace(/[^0-9]/g, ""),
+  whatsappHref: `https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414").replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi Myth AI, I would like to share a brief.")}`,
   // TODO: replace with real Mumbai office address
   office: "Mumbai, Maharashtra, India",
 };

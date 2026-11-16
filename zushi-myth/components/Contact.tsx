@@ -2,6 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/track";
 import { WaButton } from "./WhatsAppFab";
+// Enquiries go browser-direct to FormSubmit (recipient sales@myth-ai.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
+const LEAD_ENDPOINT = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/sales@myth-ai.com";
 const roles = ["Brand / Retailer", "Manufacturer / Export house", "Buying house / Agent", "Other"];
 const roleFromTab: Record<string, string> = { "Brands & Retailers": roles[0], Manufacturers: roles[1], "Buying Houses": roles[2] };
 const countries = ["India","United Arab Emirates","United Kingdom","Spain","Germany","Italy","France","Netherlands","Turkey","Brazil","Panama","United States","Canada","Bangladesh","Vietnam","Other"];
@@ -21,8 +23,9 @@ export default function Contact() {
     e.preventDefault(); setState("sending");
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
     try {
-      const r = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(data) });
-      if (!r.ok) throw new Error();
+      const r = await fetch(LEAD_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ ...data, _subject: `MYTH x ZUSHI demo request: ${data.company || data.name} (${data.interest || ""})`, _replyto: data.email, _template: "table", _captcha: "false" }) });
+      const j = await r.clone().json().catch(() => null);
+      if (!r.ok || (j && String(j.success) === "false")) throw new Error();
       track("form_submit"); window.location.href = "/thank-you";
     } catch { setState("error"); }
   }
@@ -56,7 +59,7 @@ export default function Contact() {
           {Object.entries(utm).map(([k, v]) => <input key={k} type="hidden" name={k} value={v} />)}
           <label className="sm:col-span-2 flex items-start gap-3 text-xs text-neutral-600"><input type="checkbox" name="consent" required className="mt-0.5 shrink-0" /><span>I agree to be contacted by MYTH AI and ZUSHI about this request and accept the <a href="/privacy" className="underline">privacy notice</a>.</span></label>
           <button disabled={state === "sending"} onClick={() => track("cta_demo_click", { location: "final" })} className="sm:col-span-2 rounded-full bg-ink px-6 py-3 font-bold text-white hover:bg-neutral-800 disabled:opacity-60">{state === "sending" ? "Sending..." : "Book a joint demo"}</button>
-          {state === "error" && <p className="sm:col-span-2 text-sm text-red-700">Something went wrong. Please try again or email admin@withzushi.com.</p>}
+          {state === "error" && <p className="sm:col-span-2 text-sm text-red-700">Something went wrong. Please try again or email sales@myth-ai.com.</p>}
         </form>
       </div>
     </section>

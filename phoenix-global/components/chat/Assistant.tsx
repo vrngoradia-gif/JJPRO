@@ -15,7 +15,7 @@ export default function Assistant() {
       brand="Merovant"
       subtitle="Automated assistant"
       greeting="Hello, I'm the Merovant assistant. What are you looking for?"
-      whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
+      whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414"}
       whatsappText="Hello, I found you through the Merovant website and would like a quote."
       menu={menu}
     />

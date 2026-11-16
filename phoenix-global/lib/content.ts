@@ -13,10 +13,9 @@ export const siteMeta = {
 };
 
 export const contactInfo = {
-  // PLACEHOLDER: confirm all contact details
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@phoenixglobal.biz",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "sales@myth-ai.com",
   phone: process.env.NEXT_PUBLIC_PHONE || "",
-  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "",
+  whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414",
   offices: [
     { place: "India (head office)", detail: "Address to be confirmed" },
     { place: "China", detail: "Address to be confirmed" },

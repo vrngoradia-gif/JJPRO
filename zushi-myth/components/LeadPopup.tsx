@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import { track } from "@/lib/track";
 const KEY = "zm_lead_popup";
+// Enquiries go browser-direct to FormSubmit (recipient sales@myth-ai.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
+const LEAD_ENDPOINT = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/sales@myth-ai.com";
 export default function LeadPopup() {
   const [open, setOpen] = useState(false);
   const [state, setState] = useState<"idle" | "sending" | "ok" | "error">("idle");
@@ -16,8 +18,9 @@ export default function LeadPopup() {
     e.preventDefault(); setState("sending");
     const d = Object.fromEntries(new FormData(e.currentTarget).entries());
     try {
-      const r = await fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...d, interest: "Popup enquiry", source: "popup_60s", page: window.location.pathname }) });
-      if (!r.ok) throw new Error();
+      const r = await fetch(LEAD_ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ ...d, interest: "Popup enquiry", source: "popup_60s", page: window.location.pathname, _subject: `MYTH x ZUSHI popup lead: ${d.company || d.name}`, _replyto: d.email, _template: "table", _captcha: "false" }) });
+      const j = await r.clone().json().catch(() => null);
+      if (!r.ok || (j && String(j.success) === "false")) throw new Error();
       sessionStorage.setItem(KEY, "1"); track("form_submit", { source: "popup" }); setState("ok");
     } catch { setState("error"); }
   }
@@ -42,7 +45,7 @@ export default function LeadPopup() {
                 <input name="phone" type="tel" required placeholder="Phone (with country code)" className={f} />
                 <textarea name="use_case" required rows={2} placeholder="Use case (e.g. 5,000 polos for a UK retailer)" className={f} />
                 <button disabled={state === "sending"} className="rounded-full bg-ink px-6 py-3 font-bold text-white hover:bg-neutral-800 disabled:opacity-60">{state === "sending" ? "Sending..." : "Talk to us"}</button>
-                {state === "error" && <p className="text-sm text-red-600">Something went wrong. Please try again or email admin@withzushi.com.</p>}
+                {state === "error" && <p className="text-sm text-red-600">Something went wrong. Please try again or email sales@myth-ai.com.</p>}
                 <p className="text-[11px] text-neutral-500">By submitting you agree to be contacted about this request. <a href="/privacy" className="underline">Privacy</a></p>
               </form>
             </>

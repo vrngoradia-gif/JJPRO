@@ -1,6 +1,6 @@
 // Cloudflare Pages advanced-mode worker. Serves the static export and reproduces
 // the former Next.js /api/lead route (POST, JSON) so forms keep working unchanged.
-// Leads go to LEAD_TO_EMAIL (default jigjn14@gmail.com) through FormSubmit.co,
+// Leads go to LEAD_TO_EMAIL (default sales@myth-ai.com) through FormSubmit.co,
 // or to LEAD_WEBHOOK_URL when set.
 function json(body, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
@@ -9,7 +9,7 @@ function json(body, status = 200) {
 async function handleLead(request, env) {
   const body = await request.json().catch(() => null);
   if (!body || !body.email || !body.name) return json({ ok: false }, 400);
-  const to = env.LEAD_TO_EMAIL || "jigjn14@gmail.com";
+  const to = env.LEAD_TO_EMAIL || "sales@myth-ai.com";
   const url = env.LEAD_WEBHOOK_URL || `https://formsubmit.co/ajax/${to}`;
   const payload = { ...body, _subject: `MYTH x ZUSHI ${body.source === "popup_60s" ? "popup lead" : "demo request"}: ${body.company || body.name} (${body.interest || ""})`, _replyto: body.email, _template: "table", _captcha: "false" };
   try {

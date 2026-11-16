@@ -1,5 +1,5 @@
 // WhatsApp number comes from env (digits with country code). Same pattern as the other JJ sites.
-const NUM = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "").replace(/[^0-9]/g, "");
+const NUM = (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414").replace(/[^0-9]/g, "");
 export function waLink(text = "Hi, I'd like to talk about MYTH AI x ZUSHI (design + sourcing + production).") {
   const q = encodeURIComponent(text);
   return NUM ? `https://wa.me/${NUM}?text=${q}` : `https://api.whatsapp.com/send?text=${q}`;

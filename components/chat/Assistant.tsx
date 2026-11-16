@@ -14,7 +14,7 @@ export default function Assistant() {
       brand="JJ PRO"
       subtitle="Automated assistant"
       greeting="Hi, I'm the JJ PRO assistant. What can I help with?"
-      whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
+      whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414"}
       whatsappText="Hi, I found you through the JJ PRO website and would like to talk."
       menu={menu}
     />

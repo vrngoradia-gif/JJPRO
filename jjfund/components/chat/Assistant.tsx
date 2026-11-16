@@ -49,7 +49,7 @@ export default function Assistant() {
       brand="Avenor Nexus"
       subtitle="Quick questionnaire"
       greeting="Hi, I'm the Avenor Nexus assistant."
-      whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER}
+      whatsappNumber={process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414"}
       whatsappText="Hi, I found you through the Avenor Nexus website and would like to talk."
       menu={[]}
       questionnaire={questionnaire}
