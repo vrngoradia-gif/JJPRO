@@ -19,7 +19,7 @@ export const siteMeta = {
 };
 
 export const contact = {
-  email: "sales@myth-ai.com",
+  email: "india@myth-ai.com",
   // WhatsApp Business number (digits with country code); override with NEXT_PUBLIC_WHATSAPP_NUMBER
   whatsapp: "+" + (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414").replace(/[^0-9]/g, ""),
   whatsappHref: `https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414").replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi Myth AI, I would like to share a brief.")}`,

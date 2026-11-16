@@ -11,8 +11,8 @@ const label = "mb-2 block text-xs uppercase tracking-widest text-paper-dim";
 export default function InquiryForm({ defaultType = "buyer" }: { defaultType?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   // PLACEHOLDER: set NEXT_PUBLIC_FORMSPREE_ID in Vercel. File attachments need a Formspree plan that supports uploads.
-  // Enquiries go browser-direct to FormSubmit (recipient sales@myth-ai.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
-  const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/sales@myth-ai.com";
+  // Enquiries go browser-direct to FormSubmit (recipient jigjn14@gmail.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
+  const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/jigjn14@gmail.com";
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
