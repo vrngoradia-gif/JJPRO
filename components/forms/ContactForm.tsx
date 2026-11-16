@@ -27,8 +27,8 @@ export default function ContactForm({
 }) {
   const [status, setStatus] = useState<Status>("idle");
 
-  // Enquiries go browser-direct to FormSubmit (recipient sales@myth-ai.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
-  const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/sales@myth-ai.com";
+  // Enquiries go browser-direct to FormSubmit (recipient jigjn14@gmail.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
+  const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/jigjn14@gmail.com";
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
