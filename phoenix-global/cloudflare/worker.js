@@ -1,6 +1,6 @@
 // Cloudflare Pages advanced-mode worker. Serves the static export and reproduces
 // the former Next.js /api/lead route (POST) so forms keep working unchanged.
-// Leads go to LEAD_TO_EMAIL (default jigjn14@gmail.com) through FormSubmit.co.
+// Leads go to LEAD_TO_EMAIL (default sales@myth-ai.com) through FormSubmit.co.
 const SITE = "Merovant";
 const SITE_URL = "https://merovant.co";
 
@@ -9,7 +9,7 @@ function json(body, status = 200) {
 }
 
 async function handleLead(request, env) {
-  const to = env.LEAD_TO_EMAIL || "jigjn14@gmail.com";
+  const to = env.LEAD_TO_EMAIL || "sales@myth-ai.com";
   const siteUrl = env.SITE_URL || SITE_URL;
   const type = request.headers.get("content-type") || "";
   const out = new FormData();

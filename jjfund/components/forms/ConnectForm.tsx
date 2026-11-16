@@ -9,9 +9,8 @@ type Status = "idle" | "submitting" | "success" | "error";
 export default function ConnectForm({ defaultAudience }: { defaultAudience?: string }) {
   const [status, setStatus] = useState<Status>("idle");
 
-  // Form service ID comes from NEXT_PUBLIC_FORMSPREE_ID. Enquiries are delivered to the address set on that Formspree form (jignesh@myth-ai.com, see .env.example).
-  const formspreeId = "lead"; // posts to /api/lead (FormSubmit)
-  const endpoint = "/api/lead";
+  // Enquiries go browser-direct to FormSubmit (recipient sales@myth-ai.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
+  const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/sales@myth-ai.com";
 
   const initialAudience = connect.audienceOptions.some((o) => o.value === defaultAudience)
     ? defaultAudience
@@ -21,10 +20,12 @@ export default function ConnectForm({ defaultAudience }: { defaultAudience?: str
     e.preventDefault();
     setStatus("submitting");
 
-    if (!formspreeId) { setStatus("error"); return; }
     const formData = new FormData(e.currentTarget);
     formData.append("_subject", `New enquiry from ${window.location.hostname}`);
     formData.append("_site", window.location.hostname);
+    formData.append("_template", "table");
+    formData.append("_captcha", "false");
+    formData.append("_replyto", String(formData.get("email") || ""));
 
     try {
       const res = await fetch(endpoint, {
@@ -33,7 +34,8 @@ export default function ConnectForm({ defaultAudience }: { defaultAudience?: str
         headers: { Accept: "application/json" },
       });
 
-      if (res.ok) {
+      const j = await res.clone().json().catch(() => null);
+      if (res.ok && (!j || String(j.success) !== "false")) {
         setStatus("success");
         e.currentTarget.reset();
       } else {

@@ -28,10 +28,9 @@ export const navLinks = [
 
 export const footerLinks = {
   contact: {
-    // TODO: replace with real client content — confirm official emails
-    email: "hello@jjfund.com",
-    investor: "invest@jjfund.com",
-    partner: "partners@jjfund.com",
+    email: "sales@myth-ai.com",
+    investor: "sales@myth-ai.com",
+    partner: "sales@myth-ai.com",
   },
   socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/jignesh1409/" }],
   sitemap: [
@@ -349,9 +348,8 @@ export const connect = {
   },
   directEmail: {
     heading: "Prefer email?",
-    // TODO: replace with real client content — confirm official emails
-    founder: "hello@jjfund.com",
-    investor: "invest@jjfund.com",
-    partner: "partners@jjfund.com",
+    founder: "sales@myth-ai.com",
+    investor: "sales@myth-ai.com",
+    partner: "sales@myth-ai.com",
   },
 };

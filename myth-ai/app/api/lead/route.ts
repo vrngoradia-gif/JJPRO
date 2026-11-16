@@ -1,13 +1,13 @@
 import { NextResponse } from "next/server";
 
-// Enquiries are emailed to LEAD_TO_EMAIL (default jigjn14@gmail.com) through FormSubmit.co.
+// Enquiries are emailed to LEAD_TO_EMAIL (default sales@myth-ai.com) through FormSubmit.co.
 // FormSubmit needs a one-time activation per address: the first submission sends a
 // confirmation email to it. Set LEAD_TO_EMAIL in Vercel to change the recipient.
 const SITE = "MYTH AI India";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://myth-ai.com";
 
 export async function POST(req: Request) {
-  const to = process.env.LEAD_TO_EMAIL || "jigjn14@gmail.com";
+  const to = process.env.LEAD_TO_EMAIL || "sales@myth-ai.com";
   const type = req.headers.get("content-type") || "";
   const out = new FormData();
   try {

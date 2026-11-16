@@ -11,16 +11,23 @@ const label = "mb-2 block text-xs uppercase tracking-widest text-paper-dim";
 export default function InquiryForm({ defaultType = "buyer" }: { defaultType?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   // PLACEHOLDER: set NEXT_PUBLIC_FORMSPREE_ID in Vercel. File attachments need a Formspree plan that supports uploads.
-  const formspreeId = "lead"; // posts to /api/lead (FormSubmit)
+  // Enquiries go browser-direct to FormSubmit (recipient sales@myth-ai.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
+  const endpoint = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/sales@myth-ai.com";
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!formspreeId) { setStatus("error"); return; }
     setStatus("submitting");
     const form = e.currentTarget;
     try {
-      const res = await fetch("/api/lead", { method: "POST", body: (() => { const fd = new FormData(form); fd.append("_subject", `New enquiry from ${window.location.hostname}`); fd.append("_site", window.location.hostname); return fd; })(), headers: { Accept: "application/json" } });
-      if (res.ok) { setStatus("success"); form.reset(); } else setStatus("error");
+      const fd = new FormData(form);
+      fd.append("_subject", `New enquiry from ${window.location.hostname}`);
+      fd.append("_site", window.location.hostname);
+      fd.append("_template", "table");
+      fd.append("_captcha", "false");
+      fd.append("_replyto", String(fd.get("email") || ""));
+      const res = await fetch(endpoint, { method: "POST", body: fd, headers: { Accept: "application/json" } });
+      const j = await res.clone().json().catch(() => null);
+      if (res.ok && (!j || String(j.success) !== "false")) { setStatus("success"); form.reset(); } else setStatus("error");
     } catch { setStatus("error"); }
   }
 
@@ -52,7 +59,7 @@ export default function InquiryForm({ defaultType = "buyer" }: { defaultType?: s
       <button type="submit" disabled={status === "submitting"} className="w-full rounded-full bg-accent px-8 py-3.5 text-sm tracking-wide text-white transition-colors hover:bg-accent-bright disabled:opacity-60">
         {status === "submitting" ? "Sending..." : "Send enquiry"}
       </button>
-      {status === "error" && <p className="text-sm text-red-700">{formspreeId ? "That did not go through. Please try again or use WhatsApp." : "The enquiry form is not connected yet. Please use WhatsApp or email for now."}</p>}
+      {status === "error" && <p className="text-sm text-red-700">That did not go through. Please try again or use WhatsApp.</p>}
     </form>
   );
 }
