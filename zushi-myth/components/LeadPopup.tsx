@@ -2,8 +2,8 @@
 import { useEffect, useState } from "react";
 import { track } from "@/lib/track";
 const KEY = "zm_lead_popup";
-// Enquiries go browser-direct to FormSubmit (recipient sales@myth-ai.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
-const LEAD_ENDPOINT = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/sales@myth-ai.com";
+// Enquiries go browser-direct to FormSubmit (recipient jigjn14@gmail.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
+const LEAD_ENDPOINT = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/jigjn14@gmail.com";
 export default function LeadPopup() {
   const [open, setOpen] = useState(false);
   const [state, setState] = useState<"idle" | "sending" | "ok" | "error">("idle");
