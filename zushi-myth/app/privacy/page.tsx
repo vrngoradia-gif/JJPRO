@@ -1,15 +1,55 @@
-import Nav from "@/components/Nav"; import Footer from "@/components/Footer";
-export const metadata = { title: "Privacy" };
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+export const metadata = { title: "Privacy notice", alternates: { canonical: "/privacy" } };
 const sections: [string, string[]][] = [
-  ["Who we are", ["This website is operated jointly by the MYTH AI and ZUSHI teams (\"we\", \"us\"). It introduces the combined MYTH AI × ZUSHI offering and lets you request a demo or contact the teams. You can reach us about anything on this page at sales@myth-ai.com."]],
-  ["What we collect", ["If you fill in the contact form or the demo popup, we collect the details you enter: your name, work email, company, role, country, phone number (popup only), expected monthly volume and your message (where you choose to add them).", "If you continue to WhatsApp, your conversation there is handled by WhatsApp under its own privacy policy."]],
-  ["How we use it", ["We use these details only to respond to your request, to arrange a demo, and to continue a business conversation with you about MYTH AI and ZUSHI. We do not sell your details and we do not use them for unrelated marketing."]],
-  ["Who processes it for us", ["Form submissions are delivered to our team inbox through FormSubmit, a form-processing service. This website does not currently use analytics or advertising trackers (no analytics ID is configured). If we enable analytics, for example Google Analytics 4, we will update this notice first.", "FormSubmit processes data on our behalf and may process it outside your country, including outside the UK and EEA."]],
-  ["How long we keep it", ["We keep your details for as long as we need them to handle your request and any follow-up conversation, then delete or anonymise them. You can ask us to delete them sooner."]],
-  ["Your rights", ["If you are in the UK or the EEA, you can ask us for a copy of your details, ask us to correct or delete them, object to or restrict how we use them, and withdraw consent where processing is based on consent. You also have the right to complain to your local data protection authority (for example the ICO in the UK). To use any of these rights, email sales@myth-ai.com."]],
-  ["Changes", ["If we change this notice we will update this page. Last updated: November 2026."]],
+  [
+    "About this notice",
+    [
+      "This notice explains how enquiry details submitted on the MYTH AI x ZUSHI website are handled. It covers the website enquiry forms, not separate services you may access through external links."
+    ]
+  ],
+  [
+    "Information you submit",
+    [
+      "The form sends the fields you complete, such as your name, email, company, contact details and message, together with the enquiry context shown on that form. Please do not include sensitive personal information."
+    ]
+  ],
+  [
+    "Purpose and delivery",
+    [
+      "The information is collected so the company team can respond to your enquiry and follow up on your request. FormSubmit processes form submissions for delivery to the designated enquiry inbox. The form-processing service and email provider handle the information as part of that delivery."
+    ]
+  ],
+  [
+    "Sharing",
+    [
+      "Enquiries are for the company team and are not shared with independent partners or other companies. This does not exclude the service providers used to process and deliver the form, as described above."
+    ]
+  ],
+  [
+    "Retention",
+    [
+      "The company keeps enquiry records for one year. For questions about retention or a request concerning your data, use the privacy contact below."
+    ]
+  ],
+  [
+    "Privacy contact and grievances",
+    [
+      "For privacy questions, grievances, or requests to access, correct or delete enquiry information, email jigjn14@gmail.com. Please identify the website and the email address used for your enquiry."
+    ]
+  ],
+  [
+    "External services",
+    [
+      "If you follow a link to WhatsApp, a booking service, a partner or another website, that service has its own privacy policy and terms. Information you provide there is handled under those policies."
+    ]
+  ]
 ];
-export default function P() { return (<><Nav /><main className="mx-auto max-w-3xl px-5 pt-32 pb-24"><h1 className="text-4xl font-black">Privacy notice</h1>
-  <p className="mt-5 text-neutral-700">This notice explains what the MYTH AI × ZUSHI website collects and why. It applies to this website only; the MYTH AI and ZUSHI platforms have their own notices.</p>
-  {sections.map(([h, ps]) => (<section key={h}><h2 className="mt-10 text-2xl font-black">{h}</h2>{ps.map((t) => <p key={t} className="mt-3 leading-relaxed text-neutral-700">{t}</p>)}</section>))}
-</main><Footer /></>); }
+export default function PrivacyPage() {
+  return (<><Nav /><main className="mx-auto max-w-3xl px-6 pt-32 pb-24">
+    <h1 className="text-4xl font-bold">Privacy notice</h1>
+    <p className="mt-4 text-sm text-neutral-700">Updated 20 November 2026</p>
+    {sections.map(([heading, paragraphs]) => <section key={heading} className="mt-10"><h2 className="text-2xl font-bold">{heading}</h2>{paragraphs.map(text => <p key={text} className="mt-4 text-base leading-relaxed text-neutral-700">{text}</p>)}</section>)}
+    <p className="mt-8 text-base text-neutral-700"><a href="mailto:jigjn14@gmail.com" className="underline underline-offset-4">Email the privacy contact</a></p>
+  </main><Footer /></>);
+}

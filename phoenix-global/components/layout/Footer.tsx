@@ -28,6 +28,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-line px-6 py-6 text-xs text-paper-dim md:px-10">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-2 sm:flex-row">
+          <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-3 text-sm"><Link href="/privacy" className="underline underline-offset-4">Privacy notice</Link><Link href="/terms" className="underline underline-offset-4">Terms of use</Link></nav>
           <p>&copy; {new Date().getFullYear()} {siteMeta.legalName}. All rights reserved.</p>
           <p>Trade and sourcing enquiries welcome.</p>
         </div>

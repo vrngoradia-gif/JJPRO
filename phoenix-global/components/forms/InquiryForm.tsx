@@ -56,6 +56,10 @@ export default function InquiryForm({ defaultType = "buyer" }: { defaultType?: s
         <div><label htmlFor="file" className={label}>Attach a file (spec, tech pack, photo)</label><input id="file" name="attachment" type="file" multiple className="w-full py-2 text-sm text-paper-dim" /></div>
       </div>
       <div><label htmlFor="message" className={label}>Details *</label><textarea id="message" name="message" required rows={5} className={`${field} resize-none`} /></div>
+      <p className="text-sm leading-relaxed text-paper-dim">
+        When you submit, the details you enter are sent through <a href="https://formsubmit.co/" target="_blank" rel="noreferrer" className="underline underline-offset-4">FormSubmit</a> to the enquiry inbox so the team can respond to your request. Please do not include sensitive personal information. <a href="/privacy" className="underline underline-offset-4">Privacy notice</a>.
+      </p>
+
       <button type="submit" disabled={status === "submitting"} className="w-full rounded-full bg-accent px-8 py-3.5 text-sm tracking-wide text-white transition-colors hover:bg-accent-bright disabled:opacity-60">
         {status === "submitting" ? "Sending..." : "Send enquiry"}
       </button>

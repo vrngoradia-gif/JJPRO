@@ -193,6 +193,7 @@ export default function AssistantWidget(props: AssistantProps) {
             {stage === "done" && questionnaire && (
               <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                 <a href={whatsappLink(whatsappNumber, `${whatsappText}\n\n${summary(answers)}`)} target="_blank" rel="noreferrer" style={css.link}>Send these answers on WhatsApp</a>
+                <p style={{ fontSize: 12, lineHeight: 1.6, color: "var(--aw-dim)" }}>Email sends these answers through FormSubmit to the enquiry inbox for follow-up. WhatsApp opens a separate service with its own privacy policy. Please do not include sensitive personal information. <a href="/privacy" style={{ textDecoration: "underline" }}>Privacy notice</a>.</p>
                 {formspreeId && sent !== "ok" && (
                   <button type="button" onClick={submitLead} disabled={sent === "sending"} style={{ ...css.chip, textAlign: "center" }}>
                     {sent === "sending" ? "Sending..." : "Send to the team by email"}
