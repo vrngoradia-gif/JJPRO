@@ -2,8 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import { track } from "@/lib/track";
 import { WaButton } from "./WhatsAppFab";
-// Enquiries go browser-direct to FormSubmit (recipient sales@myth-ai.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
-const LEAD_ENDPOINT = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/sales@myth-ai.com";
+// Enquiries go browser-direct to FormSubmit (recipient jigjn14@gmail.com). Override with NEXT_PUBLIC_LEAD_ENDPOINT.
+const LEAD_ENDPOINT = process.env.NEXT_PUBLIC_LEAD_ENDPOINT || "https://formsubmit.co/ajax/jigjn14@gmail.com";
 const roles = ["Brand / Retailer", "Manufacturer / Export house", "Buying house / Agent", "Other"];
 const roleFromTab: Record<string, string> = { "Brands & Retailers": roles[0], Manufacturers: roles[1], "Buying Houses": roles[2] };
 const countries = ["India","United Arab Emirates","United Kingdom","Spain","Germany","Italy","France","Netherlands","Turkey","Brazil","Panama","United States","Canada","Bangladesh","Vietnam","Other"];
