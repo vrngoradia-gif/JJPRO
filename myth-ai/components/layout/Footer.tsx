@@ -41,16 +41,12 @@ export default function Footer() {
             <p className="mt-5 max-w-xs text-sm text-paper-dim">{siteMeta.tagline}</p>
             <p className="mt-5 text-sm text-paper-dim">{contact.office}</p>
             <div className="mt-3 flex flex-col gap-2">
-              <a
-                href={`mailto:${contact.email}`}
+              <Link
+                href="/contact"
                 className="inline-flex items-center gap-2 text-sm text-paper-dim transition-colors hover:text-paper"
               >
-                <svg viewBox="0 0 24 24" className="h-4 w-4 shrink-0" fill="none" stroke="currentColor" strokeWidth={1.6}>
-                  <path d="M3 6.5h18v11H3z" strokeLinejoin="round" />
-                  <path d="m3 7 9 6.5L21 7" strokeLinejoin="round" />
-                </svg>
-                {contact.email}
-              </a>
+                Contact us via the form
+              </Link>
               <a
                 href={contact.whatsappHref}
                 target="_blank"

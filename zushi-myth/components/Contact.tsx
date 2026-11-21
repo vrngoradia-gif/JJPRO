@@ -60,7 +60,7 @@ export default function Contact() {
           <p className="sm:col-span-2 text-sm leading-relaxed text-neutral-600">The details you enter are sent through <a href="https://formsubmit.co/" target="_blank" rel="noreferrer" className="underline">FormSubmit</a> to the enquiry inbox so the team can respond to your request. Please do not include sensitive personal information. <a href="/privacy" className="underline underline-offset-4">Privacy notice</a>.</p>
           <label className="sm:col-span-2 flex items-start gap-3 text-xs text-neutral-600"><input type="checkbox" name="consent" required className="mt-0.5 shrink-0" /><span>I agree to be contacted by MYTH AI and ZUSHI about this request and accept the <a href="/privacy" className="underline">privacy notice</a>.</span></label>
           <button disabled={state === "sending"} onClick={() => track("cta_demo_click", { location: "final" })} className="sm:col-span-2 rounded-full bg-ink px-6 py-3 font-bold text-white hover:bg-neutral-800 disabled:opacity-60">{state === "sending" ? "Sending..." : "Book a joint demo"}</button>
-          {state === "error" && <p className="sm:col-span-2 text-sm text-red-700">Something went wrong. Please try again or email sales@myth-ai.com.</p>}
+          {state === "error" && <p className="sm:col-span-2 text-sm text-red-700">Something went wrong. Please try again in a moment.</p>}
         </form>
       </div>
     </section>

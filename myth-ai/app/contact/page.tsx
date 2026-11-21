@@ -37,12 +37,6 @@ export default function ContactPage() {
 
             <div className="mt-10 space-y-3 text-sm text-paper-dim">
               <p>
-                Email:{" "}
-                <a href={`mailto:${contact.email}`} className="text-paper hover:text-accent-bright">
-                  {contact.email}
-                </a>
-              </p>
-              <p>
                 WhatsApp:{" "}
                 <a href={contact.whatsappHref} target="_blank" rel="noreferrer" className="text-paper hover:text-accent-bright">
                   {contact.whatsapp}

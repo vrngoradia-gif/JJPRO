@@ -20,7 +20,7 @@ export default function Footer() {
         <div>
           <p className="eyebrow mb-5">Contact</p>
           <ul className="space-y-3 text-sm text-paper-dim">
-            <li><a href={`mailto:${contactInfo.email}`} className="hover:text-accent-bright">{contactInfo.email}</a></li>
+            <li><Link href="/contact" className="hover:text-accent-bright">Contact us via the form</Link></li>
             {contactInfo.phone && <li>{contactInfo.phone}</li>}
             {contactInfo.offices.map((o) => <li key={o.place}>{o.place}</li>)}
           </ul>

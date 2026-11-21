@@ -27,12 +27,7 @@ export const navLinks = [
 ];
 
 export const footerLinks = {
-  contact: {
-    // TODO: confirm official emails
-    email: "hello@jjfund.com",
-    investor: "invest@jjfund.com",
-    partner: "partners@jjfund.com",
-  },
+  contact: {},
   socials: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/jignesh1409/" }],
   sitemap: [
     { label: "What We Do", href: "/what-we-do" },
@@ -348,10 +343,6 @@ export const connect = {
     },
   },
   directEmail: {
-    heading: "Prefer email?",
-    // TODO: confirm official emails
-    founder: "hello@jjfund.com",
-    investor: "invest@jjfund.com",
-    partner: "partners@jjfund.com",
+    heading: "Reach the team",
   },
 };

@@ -39,7 +39,6 @@ export function organizationSchema() {
       "@id": `${SITE_URL}/#person`,
       name: person.name,
     },
-    email: footerLinks.contact.email,
     sameAs: person.sameAs,
     areaServed: "Worldwide",
     address: {

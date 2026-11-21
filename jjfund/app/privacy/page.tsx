@@ -33,7 +33,7 @@ const sections: [string, string[]][] = [
   [
     "Privacy contact and grievances",
     [
-      "For privacy questions, grievances, or requests to access, correct or delete enquiry information, email jigjn14@gmail.com. Please identify the website and the email address used for your enquiry."
+      "For privacy questions, grievances, or requests to access, correct or delete enquiry information, contact us through the enquiry form on this website and mention it is a privacy request. Please identify the website and the email address used for your enquiry."
     ]
   ],
   [
@@ -48,6 +48,6 @@ export default function PrivacyPage() {
     <h1 className="text-4xl font-bold">Privacy notice</h1>
     <p className="mt-4 text-sm text-paper-dim">Updated 20 November 2026</p>
     {sections.map(([heading, paragraphs]) => <section key={heading} className="mt-10"><h2 className="text-2xl font-bold">{heading}</h2>{paragraphs.map(text => <p key={text} className="mt-4 text-base leading-relaxed text-paper-dim">{text}</p>)}</section>)}
-    <p className="mt-8 text-base text-paper-dim"><a href="mailto:jigjn14@gmail.com" className="underline underline-offset-4">Email the privacy contact</a></p>
+    <p className="mt-8 text-base text-paper-dim"><a href="/connect" className="underline underline-offset-4">Contact us via the enquiry form</a></p>
   </main></>);
 }

@@ -51,19 +51,9 @@ export default function Footer() {
             <p className="eyebrow mb-5">Get in Touch</p>
             <ul className="space-y-3 text-sm text-paper-dim">
               <li>
-                <a href={`mailto:${footerLinks.contact.email}`} className="transition-colors hover:text-accent-bright">
-                  {footerLinks.contact.email}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${footerLinks.contact.investor}`} className="transition-colors hover:text-accent-bright">
-                  Investors — {footerLinks.contact.investor}
-                </a>
-              </li>
-              <li>
-                <a href={`mailto:${footerLinks.contact.partner}`} className="transition-colors hover:text-accent-bright">
-                  Partners — {footerLinks.contact.partner}
-                </a>
+                <Link href="/connect" className="transition-colors hover:text-accent-bright">
+                  Contact us via the form
+                </Link>
               </li>
             </ul>
           </div>

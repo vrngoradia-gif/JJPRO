@@ -66,7 +66,7 @@ export default function RootLayout({
         <PageTransition>
           <main>{children}</main>
         </PageTransition>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", name: siteMeta.name, url: siteMeta.url, description: siteMeta.description, email: contact.email, address: { "@type": "PostalAddress", addressLocality: "Mumbai", addressCountry: "IN" } }, { "@type": "WebSite", name: siteMeta.name, url: siteMeta.url } ] }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [ { "@type": "Organization", name: siteMeta.name, url: siteMeta.url, description: siteMeta.description, address: { "@type": "PostalAddress", addressLocality: "Mumbai", addressCountry: "IN" } }, { "@type": "WebSite", name: siteMeta.name, url: siteMeta.url } ] }) }} />
         <NetworkStrip current="myth" />
         <Footer />
         <WhatsAppFab />

@@ -13,7 +13,6 @@ export const siteMeta = {
 };
 
 export const contactInfo = {
-  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "info@phoenixglobal.biz",
   phone: process.env.NEXT_PUBLIC_PHONE || "",
   whatsapp: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414",
   offices: [

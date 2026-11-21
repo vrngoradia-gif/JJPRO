@@ -26,12 +26,7 @@ export const navLinks = [
 ];
 
 export const footerLinks = {
-  contact: {
-    // TODO: replace with real client content — confirm official emails
-    email: "hello@jjpro.in",
-    career: "careers@jjpro.in",
-    partner: "partners@jjpro.in",
-  },
+  contact: {},
   socials: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/jignesh1409/" },
   ],
@@ -337,9 +332,6 @@ export const contact = {
   },
   directEmail: {
     heading: "Or Reach Out Directly",
-    // TODO: replace with real client content — confirm official emails
-    general: "hello@jjpro.in",
-    career: "careers@jjpro.in",
   },
   partnerCta: {
     kicker: "Are You an Investor, Agency or Operator?",
@@ -461,7 +453,7 @@ export const faqs = {
     {
       question: "How do I get in touch with JJ PRO?",
       answer:
-        "You can reach JJ PRO by filling out the contact form on this page, emailing hello@jjpro.in directly, or booking a free 30-minute intro call on the calendar below — whichever is fastest for you.",
+        "You can reach JJ PRO by filling out the contact form on this page or booking a free 30-minute intro call on the calendar below, whichever is fastest for you.",
     },
     {
       question: "Can I book a call directly instead of filling out a form?",
