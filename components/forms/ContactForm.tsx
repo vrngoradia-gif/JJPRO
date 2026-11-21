@@ -32,9 +32,10 @@ export default function ContactForm({
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setStatus("submitting");
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(form);
     formData.append("_subject", `New enquiry from ${window.location.hostname}`);
     formData.append("_site", window.location.hostname);
     formData.append("_template", "table");
@@ -51,7 +52,7 @@ export default function ContactForm({
       const j = await res.clone().json().catch(() => null);
       if (res.ok && (!j || String(j.success) !== "false")) {
         setStatus("success");
-        e.currentTarget.reset();
+        form.reset();
       } else {
         setStatus("error");
       }
