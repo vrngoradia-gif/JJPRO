@@ -21,6 +21,9 @@ export default function PartnersPage() {
       <section className="mx-auto max-w-3xl px-6 pb-16 md:px-10">
         <SectionReveal>
           <p className="text-base leading-relaxed text-paper-dim">{partners.body}</p>
+          <aside aria-label="External website notice" className="mt-8 rounded-2xl border border-line bg-panel/60 p-6 text-sm leading-relaxed text-paper-dim">
+            Links to partner websites take you to independent third-party websites. Their own privacy policies and terms apply to information you provide there. Following a link does not submit this website&apos;s enquiry form or send your form answers to that partner.
+          </aside>
         </SectionReveal>
       </section>
       <section className="mx-auto max-w-4xl px-6 pb-24 md:px-10 md:pb-32">

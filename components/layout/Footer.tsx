@@ -104,6 +104,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-line/60 pt-8 text-xs text-paper-dim/70 sm:flex-row sm:items-center">
+          <nav aria-label="Legal" className="flex flex-wrap gap-x-6 gap-y-3 text-sm"><Link href="/privacy" className="underline underline-offset-4">Privacy notice</Link><Link href="/terms" className="underline underline-offset-4">Terms of use</Link></nav>
           <p>© {new Date().getFullYear()} {siteMeta.name}. All rights reserved.</p>
           <p>Site by JJ PRO</p>
         </div>

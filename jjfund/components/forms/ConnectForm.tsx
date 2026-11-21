@@ -132,6 +132,10 @@ export default function ConnectForm({ defaultAudience }: { defaultAudience?: str
         />
       </div>
 
+      <p className="text-sm leading-relaxed text-paper-dim">
+        When you submit, the details you enter are sent through <a href="https://formsubmit.co/" target="_blank" rel="noreferrer" className="underline underline-offset-4">FormSubmit</a> to the enquiry inbox so the team can respond to your request. Please do not include sensitive personal information. <a href="/privacy" className="underline underline-offset-4">Privacy notice</a>.
+      </p>
+
       <button
         type="submit"
         disabled={status === "submitting"}

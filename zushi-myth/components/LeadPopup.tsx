@@ -44,6 +44,7 @@ export default function LeadPopup() {
                 <input name="email" type="email" required placeholder="Email" className={f} />
                 <input name="phone" type="tel" required placeholder="Phone (with country code)" className={f} />
                 <textarea name="use_case" required rows={2} placeholder="Use case (e.g. 5,000 polos for a UK retailer)" className={f} />
+                <p className="text-xs leading-relaxed text-neutral-600">Your details are sent through <a href="https://formsubmit.co/" target="_blank" rel="noreferrer" className="underline">FormSubmit</a> to the enquiry inbox so the team can respond. Please do not include sensitive personal information. <a href="/privacy" className="underline underline-offset-4">Privacy notice</a>.</p>
                 <button disabled={state === "sending"} className="rounded-full bg-ink px-6 py-3 font-bold text-white hover:bg-neutral-800 disabled:opacity-60">{state === "sending" ? "Sending..." : "Talk to us"}</button>
                 {state === "error" && <p className="text-sm text-red-600">Something went wrong. Please try again or email sales@myth-ai.com.</p>}
                 <p className="text-[11px] text-neutral-500">By submitting you agree to be contacted about this request. <a href="/privacy" className="underline">Privacy</a></p>

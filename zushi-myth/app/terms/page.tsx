@@ -1,7 +1,7 @@
 import Nav from "@/components/Nav"; import Footer from "@/components/Footer";
 export const metadata = { title: "Terms" };
 const sections: [string, string[]][] = [
-  ["About this website", ["This website is operated jointly by the MYTH AI and ZUSHI teams. It describes the combined MYTH AI × ZUSHI offering: digital product creation by MYTH AI and factory matching, production tracking and shipment by ZUSHI. By using this website you accept these terms."]],
+  ["About this website", ["This website describes the combined MYTH AI × ZUSHI offering: digital product creation by MYTH AI and factory matching, production tracking and shipment by ZUSHI. By using this website you accept these terms."]],
   ["Information, not an offer", ["Content on this site is general information about the two platforms and how they work together. It is not an offer, a quote or a contract. Any engagement, pricing, escrow arrangement and service levels are agreed separately in writing with MYTH AI or ZUSHI."]],
   ["Your submissions", ["When you send us a design reference, brief or message through the contact form, you confirm you have the right to share it. You keep ownership of your designs and materials. We use what you send only to respond, as described in our privacy notice."]],
   ["Our content", ["The text, visuals and branding on this site belong to MYTH AI and ZUSHI or their licensors. Product screenshots are illustrative. You may share the link; you may not copy the site's content for your own commercial use without permission."]],
