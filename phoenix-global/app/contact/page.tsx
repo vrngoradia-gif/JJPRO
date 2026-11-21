@@ -19,7 +19,7 @@ export default function Contact() {
           <div>
             <p className="eyebrow">Reach us directly</p>
             <ul className="mt-4 space-y-2 text-paper-dim">
-              <li><a href={`mailto:${contactInfo.email}`} className="hover:text-accent-bright">{contactInfo.email}</a></li>
+              <li>Send an enquiry through the form and the team will reply by email.</li>
               {contactInfo.phone && <li>{contactInfo.phone}</li>}
             </ul>
             <div className="mt-4"><CtaButton external href={whatsappLink(contactInfo.whatsapp, "Hello, I would like a quote from Merovant.")} variant="outline">WhatsApp us</CtaButton></div>

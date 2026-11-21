@@ -19,7 +19,6 @@ export const siteMeta = {
 };
 
 export const contact = {
-  email: "india@myth-ai.com",
   // WhatsApp Business number (digits with country code); override with NEXT_PUBLIC_WHATSAPP_NUMBER
   whatsapp: "+" + (process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414").replace(/[^0-9]/g, ""),
   whatsappHref: `https://wa.me/${(process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919960642414").replace(/[^0-9]/g, "")}?text=${encodeURIComponent("Hi Myth AI, I would like to share a brief.")}`,
@@ -810,7 +809,7 @@ export const about = {
   press: {
     heading: "Media & Press",
     // TODO: add press mentions / press kit link once available
-    body: "Press inquiries: " + contact.email,
+    body: "Press inquiries: use the contact form on this website.",
   },
 };
 

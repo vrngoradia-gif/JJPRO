@@ -58,12 +58,9 @@ export default function ContactPage() {
             <p className="font-display text-lg text-paper">
               {contact.directEmail.heading}
             </p>
-            <a
-              href={`mailto:${contact.directEmail.general}`}
-              className="mt-2 block text-sm text-gold"
-            >
-              {contact.directEmail.general}
-            </a>
+            <p className="mt-2 text-sm text-paper-dim">
+              Send us a message through the form above and the team will reply by email.
+            </p>
             <a href="https://www.linkedin.com/in/jignesh1409/" target="_blank" rel="noopener noreferrer" className="mt-3 block text-sm text-gold">
               Connect on LinkedIn →
             </a>

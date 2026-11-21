@@ -35,23 +35,7 @@ export default function ConnectPage() {
 
         <SectionReveal delay={0.1} className="mt-12 border-t border-line/60 pt-8">
           <p className="font-display text-lg text-paper">{connect.directEmail.heading}</p>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li>
-              <a href={`mailto:${connect.directEmail.founder}`} className="text-accent-bright hover:text-accent">
-                Founders — {connect.directEmail.founder}
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${connect.directEmail.investor}`} className="text-accent-bright hover:text-accent">
-                Investors — {connect.directEmail.investor}
-              </a>
-            </li>
-            <li>
-              <a href={`mailto:${connect.directEmail.partner}`} className="text-accent-bright hover:text-accent">
-                Partners — {connect.directEmail.partner}
-              </a>
-            </li>
-          </ul>
+          <p className="mt-4 text-sm text-paper-dim">Send us a message through the form above and the team will reply by email.</p>
         </SectionReveal>
       </section>
     </>
